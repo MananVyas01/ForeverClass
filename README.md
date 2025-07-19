@@ -82,8 +82,8 @@ Forever Class is a **real learning platform** designed for people who want to gr
 ### For Contributors
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/[username]/forever-class.git
-   cd forever-class
+   git clone https://github.com/MananVyas01/ForeverClass.git
+   cd ForeverClass
    ```
 
 2. **Open locally**:
@@ -112,6 +112,7 @@ forever-class/
 │   └── script.js              # Interactive functionality (400+ lines)
 ├── assets/                    # Images, icons, favicons (to be added)
 ├── index.html                 # Main page (comprehensive layout)
+├── git-github.html          # Git and GitHub guide
 └── README.md                  # This file
 ```
 
