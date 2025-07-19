@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn Git & GitHub from scratch - Beginner-friendly guide with practical examples and real-world applications. Part of Forever Class free learning platform.">
+    <meta name="keywords" content="git, github, version control, programming, coding, beginner tutorial, free course">
+    <meta name="author" content="Forever Class">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://forever-class.github.io/git-github.html">
+    <meta property="og:title" content="Git & GitHub Mastery - Forever Class">
+    <meta property="og:description" content="Master Git & GitHub with this beginner-friendly, practical guide. No boring theory - just real examples and hands-on learning!">
+    <meta property="og:image" content="https://forever-class.github.io/assets/git-github-og.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://forever-class.github.io/git-github.html">
+    <meta property="twitter:title" content="Git & GitHub Mastery - Forever Class">
+    <meta property="twitter:description" content="Master Git & GitHub with this beginner-friendly, practical guide. No boring theory - just real examples and hands-on learning!">
+    <meta property="twitter:image" content="https://forever-class.github.io/assets/git-github-og.png">
+
+    <title>Git & GitHub Mastery - Forever Class</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        /* Additional styles for this learning page */
+        .learning-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-lg);
+        }
+        
+        /* Sidebar Navigation for Desktop */
+        .page-layout {
+            display: flex;
+            gap: var(--spacing-xl);
+            margin-top: calc(80px + var(--spacing-lg));
+        }
+        
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 80px;
+            width: 280px;
+            height: calc(100vh - 80px);
+            background: var(--card-bg);
+            border-right: 1px solid var(--border-color);
+            padding: var(--spacing-xl) var(--spacing-lg);
+            overflow-y: auto;
+            z-index: 999;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        
+        .sidebar-header {
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-lg);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .sidebar-header h3 {
+            color: var(--primary-color);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .sidebar-header p {
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) var(--spacing-md);
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-sm);
+            transition: all var(--transition-fast);
+            position: relative;
+        }
+        
+        .sidebar-nav a:hover {
+            background: var(--bg-secondary);
+            color: var(--primary-color);
+            transform: translateX(4px);
+        }
+        
+        .sidebar-nav a.active {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: 0 2px 8px rgba(103, 126, 234, 0.3);
+        }
+        
+        .sidebar-nav .section-icon {
+            font-size: var(--font-size-base);
+            width: 20px;
+            text-align: center;
+        }
+        
+        .main-content {
+            flex: 1;
+            margin-left: 0;
+        }
+        
+        .page-header {
+            text-align: center;
+            padding: var(--spacing-3xl) 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            margin-bottom: var(--spacing-3xl);
+            border-radius: var(--radius-lg);
+        }
+        
+        .learning-section {
+            background: var(--card-bg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .section-number {
+            background: var(--primary-color);
+            color: white;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-sm);
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .metaphor-box {
+            background: var(--bg-secondary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-lg) 0;
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        .command-box {
+            background: #1e1e1e;
+            color: #f8f8f2;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            font-family: 'Courier New', monospace;
+            margin: var(--spacing-md) 0;
+            overflow-x: auto;
+        }
+        
+        .command-box pre {
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            color: inherit;
+            background: none;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .command-box .comment {
+            color: #6a9955;
+        }
+        
+        /* Desktop Sidebar Layout */
+        @media (min-width: 1024px) {
+            .sidebar {
+                display: block;
+            }
+            
+            .main-content {
+                margin-left: 300px;
+            }
+            
+            .learning-page {
+                max-width: none;
+                padding: 0 var(--spacing-lg);
+            }
+        }
+        
+        /* Mobile-first - hide sidebar on smaller screens */
+        @media (max-width: 1023px) {
+            .page-layout {
+                margin-top: calc(80px + var(--spacing-md));
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+        }
+        
+        .practice-box {
+            background: linear-gradient(135deg, rgba(103, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            border: 2px dashed var(--primary-color);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .recap-box {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(103, 126, 234, 0.1));
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            margin: var(--spacing-lg) 0;
+            text-align: center;
+        }
+        
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .resource-card {
+            background: var(--card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .mistake-card {
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid rgba(244, 67, 54, 0.3);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            margin: var(--spacing-md) 0;
+        }
+        
+        .mistake-title {
+            color: var(--error-color);
+            font-weight: bold;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .fix-box {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-sm);
+            margin-top: var(--spacing-sm);
+        }
+        
+        .btn-practice {
+            background: linear-gradient(135deg, var(--success-color), var(--primary-color));
+            color: white;
+            padding: var(--spacing-md) var(--spacing-lg);
+            border: none;
+            border-radius: var(--border-radius-md);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin: var(--spacing-md) var(--spacing-sm) var(--spacing-md) 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-practice:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">📚</span>
+                <span class="logo-text">Forever Class</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">← Home</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span>🌙</span></button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar Navigation (Desktop Only) -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h3>📚 Learning Guide</h3>
+            <p>Navigate through the Git & GitHub essentials</p>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#introduction" class="sidebar-link active">
+                    <span class="section-icon">👋</span>
+                    Introduction
+                </a></li>
+                <li><a href="#what-is-git" class="sidebar-link">
+                    <span class="section-icon">❓</span>
+                    What is Git?
+                </a></li>
+                <li><a href="#why-github" class="sidebar-link">
+                    <span class="section-icon">🌐</span>
+                    Why GitHub?
+                </a></li>
+                <li><a href="#getting-started" class="sidebar-link">
+                    <span class="section-icon">🚀</span>
+                    Getting Started
+                </a></li>
+                <li><a href="#git-basics" class="sidebar-link">
+                    <span class="section-icon">⚙️</span>
+                    Git Basics
+                </a></li>
+                <li><a href="#github-workflow" class="sidebar-link">
+                    <span class="section-icon">🔄</span>
+                    GitHub Workflow
+                </a></li>
+                <li><a href="#common-mistakes" class="sidebar-link">
+                    <span class="section-icon">⚠️</span>
+                    Common Mistakes
+                </a></li>
+                <li><a href="#resources" class="sidebar-link">
+                    <span class="section-icon">📖</span>
+                    Resources
+                </a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="page-layout">
+        <main class="main-content">
+            <!-- Page Header -->
+            <header class="page-header">
+                <h1>🚀 Git & GitHub Mastery</h1>
+                <p class="hero-subtitle">From Zero to Hero - No Boring Theory, Just Real Practice!</p>
+                <p>Welcome to your practical journey into version control. We'll use real examples, simple metaphors, and hands-on practice to make you confident with Git & GitHub.</p>
+            </header>
+
+        <!-- Friendly Introduction -->
+        <section id="introduction" class="learning-section">
+            <div class="section-number">👋</div>
+            <h2>Welcome, Future Git Master!</h2>
+            <p>You're about to learn one of the most important skills in modern development and collaboration. Don't worry if you've never used Git before - by the end of this guide, you'll feel confident managing your code like a pro!</p>
+            
+            <div class="metaphor-box">
+                <h4>🎯 Think of Git Like This:</h4>
+                <p><strong>Git is like a time machine for your projects.</strong> Imagine you're writing a story (your code). Git lets you:</p>
+                <ul>
+                    <li>📸 Take snapshots at any point</li>
+                    <li>⏪ Go back to any previous version</li>
+                    <li>🔀 Try different versions without losing the original</li>
+                    <li>🤝 Collaborate with others without overwriting each other's work</li>
+                </ul>
+            </div>
+
+            <div class="practice-box">
+                <h4>🚀 What You'll Build Today:</h4>
+                <p>By the end of this guide, you'll create your first GitHub repository, make commits, and understand how millions of developers collaborate every day!</p>
+            </div>
+        </section>
+
+        <!-- What is Git? -->
+        <section id="what-is-git" class="learning-section">
+            <div class="section-number">1️⃣</div>
+            <h2>What is Git? (The Simple Truth)</h2>
+            
+            <p>Git is a <strong>version control system</strong>. But what does that actually mean in real life?</p>
+            
+            <div class="metaphor-box">
+                <h4>📝 Real-Life Example:</h4>
+                <p>Remember working on school essays? You probably had files like:</p>
+                <ul>
+                    <li>essay_final.doc</li>
+                    <li>essay_final_v2.doc</li>
+                    <li>essay_final_ACTUALLY_FINAL.doc</li>
+                    <li>essay_final_for_real_this_time.doc</li>
+                </ul>
+                <p><strong>Git solves this chaos!</strong> Instead of multiple files, Git tracks all changes in one project and lets you jump between versions instantly.</p>
+            </div>
+
+            <h3>Why Developers Love Git:</h3>
+            <ul>
+                <li><strong>No more lost work:</strong> Every change is saved and recoverable</li>
+                <li><strong>Experiment safely:</strong> Try new features without breaking working code</li>
+                <li><strong>Collaborate easily:</strong> Multiple people can work on the same project</li>
+                <li><strong>See what changed:</strong> Track exactly what was modified and when</li>
+                <li><strong>Professional standard:</strong> Every tech company and open-source project uses Git</li>
+            </ul>
+
+            <div class="recap-box">
+                <h4>🎯 Quick Recap: What did you just learn?</h4>
+                <p>Git = Smart file versioning system that prevents chaos and enables collaboration!</p>
+            </div>
+        </section>
+
+        <!-- Why GitHub? -->
+        <section id="why-github" class="learning-section">
+            <div class="section-number">2️⃣</div>
+            <h2>Why GitHub? (Where the Magic Happens)</h2>
+            
+            <p>If Git is your local time machine, GitHub is like <strong>Google Drive for developers</strong> - but way more powerful!</p>
+            
+            <div class="metaphor-box">
+                <h4>🏠 Think of it This Way:</h4>
+                <ul>
+                    <li><strong>Git</strong> = Your personal notebook at home</li>
+                    <li><strong>GitHub</strong> = The library where everyone shares and collaborates on notebooks</li>
+                </ul>
+            </div>
+
+            <h3>What Makes GitHub Special:</h3>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h4>☁️ Cloud Backup</h4>
+                    <p>Your code is safe online, accessible from anywhere</p>
+                </div>
+                <div class="resource-card">
+                    <h4>🤝 Collaboration</h4>
+                    <p>Work with team members without stepping on each other's code</p>
+                </div>
+                <div class="resource-card">
+                    <h4>🌟 Portfolio</h4>
+                    <p>Show employers your coding projects and contributions</p>
+                </div>
+                <div class="resource-card">
+                    <h4>🎓 Learning</h4>
+                    <p>Explore millions of open-source projects to learn from</p>
+                </div>
+            </div>
+
+            <div class="practice-box">
+                <h4>💡 Real-World Example:</h4>
+                <p>Popular projects on GitHub:</p>
+                <ul>
+                    <li><strong>VS Code</strong> - Microsoft's code editor (150k+ contributors!)</li>
+                    <li><strong>React</strong> - Facebook's web framework</li>
+                    <li><strong>Python</strong> - Yes, even programming languages are on GitHub!</li>
+                </ul>
+                <p>When you use GitHub, you're joining the same platform that powers the entire software industry!</p>
+            </div>
+        </section>
+
+        <!-- Getting Started -->
+        <section id="getting-started" class="learning-section">
+            <div class="section-number">3️⃣</div>
+            <h2>Getting Started (Let's Install & Set Up)</h2>
+            
+            <h3>Step 1: Install Git</h3>
+            <p>Don't worry - this is easier than installing most apps!</p>
+            
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h4>🪟 Windows</h4>
+                    <p>Download from: <a href="https://git-scm.com/download/win" target="_blank">git-scm.com/download/win</a></p>
+                    <p>Just click "Next" through the installer - the defaults are perfect!</p>
+                </div>
+                <div class="resource-card">
+                    <h4>🍎 macOS</h4>
+                    <p>Option 1: Download from <a href="https://git-scm.com/download/mac" target="_blank">git-scm.com/download/mac</a></p>
+                    <p>Option 2: Open Terminal and type: <code>git --version</code> (macOS will prompt to install)</p>
+                </div>
+                <div class="resource-card">
+                    <h4>🐧 Linux</h4>
+                    <p>Ubuntu/Debian: <code>sudo apt install git</code></p>
+                    <p>Fedora: <code>sudo dnf install git</code></p>
+                </div>
+            </div>
+
+            <h3>Step 2: Set Up Your Identity</h3>
+            <p>Before your first commit, Git needs to know who you are:</p>
+            
+            <div class="command-box">
+                <pre></pre># Replace with your actual name and email
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# Check if it worked
+git config --global --list</pre>
+            </div>
+
+            <h3>Step 3: Create a GitHub Account</h3>
+            <p>Go to <a href="https://github.com" target="_blank">github.com</a> and sign up. It's free!</p>
+            
+            <ul>
+                <li>Choose a professional username (you'll use this for your portfolio)</li>
+                <li>Use the same email you used in the Git config above</li>
+                <li>Consider GitHub Pro for students (free with student email)</li>
+            </ul>
+
+            <div class="practice-box">
+                <h4>✅ Quick Check: Are You Ready?</h4>
+                <p>Open your terminal/command prompt and type: <code>git --version</code></p>
+                <p>If you see a version number, you're ready to rock! 🎸</p>
+            </div>
+        </section>
+
+        <!-- Git Basics -->
+        <section id="git-basics" class="learning-section">
+            <div class="section-number">4️⃣</div>
+            <h2>Git Basics (Your First Commands)</h2>
+            
+            <p>Time to get your hands dirty! We'll learn by doing - create a practice project right now.</p>
+            
+            <h3>Create Your First Repository</h3>
+            <p>Let's make a simple project to practice with:</p>
+            
+            <div class="command-box">
+                <pre># Create a new folder for your project
+mkdir my-first-repo
+cd my-first-repo
+
+# Initialize Git (this creates the "time machine")
+git init
+
+# Create a simple file
+echo "Hello, Git world!" > README.md
+
+# Check what Git sees
+git status</pre>
+            </div>
+
+            <h3>The Git Workflow (4 Essential Commands)</h3>
+            
+            <div class="metaphor-box">
+                <h4>📸 Think of Git Like Taking Photos:</h4>
+                <ol>
+                    <li><strong>git add</strong> = Choose what to include in the photo</li>
+                    <li><strong>git commit</strong> = Take the photo and write a caption</li>
+                    <li><strong>git status</strong> = See what's ready for the photo</li>
+                    <li><strong>git log</strong> = View your photo album</li>
+                </ol>
+            </div>
+
+            <h4>1. git status (What's happening?)</h4>
+            <div class="command-box">
+git status
+<span class="comment"># Shows which files are changed, added, or ready to commit</span>
+            </div>
+
+            <h4>2. git add (Stage your changes)</h4>
+            <div class="command-box">
+                <pre>git add README.md          <span class="comment"># Add one specific file</span>
+git add .                  <span class="comment"># Add all changed files</span>
+git add *.js              <span class="comment"># Add all JavaScript files</span></pre>
+            </div>
+
+            <h4>3. git commit (Save a snapshot)</h4>
+            <div class="command-box">
+                <pre>git commit -m "Add README file with greeting"
+<span class="comment"># The -m flag lets you add a message describing what you did</span></pre>
+            </div>
+
+            <h4>4. git log (See your history)</h4>
+            <div class="command-box">
+                <pre>git log                    <span class="comment"># See all commits</span>
+git log --oneline         <span class="comment"># Compact view</span></pre>
+            </div>
+
+            <div class="practice-box">
+                <h4>🎯 Practice Time!</h4>
+                <p><strong>Try this right now:</strong></p>
+                <ol>
+                    <li>Create the folder and file as shown above</li>
+                    <li>Run <code>git status</code> - what do you see?</li>
+                    <li>Add the file with <code>git add README.md</code></li>
+                    <li>Run <code>git status</code> again - notice the difference?</li>
+                    <li>Commit with <code>git commit -m "My first commit!"</code></li>
+                    <li>Check your history with <code>git log</code></li>
+                </ol>
+                <p><em>Don't worry if you make mistakes - that's how developers learn every day!</em></p>
+            </div>
+
+            <h3>More Useful Commands</h3>
+            <div class="command-box">
+                <pre>git diff                   <span class="comment"># See exactly what changed</span>
+git diff --staged         <span class="comment"># See staged changes</span>
+git checkout filename     <span class="comment"># Undo changes to a file</span>
+git reset HEAD filename   <span class="comment"># Unstage a file</span></pre>
+            </div>
+
+            <div class="recap-box">
+                <h4>🎯 Quick Recap: Core Git Workflow</h4>
+                <p><code>git status</code> → <code>git add</code> → <code>git commit</code> → repeat!</p>
+                <p>This is what you'll do 90% of the time with Git.</p>
+            </div>
+        </section>
+
+        <!-- GitHub Workflow -->
+        <section id="github-workflow" class="learning-section">
+            <div class="section-number">5️⃣</div>
+            <h2>Working with GitHub (Going Online!)</h2>
+            
+            <p>Now let's take your local repository and share it with the world on GitHub!</p>
+            
+            <h3>Step 1: Create a Repository on GitHub</h3>
+            <ol>
+                <li>Go to <a href="https://github.com" target="_blank">github.com</a> and sign in</li>
+                <li>Click the green "New" button (or the "+" in the top right)</li>
+                <li>Name your repository (same as your folder: "my-first-repo")</li>
+                <li>Make it public (so others can see your awesome work!)</li>
+                <li>DON'T initialize with README (you already have one)</li>
+                <li>Click "Create repository"</li>
+            </ol>
+
+            <h3>Step 2: Connect Your Local Repository to GitHub</h3>
+            <p>GitHub will show you the exact commands. They'll look like this:</p>
+            
+            <div class="command-box">
+                <pre># Add GitHub as the "remote" destination 
+git remote add origin https://github.com/yourusername/my-first-repo.git
+
+# Push your commits to GitHub
+git push -u origin main</pre>
+            </div>
+
+            <div class="metaphor-box">
+                <h4>🚀 What Just Happened?</h4>
+                <ul>
+                    <li><strong>remote add origin</strong> = "Remember this GitHub address as 'origin'"</li>
+                    <li><strong>push</strong> = "Upload my commits to GitHub"</li>
+                    <li><strong>-u origin main</strong> = "Set up tracking so future pushes are easier"</li>
+                </ul>
+            </div>
+
+            <h3>The Daily GitHub Workflow</h3>
+            
+            <h4>Making Changes and Pushing</h4>
+            <div class="command-box">
+                <pre># 1. Make changes to your files
+echo "This is my awesome project!" >> README.md
+
+
+# 2. The familiar Git workflow
+git add .
+git commit -m "Update README with project description"
+
+# 3. Push to GitHub (now it's just this simple!)
+git push</pre>
+            </div>
+
+            <h4>Getting Changes from GitHub</h4>
+            <div class="command-box">
+                <pre>git pull                   <span class="comment"># Download and merge latest changes</span>
+git fetch                 <span class="comment"># Download but don't merge yet</span></pre>
+            </div>
+
+            <h3>Working with Other People's Projects</h3>
+            
+            <h4>Cloning (Downloading) a Repository</h4>
+            <div class="command-box">
+                <pre># Clone someone else's project
+git clone https://github.com/username/project-name.git
+
+# This creates a folder with all the project files
+cd project-name</pre>
+            </div>
+
+            <h4>Forking (Your Own Copy)</h4>
+            <p>When you want to contribute to someone else's project:</p>
+            <ol>
+                <li>Click "Fork" on their GitHub repository page</li>
+                <li>This creates your own copy on your GitHub account</li>
+                <li>Clone YOUR fork to your computer</li>
+                <li>Make changes and push to your fork</li>
+                <li>Create a "Pull Request" to suggest your changes to the original project</li>
+            </ol>
+
+            <div class="practice-box">
+                <h4>🎯 Practice Challenge!</h4>
+                <p><strong>Complete GitHub Workflow:</strong></p>
+                <ol>
+                    <li>Create a GitHub repository for your local project</li>
+                    <li>Push your commits to GitHub</li>
+                    <li>Make a change to README.md</li>
+                    <li>Commit and push the change</li>
+                    <li>Visit your GitHub repository page - see your changes online!</li>
+                </ol>
+                <p><em>Pro tip: Your GitHub profile now shows your activity. Employers love to see this!</em></p>
+            </div>
+
+            <div class="recap-box">
+                <h4>🎯 Quick Recap: GitHub Workflow</h4>
+                <p>Local changes → <code>git add</code> → <code>git commit</code> → <code>git push</code> → World can see it!</p>
+            </div>
+        </section>
+
+        <!-- Common Mistakes -->
+        <section id="common-mistakes" class="learning-section">
+            <div class="section-number">🚨</div>
+            <h2>Common Mistakes (And How to Fix Them)</h2>
+            
+            <p>Don't worry - every developer makes these mistakes! Here's how to handle them like a pro.</p>
+            
+            <div class="mistake-card">
+                <div class="mistake-title">😅 "I committed but forgot to add a file!"</div>
+                <p><strong>What happened:</strong> You ran <code>git commit</code> but forgot to <code>git add</code> some files.</p>
+                <div class="fix-box">
+                    <strong>The Fix:</strong>
+                    <div class="command-box">
+                        <pre># Add the forgotten files
+git add forgotten-file.js
+
+# Amend the last commit (adds to it instead of creating new one)
+git commit --amend --no-edit</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mistake-card">
+                <div class="mistake-title">😱 "I want to undo my last commit!"</div>
+                <p><strong>What happened:</strong> You committed something you didn't mean to.</p>
+                <div class="fix-box">
+                    <strong>The Fix:</strong>
+                    <div class="command-box">
+                        <pre># Undo last commit but keep the changes
+git reset HEAD~1
+
+# Or undo and discard the changes completely (be careful!)
+git reset --hard HEAD~1</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mistake-card">
+                <div class="mistake-title">🤯 "I have merge conflicts!"</div>
+                <p><strong>What happened:</strong> Git can't automatically combine changes from different sources.</p>
+                <div class="fix-box">
+                    <strong>The Fix:</strong>
+                    <ol>
+                        <li>Open the conflicted files in your editor</li>
+                        <li>Look for lines with <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code></li>
+                        <li>Choose which changes to keep</li>
+                        <li>Remove the conflict markers</li>
+                        <li>Save the file</li>
+                        <li><code>git add</code> the resolved files</li>
+                        <li><code>git commit</code> to complete the merge</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="mistake-card">
+                <div class="mistake-title">😵 "I accidentally deleted important files!"</div>
+                <p><strong>What happened:</strong> You deleted files you need back.</p>
+                <div class="fix-box">
+                    <strong>The Fix:</strong>
+                    <div class="command-box">
+                        <pre># Restore a specific file
+git checkout HEAD -- filename.txt
+
+# Restore all deleted files
+git checkout HEAD -- .
+
+# If you committed the deletion, go back to before that commit
+git checkout previous-commit-hash -- filename.txt</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="practice-box">
+                <h4>💡 Pro Tips for Avoiding Mistakes:</h4>
+                <ul>
+                    <li>Always run <code>git status</code> before committing</li>
+                    <li>Use <code>git diff</code> to see exactly what you're committing</li>
+                    <li>Write clear commit messages (your future self will thank you)</li>
+                    <li>Commit small, logical changes frequently</li>
+                    <li>Test your code before committing</li>
+                </ul>
+            </div>
+
+            <div class="recap-box">
+                <h4>🎯 Remember: Mistakes Are Learning Opportunities!</h4>
+                <p>Every Git mistake teaches you something. The key is knowing how to fix them - and now you do!</p>
+            </div>
+        </section>
+
+        <!-- Cheat Sheet -->
+        <section id="cheat-sheet" class="learning-section">
+            <div class="section-number">📋</div>
+            <h2>Git Cheat Sheet (Your Quick Reference)</h2>
+            <p style="text-align: center; margin-bottom: var(--spacing-xl); color: var(--text-secondary);">
+                Save this section as a bookmark! These are the commands you'll use 90% of the time.
+            </p>
+            
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h4>📁 Repository Setup</h4>
+                    <div class="command-box">
+                        <pre># Start a new repository
+git init
+
+# Download an existing repository  
+git clone [url]
+
+# Connect local repo to GitHub
+git remote add origin [url]
+
+# Check remote connections
+git remote -v</pre>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <h4>💾 Basic Workflow</h4>
+                    <div class="command-box">
+                        <pre># Check what's changed
+git status
+
+# Stage files for commit
+git add [file]
+git add .              # Add all files
+
+# Save changes with a message
+git commit -m "message"
+
+# Upload to GitHub
+git push</pre>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <h4>📖 Information & History</h4>
+                    <div class="command-box">
+                        <pre># View commit history
+git log
+git log --oneline      # Compact view
+
+# See what changed
+git diff
+git diff --staged      # Staged changes
+
+# List branches
+git branch
+
+# Show file at specific commit
+git show [commit]:[file]</pre>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <h4>� Syncing & Collaboration</h4>
+                    <div class="command-box">
+                        <pre># Download latest changes
+git pull
+
+# Check for updates (don't merge)
+git fetch
+
+# Combine branches
+git merge [branch]
+
+# Create and switch to new branch
+git checkout -b [branch-name]</pre>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <h4>🛠️ Undo & Fix</h4>
+                    <div class="command-box">
+                        <pre># Unstage a file
+git reset [file]
+
+# Undo changes to file
+git checkout -- [file]
+
+# Undo last commit (keep changes)
+git reset HEAD~1
+
+# Undo last commit (discard changes)
+git reset --hard HEAD~1</pre>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <h4>🌟 GitHub Essentials</h4>
+                    <div class="command-box">
+                        <pre># First time setup
+git config --global user.name "Name"
+git config --global user.email "email"
+
+# Push to new GitHub repo
+git push -u origin main
+
+# Clone and navigate
+git clone [url] && cd [folder]</pre>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: var(--bg-secondary); padding: var(--spacing-lg); border-radius: var(--radius-md); margin-top: var(--spacing-xl); text-align: center;">
+                <h4 style="color: var(--primary-color); margin-bottom: var(--spacing-md);">💡 Pro Tip: The Daily Git Workflow</h4>
+                <div style="font-family: monospace; background: var(--card-bg); padding: var(--spacing-md); border-radius: var(--radius-sm); display: inline-block;">
+                    <code>git status → git add . → git commit -m "message" → git push</code>
+                </div>
+                <p style="margin-top: var(--spacing-sm); color: var(--text-secondary);">
+                    Master this sequence and you'll handle 90% of your Git needs!
+                </p>
+            </div>
+
+            <div class="practice-box">
+                <h4>💾 Download This Cheat Sheet</h4>
+                <p>Bookmark these resources for quick reference:</p>
+                <ul>
+                    <li><a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank">Official GitHub Git Cheat Sheet (PDF)</a></li>
+                    <li><a href="https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet" target="_blank">Atlassian Git Cheat Sheet</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Free Resources -->
+        <section id="resources" class="learning-section">
+            <div class="section-number">📚</div>
+            <h2>Free Resources for Deeper Learning</h2>
+            
+            <p>Ready to level up? These free resources will take you from beginner to Git master!</p>
+            
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h4>🎓 Interactive Learning</h4>
+                    <h5><a href="https://learngitbranching.js.org/" target="_blank">Learn Git Branching</a></h5>
+                    <p>Visual, interactive Git tutorial. Perfect for understanding branches and merging!</p>
+                </div>
+                
+                <div class="resource-card">
+                    <h4>🧪 GitHub Skills</h4>
+                    <h5><a href="https://skills.github.com/" target="_blank">GitHub Skills</a></h5>
+                    <p>Hands-on courses directly from GitHub. Learn by doing real projects!</p>
+                </div>
+                
+                <div class="resource-card">
+                    <h4>📺 Video Course</h4>
+                    <h5><a href="https://www.freecodecamp.org/news/git-and-github-for-beginners/" target="_blank">freeCodeCamp Git Course</a></h5>
+                    <p>Complete beginner-friendly video course covering everything you need to know.</p>
+                </div>
+                
+                <div class="resource-card">
+                    <h4>📖 Documentation</h4>
+                    <h5><a href="https://git-scm.com/book" target="_blank">Pro Git Book</a></h5>
+                    <p>The official Git book - free online. Goes from basics to advanced topics.</p>
+                </div>
+                
+                <div class="resource-card">
+                    <h4>🎮 Practice Platform</h4>
+                    <h5><a href="https://www.katacoda.com/courses/git" target="_blank">Katacoda Git Scenarios</a></h5>
+                    <p>Practice Git commands in a real terminal environment without installing anything.</p>
+                </div>
+                
+                <div class="resource-card">
+                    <h4>🔧 Advanced Tutorials</h4>
+                    <h5><a href="https://www.atlassian.com/git/tutorials" target="_blank">Atlassian Git Tutorials</a></h5>
+                    <p>Comprehensive tutorials covering advanced Git workflows and best practices.</p>
+                </div>
+            </div>
+
+            <h3>🎯 Your Next Steps</h3>
+            <div class="practice-box">
+                <h4>Week 1: Master the Basics</h4>
+                <ul>
+                    <li>Practice the basic workflow daily</li>
+                    <li>Create 2-3 practice repositories</li>
+                    <li>Try the Learn Git Branching tutorial</li>
+                </ul>
+                
+                <h4>Week 2: Explore GitHub</h4>
+                <ul>
+                    <li>Fork an open-source project</li>
+                    <li>Make your first pull request</li>
+                    <li>Explore trending repositories</li>
+                </ul>
+                
+                <h4>Week 3: Advanced Concepts</h4>
+                <ul>
+                    <li>Learn about branches and merging</li>
+                    <li>Practice resolving merge conflicts</li>
+                    <li>Set up GitHub Pages for a project</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="learning-section">
+            <div class="section-number">🎉</div>
+            <h2>Congratulations, Git Master!</h2>
+            
+            <p>You've just learned one of the most valuable skills in modern development. Every developer, from beginners to senior engineers at Google, uses Git daily.</p>
+            
+            <div class="recap-box">
+                <h4>🏆 What You've Accomplished:</h4>
+                <ul>
+                    <li>Understand version control and why it matters</li>
+                    <li>Can create repositories and make commits</li>
+                    <li>Know how to collaborate on GitHub</li>
+                    <li>Can fix common Git mistakes</li>
+                    <li>Have resources for continued learning</li>
+                </ul>
+            </div>
+
+            <div class="practice-box">
+                <h4>🚀 Your Mission (Should You Choose to Accept It):</h4>
+                <ol>
+                    <li><strong>Create a portfolio repository</strong> - Showcase your projects on GitHub</li>
+                    <li><strong>Contribute to open source</strong> - Find a project you care about and make a small improvement</li>
+                    <li><strong>Teach someone else</strong> - The best way to master Git is to help others learn it</li>
+                </ol>
+            </div>
+
+            <p style="text-align: center; margin-top: 2rem;">
+                <a href="index.html" class="btn-practice">← Back to Forever Class Home</a>
+                <a href="#top" class="btn-practice">↑ Back to Top</a>
+            </p>
+
+            <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: var(--bg-secondary); border-radius: var(--border-radius-md);">
+                <h4>💡 Remember:</h4>
+                <p><em>"Every expert was once a beginner. Every pro was once an amateur. Every icon was once an unknown."</em></p>
+                <p><strong>Keep practicing, keep learning, and welcome to the developer community! 🌟</strong></p>
+            </div>
+        </section>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Add smooth scrolling and progress tracking for this page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sidebar navigation functionality
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+            const sections = document.querySelectorAll('.learning-section');
+            
+            // Smooth scrolling for sidebar links
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 100;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active link
+                        sidebarLinks.forEach(nav => nav.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Update active sidebar link on scroll
+            function updateActiveSidebarLink() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    if (window.scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', updateActiveSidebarLink);
+            updateActiveSidebarLink(); // Initial call
+            
+            // Add click handlers for practice buttons
+            const practiceButtons = document.querySelectorAll('.btn-practice');
+            practiceButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (this.textContent.includes('Practice')) {
+                        // Could add practice mode or tutorial overlay here
+                        console.log('Practice mode activated!');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
