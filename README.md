@@ -1,6 +1,17 @@
 # 📚 Forever Class - Learning That Never Stops
 
-**Always Open, For Everyone** | A user-focused educational platform for daily learning and personal growth.
+**Always Open, For Everyone** | A user-focuse3. **Open locally**:
+   - Open `index.html` in your browser, or
+   - Use a local server like Live Server in VS Code
+
+4. **Make changes**:
+   - Edit HTML in `index.html`
+   - Style changes in `css/style.css`
+   - JavaScript in `js/script.js`
+
+5. **Deploy**:
+   - Push to main branch
+   - GitHub Actions automatically deploys to GitHub Pagesl platform for daily learning and personal growth.
 
 ![Forever Class Banner](https://img.shields.io/badge/Learning-Never%20Stops-blue?style=for-the-badge)
 ![GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-green?style=for-the-badge)
@@ -86,7 +97,12 @@ Forever Class is a **real learning platform** designed for people who want to gr
    cd ForeverClass
    ```
 
-2. **Open locally**:
+2. **Set up GitHub Pages** (First time only):
+   - Go to Repository Settings > Pages
+   - Set **Source** to "GitHub Actions"
+   - The workflow will automatically deploy on every push to main
+
+3. **Open locally**:
    - Open `index.html` in your browser, or
    - Use a local server like Live Server in VS Code
 
