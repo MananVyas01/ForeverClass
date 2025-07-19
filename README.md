@@ -102,7 +102,7 @@ Forever Class is a **real learning platform** designed for people who want to gr
 ## 📁 Project Structure
 
 ```
-forever-class/
+ForeverClass/                   # Repository root
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml          # GitHub Actions deployment
