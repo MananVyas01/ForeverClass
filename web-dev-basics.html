@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Fundamentals - Forever Class</title>
+    <meta name="description" content="Learn web development fundamentals including HTML, CSS, JavaScript, and modern web technologies">
+    <meta name="keywords" content="web development, HTML, CSS, JavaScript, frontend, backend, programming">
+    <meta property="og:title" content="Web Development Fundamentals - Forever Class">
+    <meta property="og:description" content="Comprehensive guide to web development fundamentals">
+    <meta property="og:url" content="https://mananvyas01.github.io/ForeverClass/web-dev-basics.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span>Forever Class</span>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="git-github.html" class="nav-link">Git & GitHub</a>
+                <a href="web-dev-basics.html" class="nav-link active">Web Development</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <!-- Desktop Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <h3>Web Development</h3>
+                <ul>
+                    <li><a href="#introduction" class="sidebar-link">Introduction</a></li>
+                    <li><a href="#html-basics" class="sidebar-link">HTML Basics</a></li>
+                    <li><a href="#css-fundamentals" class="sidebar-link">CSS Fundamentals</a></li>
+                    <li><a href="#javascript-essentials" class="sidebar-link">JavaScript Essentials</a></li>
+                    <li><a href="#responsive-design" class="sidebar-link">Responsive Design</a></li>
+                    <li><a href="#tools-setup" class="sidebar-link">Tools & Setup</a></li>
+                    <li><a href="#best-practices" class="sidebar-link">Best Practices</a></li>
+                    <li><a href="#project-ideas" class="sidebar-link">Project Ideas</a></li>
+                    <li><a href="#resources" class="sidebar-link">Resources</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Web Development Fundamentals</h1>
+                <p>Master the essential skills to build modern websites and web applications</p>
+            </header>
+
+            <!-- Introduction -->
+            <section id="introduction" class="content-section">
+                <h2>🌐 What is Web Development?</h2>
+                <div class="content-grid">
+                    <div class="info-card">
+                        <h3>Frontend Development</h3>
+                        <p>The client-side of web development. What users see and interact with directly.</p>
+                        <ul>
+                            <li>HTML (Structure)</li>
+                            <li>CSS (Styling)</li>
+                            <li>JavaScript (Interactivity)</li>
+                            <li>Frameworks (React, Vue, Angular)</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3>Backend Development</h3>
+                        <p>The server-side of web development. Handles data, logic, and server operations.</p>
+                        <ul>
+                            <li>Server Languages (Node.js, Python, PHP)</li>
+                            <li>Databases (MySQL, MongoDB)</li>
+                            <li>APIs & Web Services</li>
+                            <li>Server Management</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3>Full-Stack Development</h3>
+                        <p>Combining both frontend and backend development skills.</p>
+                        <ul>
+                            <li>Complete Web Applications</li>
+                            <li>End-to-End Development</li>
+                            <li>DevOps & Deployment</li>
+                            <li>Performance Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HTML Basics -->
+            <section id="html-basics" class="content-section">
+                <h2>📝 HTML Basics</h2>
+                <p>HTML (HyperText Markup Language) is the foundation of every website. It provides the structure and content.</p>
+                
+                <div class="subsection">
+                    <h3>Essential HTML Tags</h3>
+                    <div class="code-block">
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Main Heading&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;section&gt;
+            &lt;h2&gt;Section Heading&lt;/h2&gt;
+            &lt;p&gt;Paragraph text here.&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2025 Your Website&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Common HTML Elements</h3>
+                    <div class="elements-grid">
+                        <div class="element-card">
+                            <h4>Text Elements</h4>
+                            <ul>
+                                <li><code>&lt;h1&gt; - &lt;h6&gt;</code> - Headings</li>
+                                <li><code>&lt;p&gt;</code> - Paragraphs</li>
+                                <li><code>&lt;span&gt;</code> - Inline text</li>
+                                <li><code>&lt;strong&gt;</code> - Bold text</li>
+                                <li><code>&lt;em&gt;</code> - Italic text</li>
+                            </ul>
+                        </div>
+                        <div class="element-card">
+                            <h4>Structure Elements</h4>
+                            <ul>
+                                <li><code>&lt;div&gt;</code> - Container</li>
+                                <li><code>&lt;section&gt;</code> - Content section</li>
+                                <li><code>&lt;article&gt;</code> - Article content</li>
+                                <li><code>&lt;header&gt;</code> - Page/section header</li>
+                                <li><code>&lt;footer&gt;</code> - Page/section footer</li>
+                            </ul>
+                        </div>
+                        <div class="element-card">
+                            <h4>Interactive Elements</h4>
+                            <ul>
+                                <li><code>&lt;a&gt;</code> - Links</li>
+                                <li><code>&lt;button&gt;</code> - Buttons</li>
+                                <li><code>&lt;input&gt;</code> - Form inputs</li>
+                                <li><code>&lt;form&gt;</code> - Forms</li>
+                                <li><code>&lt;img&gt;</code> - Images</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Fundamentals -->
+            <section id="css-fundamentals" class="content-section">
+                <h2>🎨 CSS Fundamentals</h2>
+                <p>CSS (Cascading Style Sheets) controls the visual presentation of your HTML content.</p>
+                
+                <div class="subsection">
+                    <h3>CSS Syntax & Selectors</h3>
+                    <div class="code-block">
+                        <pre><code>/* Element Selector */
+p {
+    color: #333;
+    font-size: 16px;
+}
+
+/* Class Selector */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ID Selector */
+#header {
+    background-color: #007bff;
+    padding: 20px;
+}
+
+/* Attribute Selector */
+input[type="text"] {
+    border: 1px solid #ccc;
+    padding: 10px;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>CSS Box Model</h3>
+                    <div class="box-model-demo">
+                        <div class="box-model">
+                            <div class="margin">Margin
+                                <div class="border">Border
+                                    <div class="padding">Padding
+                                        <div class="content">Content</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Flexbox Layout</h3>
+                    <div class="code-block">
+                        <pre><code>.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.flex-item {
+    flex: 1;
+    padding: 20px;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>CSS Grid Layout</h3>
+                    <div class="code-block">
+                        <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JavaScript Essentials -->
+            <section id="javascript-essentials" class="content-section">
+                <h2>⚡ JavaScript Essentials</h2>
+                <p>JavaScript brings interactivity and dynamic behavior to your websites.</p>
+                
+                <div class="subsection">
+                    <h3>Variables & Data Types</h3>
+                    <div class="code-block">
+                        <pre><code>// Variables
+let name = "John Doe";
+const age = 25;
+var isStudent = true;
+
+// Data Types
+let string = "Hello World";
+let number = 42;
+let boolean = true;
+let array = [1, 2, 3, 4];
+let object = {
+    name: "John",
+    age: 25,
+    city: "New York"
+};</code></pre>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Functions</h3>
+                    <div class="code-block">
+                        <pre><code>// Function Declaration
+function greetUser(name) {
+    return `Hello, ${name}!`;
+}
+
+// Arrow Function
+const calculateArea = (width, height) => width * height;
+
+// Function Expression
+const multiply = function(a, b) {
+    return a * b;
+};</code></pre>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>DOM Manipulation</h3>
+                    <div class="code-block">
+                        <pre><code>// Select Elements
+const button = document.getElementById('myButton');
+const elements = document.querySelectorAll('.item');
+
+// Modify Content
+button.textContent = 'Click Me!';
+button.style.backgroundColor = 'blue';
+
+// Event Listeners
+button.addEventListener('click', function() {
+    alert('Button clicked!');
+});
+
+// Create New Elements
+const newDiv = document.createElement('div');
+newDiv.className = 'new-element';
+document.body.appendChild(newDiv);</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Responsive Design -->
+            <section id="responsive-design" class="content-section">
+                <h2>📱 Responsive Design</h2>
+                <p>Make your websites look great on all devices and screen sizes.</p>
+                
+                <div class="subsection">
+                    <h3>Mobile-First Approach</h3>
+                    <div class="code-block">
+                        <pre><code>/* Mobile styles (base) */
+.container {
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+    .container {
+        padding: 20px;
+        font-size: 16px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .container {
+        padding: 30px;
+        font-size: 18px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Responsive Units</h3>
+                    <div class="units-grid">
+                        <div class="unit-card">
+                            <h4>Relative Units</h4>
+                            <ul>
+                                <li><strong>em</strong> - Relative to parent element</li>
+                                <li><strong>rem</strong> - Relative to root element</li>
+                                <li><strong>%</strong> - Percentage of parent</li>
+                                <li><strong>vw/vh</strong> - Viewport width/height</li>
+                            </ul>
+                        </div>
+                        <div class="unit-card">
+                            <h4>Absolute Units</h4>
+                            <ul>
+                                <li><strong>px</strong> - Pixels (avoid for responsive)</li>
+                                <li><strong>pt</strong> - Points (print media)</li>
+                                <li><strong>cm/mm</strong> - Centimeters/millimeters</li>
+                                <li><strong>in</strong> - Inches</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tools & Setup -->
+            <section id="tools-setup" class="content-section">
+                <h2>🛠️ Tools & Setup</h2>
+                <p>Essential tools and setup for web development.</p>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>Code Editors</h3>
+                        <ul>
+                            <li><strong>VS Code</strong> - Free, powerful, extensible</li>
+                            <li><strong>Sublime Text</strong> - Fast and lightweight</li>
+                            <li><strong>Atom</strong> - Hackable text editor</li>
+                            <li><strong>WebStorm</strong> - Full-featured IDE</li>
+                        </ul>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Browser Dev Tools</h3>
+                        <ul>
+                            <li><strong>Chrome DevTools</strong> - Debug and inspect</li>
+                            <li><strong>Firefox Developer Tools</strong> - Web debugging</li>
+                            <li><strong>Safari Web Inspector</strong> - Mac debugging</li>
+                            <li><strong>Edge DevTools</strong> - Microsoft's tools</li>
+                        </ul>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Package Managers</h3>
+                        <ul>
+                            <li><strong>npm</strong> - Node Package Manager</li>
+                            <li><strong>yarn</strong> - Fast, reliable package manager</li>
+                            <li><strong>pnpm</strong> - Efficient disk space usage</li>
+                            <li><strong>CDN</strong> - Content Delivery Networks</li>
+                        </ul>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Build Tools</h3>
+                        <ul>
+                            <li><strong>Webpack</strong> - Module bundler</li>
+                            <li><strong>Vite</strong> - Fast build tool</li>
+                            <li><strong>Parcel</strong> - Zero-config bundler</li>
+                            <li><strong>Gulp</strong> - Task automation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Best Practices -->
+            <section id="best-practices" class="content-section">
+                <h2>✅ Best Practices</h2>
+                <p>Follow these guidelines to write clean, maintainable, and professional code.</p>
+                
+                <div class="practices-grid">
+                    <div class="practice-card">
+                        <h3>🔍 SEO Optimization</h3>
+                        <ul>
+                            <li>Use semantic HTML5 elements</li>
+                            <li>Add proper meta tags</li>
+                            <li>Optimize images with alt text</li>
+                            <li>Create clean, descriptive URLs</li>
+                            <li>Use heading hierarchy (h1-h6)</li>
+                        </ul>
+                    </div>
+                    <div class="practice-card">
+                        <h3>♿ Accessibility</h3>
+                        <ul>
+                            <li>Use proper ARIA labels</li>
+                            <li>Ensure keyboard navigation</li>
+                            <li>Maintain color contrast ratios</li>
+                            <li>Provide alternative text for images</li>
+                            <li>Use focus indicators</li>
+                        </ul>
+                    </div>
+                    <div class="practice-card">
+                        <h3>⚡ Performance</h3>
+                        <ul>
+                            <li>Optimize images and assets</li>
+                            <li>Minimize HTTP requests</li>
+                            <li>Use CSS and JS compression</li>
+                            <li>Implement lazy loading</li>
+                            <li>Cache static resources</li>
+                        </ul>
+                    </div>
+                    <div class="practice-card">
+                        <h3>🧹 Code Quality</h3>
+                        <ul>
+                            <li>Use consistent naming conventions</li>
+                            <li>Comment your code appropriately</li>
+                            <li>Follow DRY principle</li>
+                            <li>Keep functions small and focused</li>
+                            <li>Use version control (Git)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Ideas -->
+            <section id="project-ideas" class="content-section">
+                <h2>💡 Project Ideas</h2>
+                <p>Practice your skills with these hands-on projects, from beginner to advanced.</p>
+                
+                <div class="projects-grid">
+                    <div class="project-card beginner">
+                        <span class="difficulty">Beginner</span>
+                        <h3>Personal Portfolio</h3>
+                        <p>Create a personal website showcasing your skills and projects.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-card beginner">
+                        <span class="difficulty">Beginner</span>
+                        <h3>Landing Page</h3>
+                        <p>Build a responsive landing page for a product or service.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Flexbox</span>
+                        </div>
+                    </div>
+                    <div class="project-card intermediate">
+                        <span class="difficulty">Intermediate</span>
+                        <h3>Todo App</h3>
+                        <p>Create an interactive todo list with local storage.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>LocalStorage</span>
+                        </div>
+                    </div>
+                    <div class="project-card intermediate">
+                        <span class="difficulty">Intermediate</span>
+                        <h3>Weather App</h3>
+                        <p>Build a weather application using a weather API.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>API</span>
+                        </div>
+                    </div>
+                    <div class="project-card advanced">
+                        <span class="difficulty">Advanced</span>
+                        <h3>E-commerce Site</h3>
+                        <p>Create a full e-commerce website with shopping cart functionality.</p>
+                        <div class="tech-stack">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Database</span>
+                            <span>Payment</span>
+                        </div>
+                    </div>
+                    <div class="project-card advanced">
+                        <span class="difficulty">Advanced</span>
+                        <h3>Social Media Dashboard</h3>
+                        <p>Build a dashboard to manage multiple social media accounts.</p>
+                        <div class="tech-stack">
+                            <span>React</span>
+                            <span>APIs</span>
+                            <span>Charts</span>
+                            <span>Authentication</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resources -->
+            <section id="resources" class="content-section">
+                <h2>📚 Learning Resources</h2>
+                <p>Continue your web development journey with these excellent resources.</p>
+                
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <h3>📖 Documentation</h3>
+                        <ul>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web" target="_blank">MDN Web Docs</a></li>
+                            <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
+                            <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
+                            <li><a href="https://javascript.info/" target="_blank">JavaScript.info</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h3>🎥 Video Courses</h3>
+                        <ul>
+                            <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></li>
+                            <li><a href="https://www.codecademy.com/" target="_blank">Codecademy</a></li>
+                            <li><a href="https://www.coursera.org/" target="_blank">Coursera</a></li>
+                            <li><a href="https://www.udemy.com/" target="_blank">Udemy</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h3>🛠️ Practice Platforms</h3>
+                        <ul>
+                            <li><a href="https://codepen.io/" target="_blank">CodePen</a></li>
+                            <li><a href="https://jsfiddle.net/" target="_blank">JSFiddle</a></li>
+                            <li><a href="https://codesandbox.io/" target="_blank">CodeSandbox</a></li>
+                            <li><a href="https://replit.com/" target="_blank">Replit</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h3>🎨 Design Resources</h3>
+                        <ul>
+                            <li><a href="https://fonts.google.com/" target="_blank">Google Fonts</a></li>
+                            <li><a href="https://unsplash.com/" target="_blank">Unsplash (Images)</a></li>
+                            <li><a href="https://fontawesome.com/" target="_blank">Font Awesome (Icons)</a></li>
+                            <li><a href="https://coolors.co/" target="_blank">Coolors (Palettes)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="back-to-top">
+                <a href="#" id="backToTop">↑ Back to Top</a>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
