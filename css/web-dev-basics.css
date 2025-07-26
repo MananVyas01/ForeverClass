@@ -701,3 +701,64 @@
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
+
+/* Console output styles */
+.console-line {
+    background: var(--bg-secondary);
+    padding: 8px 12px;
+    margin: 4px 0;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Weather demo styles */
+.weather-card {
+    background: var(--card-bg);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.weather-temp {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: var(--spacing-sm) 0;
+}
+
+.weather-desc {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.weather-note {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.loading {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.error {
+    color: #e74c3c;
+    font-weight: 500;
+}
+
+/* Hidden utility class */
+.hidden {
+    display: none !important;
+}
+
+/* Visible animation class */
+.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
