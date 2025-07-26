@@ -3980,8 +3980,240 @@ a:focus {
     box-shadow: var(--shadow-lg);
 }
 
-/* Responsive Design for Redesigned Page */
-@media (max-width: 768px) {
+/* Enhanced Mobile Responsive Design */
+
+/* Small mobile devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+    :root {
+        --spacing-xs: 4px;
+        --spacing-sm: 8px;
+        --spacing-md: 12px;
+        --spacing-lg: 16px;
+        --spacing-xl: 20px;
+        --spacing-2xl: 32px;
+        --spacing-3xl: 48px;
+    }
+    
+    .page-container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .main-content {
+        padding: var(--spacing-lg);
+        margin-left: 0;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .hero-section {
+        padding: var(--spacing-2xl) 0;
+        min-height: auto;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+    
+    .hero-description {
+        font-size: var(--font-size-base);
+    }
+    
+    .hero-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+    }
+    
+    .stat-item {
+        min-width: 80px;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .hero-visual {
+        height: 200px;
+        margin-top: var(--spacing-lg);
+    }
+    
+    .floating-cards {
+        gap: var(--spacing-md);
+    }
+    
+    .tech-card {
+        padding: var(--spacing-sm);
+        min-width: 60px;
+    }
+    
+    .tech-icon {
+        font-size: 1.2rem;
+    }
+    
+    .tech-name {
+        font-size: var(--font-size-xs);
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    .roadmap-timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-item {
+        padding-left: 60px;
+    }
+    
+    .timeline-marker {
+        left: 0;
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-sm);
+    }
+    
+    .mastery-grid,
+    .frameworks-comparison,
+    .projects-grid,
+    .career-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .concept-card,
+    .framework-card,
+    .project-card,
+    .career-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .code-example,
+    .code-preview {
+        font-size: var(--font-size-xs);
+    }
+    
+    .demo-tabs,
+    .playground-tabs {
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+    }
+    
+    .tab-btn,
+    .demo-tab {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: var(--font-size-xs);
+    }
+    
+    .framework-header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+    
+    .popularity-badge {
+        position: static;
+        margin: 0;
+        align-self: center;
+    }
+    
+    .project-actions,
+    .cta-actions {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .project-btn,
+    .cta-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .api-controls {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .city-input {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .responsive-preview {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .device-frame {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-content p {
+        font-size: var(--font-size-base);
+    }
+    
+    .cta-stats {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+    
+    .backend-overview {
+        grid-template-columns: 1fr;
+    }
+    
+    .chooser-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .salary-ranges {
+        gap: var(--spacing-sm);
+    }
+    
+    .resources-categories {
+        gap: var(--spacing-xl);
+    }
+}
+
+/* Medium devices (landscape phones, tablets, 576px to 768px) */
+@media (min-width: 576px) and (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        padding: var(--spacing-xl);
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
     .hero-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-2xl);
@@ -4001,8 +4233,21 @@ a:focus {
         height: 300px;
     }
     
-    .tech-card {
-        padding: var(--spacing-md);
+    .mastery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .frameworks-comparison {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .career-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     
     .roadmap-timeline::before {
@@ -4010,68 +4255,531 @@ a:focus {
     }
     
     .timeline-item {
-        flex-direction: row;
         padding-left: 80px;
     }
     
     .timeline-marker {
-        position: absolute;
         left: 0;
-        margin: 0;
     }
     
-    .timeline-content {
-        max-width: none;
-    }
-    
-    .mastery-grid {
+    .backend-overview {
         grid-template-columns: 1fr;
-    }
-    
-    .frameworks-comparison {
-        grid-template-columns: 1fr;
-    }
-    
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .career-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .cta-content h2 {
-        font-size: 2rem;
-    }
-    
-    .cta-stats {
         gap: var(--spacing-xl);
     }
     
-    .api-controls {
-        flex-direction: column;
+    .chooser-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Large tablets and small desktops (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+        padding: var(--spacing-lg);
     }
     
-    .city-input {
-        min-width: auto;
+    .main-content {
+        margin-left: 200px;
+        padding: var(--spacing-xl);
     }
     
-    .demo-controls {
-        flex-wrap: wrap;
+    .hero-content {
+        grid-template-columns: 1fr 0.8fr;
+        gap: var(--spacing-2xl);
     }
     
-    .responsive-preview {
-        gap: var(--spacing-md);
+    .mastery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
     
-    .framework-header {
+    .frameworks-comparison {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .career-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+/* Enhanced responsive for larger screens */
+@media (min-width: 1025px) {
+    .hero-content {
+        grid-template-columns: 1fr 0.7fr;
+    }
+    
+    .mastery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    
+    .frameworks-comparison {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    
+    .career-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* Touch-specific improvements */
+@media (pointer: coarse) {
+    .tab-btn,
+    .demo-tab,
+    .project-btn,
+    .career-btn,
+    .cta-btn {
+        min-height: 44px;
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+    
+    .sidebar-link {
+        padding: var(--spacing-md);
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .tech-card {
+        min-height: 60px;
+        cursor: pointer;
+    }
+    
+    .concept-card,
+    .framework-card,
+    .project-card {
+        touch-action: manipulation;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-visual,
+    .tech-card,
+    .floating-cards {
+        backface-visibility: hidden;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+/* Landscape orientation for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-section {
+        min-height: auto;
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .hero-visual {
+        height: 200px;
+    }
+    
+    .floating-cards {
+        flex-direction: row;
         justify-content: center;
-        text-align: center;
     }
     
-    .popularity-badge {
-        position: absolute;
-        top: var(--spacing-md);
-        right: var(--spacing-md);
+    .cta-stats {
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--spacing-xl);
+    }
+}
+
+/* Enhanced Mobile Typography and Spacing */
+@media (max-width: 575px) {
+    /* Improved font scaling for small screens */
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+    
+    .gradient-text {
+        background-size: 200% 200%;
+    }
+    
+    /* Better spacing for content sections */
+    .content-section {
+        padding: var(--spacing-xl) 0;
+        margin: var(--spacing-lg) 0;
+    }
+    
+    /* Improved card layouts */
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+    
+    .difficulty {
+        align-self: flex-start;
+        margin-top: var(--spacing-xs);
+    }
+    
+    /* Better button spacing */
+    .hero-actions .cta-button {
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: var(--font-size-base);
+    }
+    
+    /* Improved timeline for mobile */
+    .timeline-content h3 {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .skills-tags {
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+    }
+    
+    .skills-tags span {
+        font-size: 0.7rem;
+        padding: 2px 6px;
+    }
+    
+    /* Better demo sections */
+    .demo-container {
+        padding: var(--spacing-md);
+        margin: var(--spacing-md) 0;
+    }
+    
+    .playground-content {
+        padding: var(--spacing-sm);
+    }
+    
+    .code-editor pre {
+        font-size: 0.75rem;
+        line-height: 1.4;
+        overflow-x: auto;
+        padding: var(--spacing-sm);
+    }
+    
+    /* Improved form elements */
+    .city-input {
+        padding: var(--spacing-md);
+        font-size: var(--font-size-base);
+        border-radius: 8px;
+    }
+    
+    .api-btn, .run-code-btn {
+        padding: var(--spacing-md);
+        font-size: var(--font-size-base);
+        min-height: 44px;
+    }
+    
+    /* Better project cards */
+    .project-meta h4 {
+        font-size: var(--font-size-base);
+        line-height: 1.3;
+    }
+    
+    .project-duration {
+        font-size: 0.8rem;
+    }
+    
+    .project-features .feature {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.8rem;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .tech-stack, .project-skills {
+        gap: 4px;
+        margin: var(--spacing-md) 0;
+    }
+    
+    .tech, .project-skills span {
+        font-size: 0.7rem;
+        padding: 2px 6px;
+    }
+    
+    /* Improved career section */
+    .career-icon {
+        font-size: 2rem;
+    }
+    
+    .prep-item {
+        padding: var(--spacing-xs) 0;
+        font-size: var(--font-size-sm);
+    }
+    
+    .prep-check {
+        font-size: var(--font-size-base);
+    }
+    
+    /* Better framework comparison */
+    .framework-logo {
+        font-size: 2rem;
+    }
+    
+    .framework-features {
+        gap: var(--spacing-xs);
+        margin: var(--spacing-md) 0;
+    }
+    
+    .framework-features .feature {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs);
+    }
+    
+    .framework-stats .stat {
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+        margin-bottom: 4px;
+    }
+    
+    /* Improved backend section */
+    .concept-icon {
+        font-size: 2rem;
+    }
+    
+    .tech-option, .db-type {
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .tech-name {
+        font-size: var(--font-size-sm);
+        font-weight: 600;
+    }
+    
+    .tech-desc, .use-case {
+        font-size: 0.8rem;
+    }
+    
+    /* API endpoints mobile view */
+    .endpoint {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        padding: var(--spacing-sm);
+        align-items: flex-start;
+    }
+    
+    .method {
+        align-self: flex-start;
+    }
+    
+    .url {
+        font-size: 0.8rem;
+        word-break: break-all;
+    }
+    
+    .desc {
+        font-size: 0.75rem;
+    }
+    
+    /* Improved CTA section */
+    .cta-content {
+        padding: 0 var(--spacing-lg);
+    }
+    
+    .cta-actions {
+        margin-bottom: var(--spacing-2xl);
+    }
+    
+    .cta-btn {
+        padding: var(--spacing-md) var(--spacing-xl);
+        font-size: var(--font-size-base);
+        border-radius: 25px;
+    }
+    
+    .cta-stat .stat-number {
+        font-size: 2rem;
+    }
+    
+    .cta-stat .stat-text {
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Improved resource links */
+    .resource-link {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+        padding: var(--spacing-lg);
+    }
+    
+    .link-icon {
+        font-size: 1.5rem;
+    }
+    
+    .link-content h4 {
+        font-size: var(--font-size-base);
+    }
+    
+    .link-content p {
+        font-size: 0.8rem;
+    }
+    
+    .link-badge {
+        align-self: center;
+        margin-top: var(--spacing-xs);
+    }
+}
+
+/* Additional mobile-specific animations and interactions */
+@media (max-width: 768px) {
+    /* Reduce animation complexity on mobile for better performance */
+    .floating-cards {
+        animation: none;
+    }
+    
+    .tech-card {
+        animation: none;
+        transition: transform 0.2s ease;
+    }
+    
+    .tech-card:active {
+        transform: scale(0.95);
+    }
+    
+    /* Better hover states for touch devices */
+    .concept-card:active,
+    .project-card:active,
+    .career-card:active {
+        transform: translateY(-2px);
+    }
+    
+    /* Improved scroll behavior */
+    html {
+        scroll-padding-top: 80px;
+    }
+    
+    /* Better focus states for accessibility */
+    .tab-btn:focus,
+    .demo-tab:focus,
+    .project-btn:focus,
+    .career-btn:focus {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 2px;
+    }
+    
+    /* Improved table-like layouts for mobile */
+    .api-endpoints {
+        display: block;
+    }
+    
+    .endpoint {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    /* Better spacing for nested elements */
+    .feature-list .feature-item {
+        padding: var(--spacing-sm) 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .feature-list .feature-item:last-child {
+        border-bottom: none;
+    }
+    
+    /* Improved chart/progress bars for mobile */
+    .progress-bar {
+        height: 6px;
+        border-radius: 3px;
+    }
+    
+    .progress {
+        border-radius: 3px;
+    }
+    
+    /* Better modal-like elements */
+    .tab-content {
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+    }
+    
+    /* Improved error states and loading */
+    .api-result {
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+    }
+    
+    /* Better breadcrumb navigation */
+    .sidebar-nav ul {
+        padding: 0;
+    }
+    
+    .sidebar-nav li {
+        margin-bottom: 2px;
+    }
+    
+    .sidebar-link {
+        border-radius: 6px;
+        transition: all 0.2s ease;
+    }
+    
+    .sidebar-link.active {
+        background: var(--primary-color);
+        color: white;
+    }
+}
+
+/* Extra improvements for very small screens */
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .concept-card,
+    .project-card,
+    .career-card {
+        padding: var(--spacing-md);
+    }
+    
+    .floating-cards {
+        gap: var(--spacing-sm);
+    }
+    
+    .tech-card {
+        min-width: 50px;
+        padding: var(--spacing-xs);
+    }
+    
+    .tech-icon {
+        font-size: 1rem;
+    }
+    
+    .tech-name {
+        font-size: 0.6rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 1.3rem;
+    }
+}
+
+/* Improved focus management for keyboard navigation */
+@media (max-width: 768px) {
+    .tab-btn:focus-visible,
+    .demo-tab:focus-visible,
+    .sidebar-link:focus-visible {
+        outline: 3px solid var(--primary-color);
+        outline-offset: 2px;
+        z-index: 10;
     }
 }

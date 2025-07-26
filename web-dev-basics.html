@@ -1452,6 +1452,372 @@ function App() {
                 return;
             }
             
+            weatherResult.innerHTML = '<div class="loading">🔄 Loading weather data...</div>';
+            
+            // Simulate API call
+            setTimeout(() => {
+                const weather = {
+                    city: city,
+                    temperature: Math.round(Math.random() * 30 + 5),
+                    condition: ['Sunny', 'Cloudy', 'Rainy', 'Partly Cloudy'][Math.floor(Math.random() * 4)],
+                    humidity: Math.round(Math.random() * 40 + 30)
+                };
+                
+                weatherResult.innerHTML = `
+                    <div class="weather-card">
+                        <h4>🌤️ ${weather.city}</h4>
+                        <div class="weather-info">
+                            <div class="temperature">${weather.temperature}°C</div>
+                            <div class="condition">${weather.condition}</div>
+                            <div class="humidity">Humidity: ${weather.humidity}%</div>
+                        </div>
+                    </div>
+                `;
+            }, 1500);
+        }
+        
+        // Enhanced mobile interactions
+        function addMobileEnhancements() {
+            // Add touch feedback to interactive elements
+            const interactiveElements = document.querySelectorAll(
+                '.tech-card, .concept-card, .project-card, .career-card, .framework-card'
+            );
+            
+            interactiveElements.forEach(element => {
+                // Add touch start/end events for mobile feedback
+                element.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                }, { passive: true });
+                
+                element.addEventListener('touchend', function() {
+                    this.style.transform = '';
+                }, { passive: true });
+                
+                // Add tap to focus for better accessibility
+                element.addEventListener('click', function() {
+                    this.focus();
+                });
+            });
+            
+            // Enhanced button interactions
+            const buttons = document.querySelectorAll(
+                '.tab-btn, .demo-tab, .project-btn, .career-btn, .cta-btn, .api-btn, .run-code-btn'
+            );
+            
+            buttons.forEach(button => {
+                button.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.95)';
+                }, { passive: true });
+                
+                button.addEventListener('touchend', function() {
+                    this.style.transform = '';
+                }, { passive: true });
+            });
+            
+            // Improve input experience on mobile
+            const inputs = document.querySelectorAll('input[type="text"]');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.style.borderColor = 'var(--primary-color)';
+                    this.style.boxShadow = '0 0 0 2px rgba(102, 126, 234, 0.2)';
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.style.borderColor = '';
+                    this.style.boxShadow = '';
+                });
+            });
+        }
+        
+        // Responsive behavior management
+        function handleResponsiveChanges() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.querySelector('.main-content');
+            
+            function checkViewport() {
+                const isMobile = window.innerWidth <= 768;
+                
+                if (isMobile) {
+                    // Hide sidebar on mobile
+                    if (sidebar) {
+                        sidebar.style.display = 'none';
+                    }
+                    if (mainContent) {
+                        mainContent.style.marginLeft = '0';
+                    }
+                } else {
+                    // Show sidebar on desktop
+                    if (sidebar) {
+                        sidebar.style.display = 'block';
+                    }
+                    if (mainContent) {
+                        mainContent.style.marginLeft = '250px';
+                    }
+                }
+            }
+            
+            // Check on load and resize
+            checkViewport();
+            window.addEventListener('resize', checkViewport);
+        }
+        
+        // Improved scroll management for mobile
+        function optimizeScrolling() {
+            let ticking = false;
+            
+            function updateScrollElements() {
+                updateProgress();
+                updateActiveSection();
+                ticking = false;
+            }
+            
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(updateScrollElements);
+                    ticking = true;
+                }
+            }
+            
+            window.addEventListener('scroll', requestTick, { passive: true });
+        }
+        
+        function updateActiveSection() {
+            const sections = document.querySelectorAll('.content-section');
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    currentSection = section.id;
+                }
+            });
+            
+            // Update active sidebar link
+            sidebarLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.section === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // Enhanced demo functions
+        function toggleFlexDirection() {
+            const flexContainer = document.querySelector('.flex-container');
+            if (flexContainer) {
+                const currentDirection = flexContainer.style.flexDirection || 'row';
+                flexContainer.style.flexDirection = currentDirection === 'row' ? 'column' : 'row';
+            }
+        }
+        
+        function toggleJustifyContent() {
+            const flexContainer = document.querySelector('.flex-container');
+            if (flexContainer) {
+                const justifyValues = ['flex-start', 'center', 'flex-end', 'space-between', 'space-around'];
+                const currentJustify = flexContainer.style.justifyContent || 'flex-start';
+                const currentIndex = justifyValues.indexOf(currentJustify);
+                const nextIndex = (currentIndex + 1) % justifyValues.length;
+                flexContainer.style.justifyContent = justifyValues[nextIndex];
+            }
+        }
+        
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add mobile enhancements
+            addMobileEnhancements();
+            
+            // Handle responsive behavior
+            handleResponsiveChanges();
+            
+            // Optimize scrolling
+            optimizeScrolling();
+            
+            // Initialize progress
+            updateProgress();
+            
+            // Add keyboard navigation support
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    // Ensure focused elements are visible
+                    setTimeout(() => {
+                        const focused = document.activeElement;
+                        if (focused) {
+                            focused.scrollIntoView({ 
+                                behavior: 'smooth', 
+                                block: 'nearest' 
+                            });
+                        }
+                    }, 100);
+                }
+            });
+            
+            // Add swipe gestures for mobile tabs (basic implementation)
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            document.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            
+            document.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    const activeTab = document.querySelector('.tab-btn.active, .demo-tab.active');
+                    if (activeTab) {
+                        const tabContainer = activeTab.parentElement;
+                        const tabs = Array.from(tabContainer.children);
+                        const currentIndex = tabs.indexOf(activeTab);
+                        
+                        let nextIndex;
+                        if (diff > 0 && currentIndex < tabs.length - 1) {
+                            // Swipe left - next tab
+                            nextIndex = currentIndex + 1;
+                        } else if (diff < 0 && currentIndex > 0) {
+                            // Swipe right - previous tab
+                            nextIndex = currentIndex - 1;
+                        }
+                        
+                        if (nextIndex !== undefined) {
+                            tabs[nextIndex].click();
+                        }
+                    }
+                }
+            }
+            
+            // Add loading states for better UX
+            const actionButtons = document.querySelectorAll('.project-btn.primary, .career-btn');
+            actionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const originalText = this.textContent;
+                    this.textContent = '⏳ Loading...';
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.disabled = false;
+                    }, 2000);
+                });
+            });
+            
+            // Add intersection observer for better performance
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '50px'
+                });
+                
+                // Observe all content cards
+                document.querySelectorAll('.concept-card, .project-card, .career-card').forEach(card => {
+                    observer.observe(card);
+                });
+            }
+        });
+        
+        // Add CSS for loading and visible states
+        const style = document.createElement('style');
+        style.textContent = `
+            .concept-card, .project-card, .career-card {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+            
+            .concept-card.visible, .project-card.visible, .career-card.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .loading {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                color: var(--text-secondary);
+                font-style: italic;
+            }
+            
+            .error {
+                color: var(--error-color, #ef4444);
+                padding: 15px;
+                background: rgba(239, 68, 68, 0.1);
+                border: 1px solid rgba(239, 68, 68, 0.2);
+                border-radius: 8px;
+                text-align: center;
+            }
+            
+            .weather-card {
+                background: var(--card-bg);
+                border: 1px solid var(--border-color);
+                border-radius: 12px;
+                padding: 20px;
+                text-align: center;
+            }
+            
+            .weather-info {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                margin-top: 10px;
+            }
+            
+            .temperature {
+                font-size: 2rem;
+                font-weight: 700;
+                color: var(--primary-color);
+            }
+            
+            .condition {
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: var(--text-color);
+            }
+            
+            .humidity {
+                font-size: 0.9rem;
+                color: var(--text-secondary);
+            }
+            
+            @media (max-width: 768px) {
+                .weather-info {
+                    gap: 6px;
+                }
+                
+                .temperature {
+                    font-size: 1.5rem;
+                }
+                
+                .condition {
+                    font-size: 1rem;
+                }
+                
+                .humidity {
+                    font-size: 0.8rem;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
+                weatherResult.innerHTML = '<div class="error">Please enter a city name</div>';
+                return;
+            }
+            
             weatherResult.innerHTML = '<div class="loading">Loading weather data...</div>';
             
             // Simulate API call
