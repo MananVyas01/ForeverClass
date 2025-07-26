@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development Fundamentals - Forever Class</title>
-    <meta name="description" content="Learn web development fundamentals including HTML, CSS, JavaScript, and modern web technologies">
-    <meta name="keywords" content="web development, HTML, CSS, JavaScript, frontend, backend, programming">
-    <meta property="og:title" content="Web Development Fundamentals - Forever Class">
-    <meta property="og:description" content="Comprehensive guide to web development fundamentals">
+    <title>Web Development Mastery - Forever Class</title>
+    <meta name="description" content="Master web development from zero to hero. Learn HTML, CSS, JavaScript, and modern frameworks with hands-on projects and real-world examples.">
+    <meta name="keywords" content="web development, HTML, CSS, JavaScript, frontend, backend, programming, react, responsive design, coding bootcamp">
+    <meta property="og:title" content="Web Development Mastery - Forever Class">
+    <meta property="og:description" content="Complete web development course from beginner to advanced. Build real projects and master modern web technologies.">
     <meta property="og:url" content="https://mananvyas01.github.io/ForeverClass/web-dev-basics.html">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://mananvyas01.github.io/ForeverClass/assets/web-dev-og.png">
+    
+    <!-- Base styles first -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Dedicated styles for this page -->
+    <link rel="stylesheet" href="css/web-dev-basics.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 <body>
     <nav class="navbar">
@@ -45,83 +52,209 @@
         <!-- Desktop Sidebar -->
         <aside class="sidebar" id="sidebar">
             <nav class="sidebar-nav">
-                <h3>Web Development</h3>
+                <div class="sidebar-header">
+                    <h3>🚀 Web Development</h3>
+                    <div class="progress-indicator">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <span class="progress-text" id="progressText">0% Complete</span>
+                    </div>
+                </div>
                 <ul>
-                    <li><a href="#introduction" class="sidebar-link">Introduction</a></li>
-                    <li><a href="#html-basics" class="sidebar-link">HTML Basics</a></li>
-                    <li><a href="#css-fundamentals" class="sidebar-link">CSS Fundamentals</a></li>
-                    <li><a href="#javascript-essentials" class="sidebar-link">JavaScript Essentials</a></li>
-                    <li><a href="#responsive-design" class="sidebar-link">Responsive Design</a></li>
-                    <li><a href="#tools-setup" class="sidebar-link">Tools & Setup</a></li>
-                    <li><a href="#best-practices" class="sidebar-link">Best Practices</a></li>
-                    <li><a href="#project-ideas" class="sidebar-link">Project Ideas</a></li>
-                    <li><a href="#resources" class="sidebar-link">Resources</a></li>
+                    <li><a href="#hero-section" class="sidebar-link" data-section="hero-section">🎯 Getting Started</a></li>
+                    <li><a href="#roadmap" class="sidebar-link" data-section="roadmap">🗺️ Learning Roadmap</a></li>
+                    <li><a href="#html-mastery" class="sidebar-link" data-section="html-mastery">📝 HTML Mastery</a></li>
+                    <li><a href="#css-mastery" class="sidebar-link" data-section="css-mastery">🎨 CSS Mastery</a></li>
+                    <li><a href="#javascript-mastery" class="sidebar-link" data-section="javascript-mastery">⚡ JavaScript Mastery</a></li>
+                    <li><a href="#frameworks" class="sidebar-link" data-section="frameworks">🛠️ Modern Frameworks</a></li>
+                    <li><a href="#backend-intro" class="sidebar-link" data-section="backend-intro">🔧 Backend Basics</a></li>
+                    <li><a href="#build-projects" class="sidebar-link" data-section="build-projects">💼 Build Projects</a></li>
+                    <li><a href="#career-prep" class="sidebar-link" data-section="career-prep">🎓 Career Preparation</a></li>
+                    <li><a href="#resources-advanced" class="sidebar-link" data-section="resources-advanced">📚 Advanced Resources</a></li>
                 </ul>
             </nav>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
-            <header class="page-header">
-                <h1>Web Development Fundamentals</h1>
-                <p>Master the essential skills to build modern websites and web applications</p>
-            </header>
+            <!-- Hero Section -->
+            <section id="hero-section" class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-badge">✨ Most Popular Course</div>
+                    <h1 class="hero-title">Master Web Development<br><span class="gradient-text">From Zero to Hero</span></h1>
+                    <p class="hero-description">Join thousands of developers who've transformed their careers. Learn modern web development with hands-on projects, real-world examples, and industry best practices.</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Hands-on Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">Weeks Curriculum</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Job Ready Skills</div>
+                        </div>
+                    </div>
 
-            <!-- Introduction -->
-            <section id="introduction" class="content-section">
-                <h2>🌐 What is Web Development?</h2>
-                <div class="content-grid">
-                    <div class="info-card">
-                        <h3>Frontend Development</h3>
-                        <p>The client-side of web development. What users see and interact with directly.</p>
-                        <ul>
-                            <li>HTML (Structure)</li>
-                            <li>CSS (Styling)</li>
-                            <li>JavaScript (Interactivity)</li>
-                            <li>Frameworks (React, Vue, Angular)</li>
-                        </ul>
+                    <div class="hero-actions">
+                        <button class="cta-button primary" onclick="scrollToSection('roadmap')">
+                            🚀 Start Your Journey
+                        </button>
+                        <button class="cta-button secondary" onclick="scrollToSection('build-projects')">
+                            💼 View Projects
+                        </button>
                     </div>
-                    <div class="info-card">
-                        <h3>Backend Development</h3>
-                        <p>The server-side of web development. Handles data, logic, and server operations.</p>
-                        <ul>
-                            <li>Server Languages (Node.js, Python, PHP)</li>
-                            <li>Databases (MySQL, MongoDB)</li>
-                            <li>APIs & Web Services</li>
-                            <li>Server Management</li>
-                        </ul>
-                    </div>
-                    <div class="info-card">
-                        <h3>Full-Stack Development</h3>
-                        <p>Combining both frontend and backend development skills.</p>
-                        <ul>
-                            <li>Complete Web Applications</li>
-                            <li>End-to-End Development</li>
-                            <li>DevOps & Deployment</li>
-                            <li>Performance Optimization</li>
-                        </ul>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="floating-cards">
+                        <div class="tech-card html">
+                            <div class="tech-icon">📝</div>
+                            <div class="tech-name">HTML5</div>
+                        </div>
+                        <div class="tech-card css">
+                            <div class="tech-icon">🎨</div>
+                            <div class="tech-name">CSS3</div>
+                        </div>
+                        <div class="tech-card js">
+                            <div class="tech-icon">⚡</div>
+                            <div class="tech-name">JavaScript</div>
+                        </div>
+                        <div class="tech-card react">
+                            <div class="tech-icon">⚛️</div>
+                            <div class="tech-name">React</div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- HTML Basics -->
-            <section id="html-basics" class="content-section">
-                <h2>📝 HTML Basics</h2>
-                <p>HTML (HyperText Markup Language) is the foundation of every website. It provides the structure and content.</p>
+            <!-- Learning Roadmap -->
+            <section id="roadmap" class="content-section roadmap-section">
+                <h2 class="section-title">🗺️ Your Learning Roadmap</h2>
+                <p class="section-subtitle">Follow this proven path to become a confident web developer in 12 weeks</p>
                 
-                <div class="subsection">
-                    <h3>Essential HTML Tags</h3>
-                    <div class="code-block">
-                        <pre><code>&lt;!DOCTYPE html&gt;
+                <div class="roadmap-timeline">
+                    <div class="timeline-item" data-week="1-2">
+                        <div class="timeline-marker">1-2</div>
+                        <div class="timeline-content">
+                            <h3>Foundation Building</h3>
+                            <p>Master HTML structure, semantic elements, and basic CSS styling</p>
+                            <div class="skills-tags">
+                                <span>HTML5</span>
+                                <span>CSS Basics</span>
+                                <span>Box Model</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-week="3-4">
+                        <div class="timeline-marker">3-4</div>
+                        <div class="timeline-content">
+                            <h3>Responsive Design</h3>
+                            <p>Create mobile-first, responsive layouts with Flexbox and CSS Grid</p>
+                            <div class="skills-tags">
+                                <span>Flexbox</span>
+                                <span>CSS Grid</span>
+                                <span>Media Queries</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-week="5-6">
+                        <div class="timeline-marker">5-6</div>
+                        <div class="timeline-content">
+                            <h3>JavaScript Fundamentals</h3>
+                            <p>Learn programming concepts, DOM manipulation, and interactivity</p>
+                            <div class="skills-tags">
+                                <span>ES6+</span>
+                                <span>DOM API</span>
+                                <span>Events</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-week="7-8">
+                        <div class="timeline-marker">7-8</div>
+                        <div class="timeline-content">
+                            <h3>Advanced JavaScript</h3>
+                            <p>Async programming, APIs, and modern JavaScript features</p>
+                            <div class="skills-tags">
+                                <span>Async/Await</span>
+                                <span>Fetch API</span>
+                                <span>Modules</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-week="9-10">
+                        <div class="timeline-marker">9-10</div>
+                        <div class="timeline-content">
+                            <h3>Modern Frameworks</h3>
+                            <p>Build dynamic applications with React and component-based architecture</p>
+                            <div class="skills-tags">
+                                <span>React</span>
+                                <span>Components</span>
+                                <span>State Management</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-week="11-12">
+                        <div class="timeline-marker">11-12</div>
+                        <div class="timeline-content">
+                            <h3>Full-Stack & Deployment</h3>
+                            <p>Backend basics, databases, and deploying your applications</p>
+                            <div class="skills-tags">
+                                <span>Node.js</span>
+                                <span>APIs</span>
+                                <span>Deployment</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HTML Mastery -->
+            <section id="html-mastery" class="content-section">
+                <h2 class="section-title">📝 HTML Mastery</h2>
+                <p class="section-subtitle">Build the foundation of every website with semantic, accessible HTML</p>
+                
+                <div class="mastery-grid">
+                    <div class="concept-card interactive">
+                        <div class="card-header">
+                            <h3>🏗️ Document Structure</h3>
+                            <span class="difficulty beginner">Beginner</span>
+                        </div>
+                        <p>Learn the essential HTML document structure and semantic elements</p>
+                        
+                        <div class="code-example">
+                            <div class="code-tabs">
+                                <button class="tab-btn active" data-tab="html-basic">Basic Structure</button>
+                                <button class="tab-btn" data-tab="html-semantic">Semantic HTML</button>
+                            </div>
+                            
+                            <div class="tab-content active" id="html-basic">
+                                <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
+    &lt;h1&gt;Welcome to my website!&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                            </div>
+                            
+                            <div class="tab-content" id="html-semantic">
+                                <pre><code>&lt;body&gt;
     &lt;header&gt;
-        &lt;h1&gt;Main Heading&lt;/h1&gt;
         &lt;nav&gt;
             &lt;ul&gt;
                 &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
@@ -132,485 +265,1041 @@
     
     &lt;main&gt;
         &lt;section&gt;
-            &lt;h2&gt;Section Heading&lt;/h2&gt;
-            &lt;p&gt;Paragraph text here.&lt;/p&gt;
+            &lt;h1&gt;Article Title&lt;/h1&gt;
+            &lt;p&gt;Content goes here...&lt;/p&gt;
         &lt;/section&gt;
     &lt;/main&gt;
     
     &lt;footer&gt;
-        &lt;p&gt;&copy; 2025 Your Website&lt;/p&gt;
+        &lt;p&gt;&copy; 2025 My Website&lt;/p&gt;
     &lt;/footer&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+&lt;/body&gt;</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="practice-challenge">
+                            <h4>🎯 Quick Challenge</h4>
+                            <p>Create a semantic HTML structure for a blog post with header, main content, and footer.</p>
+                            <button class="challenge-btn">Try it in CodePen</button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="subsection">
-                    <h3>Common HTML Elements</h3>
-                    <div class="elements-grid">
-                        <div class="element-card">
-                            <h4>Text Elements</h4>
-                            <ul>
-                                <li><code>&lt;h1&gt; - &lt;h6&gt;</code> - Headings</li>
-                                <li><code>&lt;p&gt;</code> - Paragraphs</li>
-                                <li><code>&lt;span&gt;</code> - Inline text</li>
-                                <li><code>&lt;strong&gt;</code> - Bold text</li>
-                                <li><code>&lt;em&gt;</code> - Italic text</li>
-                            </ul>
+                    <div class="concept-card">
+                        <div class="card-header">
+                            <h3>🎯 Forms & Inputs</h3>
+                            <span class="difficulty intermediate">Intermediate</span>
                         </div>
-                        <div class="element-card">
-                            <h4>Structure Elements</h4>
-                            <ul>
-                                <li><code>&lt;div&gt;</code> - Container</li>
-                                <li><code>&lt;section&gt;</code> - Content section</li>
-                                <li><code>&lt;article&gt;</code> - Article content</li>
-                                <li><code>&lt;header&gt;</code> - Page/section header</li>
-                                <li><code>&lt;footer&gt;</code> - Page/section footer</li>
-                            </ul>
+                        <p>Master form elements, validation, and user input handling</p>
+                        
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <span class="feature-icon">✅</span>
+                                <span>Form validation</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📱</span>
+                                <span>Mobile-friendly inputs</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">♿</span>
+                                <span>Accessibility features</span>
+                            </div>
                         </div>
-                        <div class="element-card">
-                            <h4>Interactive Elements</h4>
-                            <ul>
-                                <li><code>&lt;a&gt;</code> - Links</li>
-                                <li><code>&lt;button&gt;</code> - Buttons</li>
-                                <li><code>&lt;input&gt;</code> - Form inputs</li>
-                                <li><code>&lt;form&gt;</code> - Forms</li>
-                                <li><code>&lt;img&gt;</code> - Images</li>
-                            </ul>
+                        
+                        <div class="mini-project">
+                            <h4>📋 Mini Project</h4>
+                            <p>Build a contact form with proper validation and accessibility</p>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="card-header">
+                            <h3>🖼️ Media & Assets</h3>
+                            <span class="difficulty beginner">Beginner</span>
+                        </div>
+                        <p>Optimize images, videos, and other media for the web</p>
+                        
+                        <div class="key-concepts">
+                            <div class="concept-tag">Responsive Images</div>
+                            <div class="concept-tag">SVG Graphics</div>
+                            <div class="concept-tag">Video Embedding</div>
+                            <div class="concept-tag">Performance</div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- CSS Fundamentals -->
-            <section id="css-fundamentals" class="content-section">
-                <h2>🎨 CSS Fundamentals</h2>
-                <p>CSS (Cascading Style Sheets) controls the visual presentation of your HTML content.</p>
+            <!-- CSS Mastery -->
+            <section id="css-mastery" class="content-section">
+                <h2 class="section-title">🎨 CSS Mastery</h2>
+                <p class="section-subtitle">Transform your HTML into beautiful, responsive designs</p>
                 
-                <div class="subsection">
-                    <h3>CSS Syntax & Selectors</h3>
-                    <div class="code-block">
-                        <pre><code>/* Element Selector */
-p {
-    color: #333;
-    font-size: 16px;
-}
+                <div class="mastery-grid">
+                    <div class="concept-card visual-demo">
+                        <div class="card-header">
+                            <h3>🎭 Layout Systems</h3>
+                            <span class="difficulty intermediate">Intermediate</span>
+                        </div>
+                        <p>Master Flexbox and CSS Grid for modern layouts</p>
+                        
+                        <div class="layout-demo">
+                            <div class="demo-tabs">
+                                <button class="demo-tab active" data-demo="flexbox">Flexbox</button>
+                                <button class="demo-tab" data-demo="grid">CSS Grid</button>
+                            </div>
+                            
+                            <div class="demo-container" id="flexbox-demo">
+                                <div class="flex-container">
+                                    <div class="flex-item">1</div>
+                                    <div class="flex-item">2</div>
+                                    <div class="flex-item">3</div>
+                                </div>
+                                <div class="demo-controls">
+                                    <button onclick="toggleFlexDirection()">Toggle Direction</button>
+                                    <button onclick="toggleJustifyContent()">Change Alignment</button>
+                                </div>
+                            </div>
+                            
+                            <div class="demo-container hidden" id="grid-demo">
+                                <div class="grid-container">
+                                    <div class="grid-item">Header</div>
+                                    <div class="grid-item">Sidebar</div>
+                                    <div class="grid-item">Main</div>
+                                    <div class="grid-item">Footer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-/* Class Selector */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+                    <div class="concept-card">
+                        <div class="card-header">
+                            <h3>🌈 Advanced Styling</h3>
+                            <span class="difficulty advanced">Advanced</span>
+                        </div>
+                        <p>Animations, transitions, and modern CSS features</p>
+                        
+                        <div class="animation-showcase">
+                            <div class="animated-element" id="bounceBox">
+                                <span>Hover me!</span>
+                            </div>
+                        </div>
+                        
+                        <div class="css-features">
+                            <div class="feature-badge">CSS Variables</div>
+                            <div class="feature-badge">Transforms</div>
+                            <div class="feature-badge">Keyframes</div>
+                            <div class="feature-badge">Filters</div>
+                        </div>
+                    </div>
 
-/* ID Selector */
-#header {
-    background-color: #007bff;
-    padding: 20px;
-}
-
-/* Attribute Selector */
-input[type="text"] {
-    border: 1px solid #ccc;
-    padding: 10px;
-}</code></pre>
+                    <div class="concept-card">
+                        <div class="card-header">
+                            <h3>📱 Responsive Design</h3>
+                            <span class="difficulty intermediate">Intermediate</span>
+                        </div>
+                        <p>Create designs that work perfectly on all devices</p>
+                        
+                        <div class="responsive-preview">
+                            <div class="device-frame mobile">
+                                <div class="screen">📱 Mobile View</div>
+                            </div>
+                            <div class="device-frame tablet">
+                                <div class="screen">📟 Tablet View</div>
+                            </div>
+                            <div class="device-frame desktop">
+                                <div class="screen">💻 Desktop View</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="subsection">
-                    <h3>CSS Box Model</h3>
-                    <div class="box-model-demo">
-                        <div class="box-model">
-                            <div class="margin">Margin
-                                <div class="border">Border
-                                    <div class="padding">Padding
-                                        <div class="content">Content</div>
+            <!-- JavaScript Mastery -->
+            <section id="javascript-mastery" class="content-section">
+                <h2 class="section-title">⚡ JavaScript Mastery</h2>
+                <p class="section-subtitle">Bring your websites to life with interactive JavaScript</p>
+                
+                <div class="mastery-grid">
+                    <div class="concept-card interactive-js">
+                        <div class="card-header">
+                            <h3>🎮 Interactive Playground</h3>
+                            <span class="difficulty beginner">Beginner</span>
+                        </div>
+                        <p>Learn JavaScript fundamentals with live code examples</p>
+                        
+                        <div class="js-playground">
+                            <div class="playground-tabs">
+                                <button class="tab-btn active" data-tab="variables">Variables</button>
+                                <button class="tab-btn" data-tab="functions">Functions</button>
+                                <button class="tab-btn" data-tab="dom">DOM</button>
+                            </div>
+                            
+                            <div class="playground-content">
+                                <div class="tab-panel active" id="variables">
+                                    <div class="code-editor">
+                                        <pre><code>// Try changing these values!
+let name = "John";
+let age = 25;
+let isStudent = true;
+
+console.log(`Hi, I'm ${name}, ${age} years old`);
+console.log(`Student status: ${isStudent}`);</code></pre>
                                     </div>
+                                    <button class="run-code-btn" onclick="runJSExample('variables')">▶️ Run Code</button>
+                                    <div class="output-console" id="variables-output"></div>
+                                </div>
+                                
+                                <div class="tab-panel" id="functions">
+                                    <div class="code-editor">
+                                        <pre><code>// Create your own functions
+function greetUser(name) {
+    return `Hello, ${name}! Welcome to JavaScript!`;
+}
+
+// Arrow function
+const calculateArea = (width, height) => {
+    return width * height;
+};
+
+console.log(greetUser("Sarah"));
+console.log(`Area: ${calculateArea(10, 5)}`);</code></pre>
+                                    </div>
+                                    <button class="run-code-btn" onclick="runJSExample('functions')">▶️ Run Code</button>
+                                    <div class="output-console" id="functions-output"></div>
+                                </div>
+                                
+                                <div class="tab-panel" id="dom">
+                                    <div class="code-editor">
+                                        <pre><code>// DOM Manipulation Example
+const button = document.getElementById('demo-btn');
+const output = document.getElementById('demo-output');
+
+button.addEventListener('click', () => {
+    output.textContent = 'Button clicked! ' + new Date().toLocaleTimeString();
+    output.style.color = '#' + Math.floor(Math.random()*16777215).toString(16);
+});</code></pre>
+                                    </div>
+                                    <div class="dom-demo">
+                                        <button id="demo-btn" class="demo-button">Click Me!</button>
+                                        <div id="demo-output" class="demo-output">Click the button to see magic!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="card-header">
+                            <h3>🌐 API Integration</h3>
+                            <span class="difficulty intermediate">Intermediate</span>
+                        </div>
+                        <p>Connect to external APIs and handle asynchronous data</p>
+                        
+                        <div class="api-demo">
+                            <h4>Weather API Example</h4>
+                            <div class="api-controls">
+                                <input type="text" id="cityInput" placeholder="Enter city name" class="city-input">
+                                <button onclick="getWeather()" class="api-btn">Get Weather</button>
+                            </div>
+                            <div id="weatherResult" class="api-result"></div>
+                        </div>
+                        
+                        <div class="code-snippet">
+                            <pre><code>async function getWeather(city) {
+    try {
+        const response = await fetch(`/api/weather?city=${city}`);
+        const data = await response.json();
+        displayWeather(data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="card-header">
+                            <h3>🎯 ES6+ Features</h3>
+                            <span class="difficulty advanced">Advanced</span>
+                        </div>
+                        <p>Master modern JavaScript features and best practices</p>
+                        
+                        <div class="feature-showcase">
+                            <div class="feature-item">
+                                <h5>Destructuring</h5>
+                                <code>const {name, age} = user;</code>
+                            </div>
+                            <div class="feature-item">
+                                <h5>Template Literals</h5>
+                                <code>`Hello ${name}!`</code>
+                            </div>
+                            <div class="feature-item">
+                                <h5>Arrow Functions</h5>
+                                <code>const add = (a, b) => a + b;</code>
+                            </div>
+                            <div class="feature-item">
+                                <h5>Promises/Async</h5>
+                                <code>await fetch('/api/data');</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Modern Frameworks -->
+            <section id="frameworks" class="content-section">
+                <h2 class="section-title">🛠️ Modern Frameworks</h2>
+                <p class="section-subtitle">Build scalable applications with popular frameworks</p>
+                
+                <div class="frameworks-comparison">
+                    <div class="framework-card react-card">
+                        <div class="framework-header">
+                            <div class="framework-logo">⚛️</div>
+                            <h3>React</h3>
+                            <div class="popularity-badge">Most Popular</div>
+                        </div>
+                        <p>A JavaScript library for building user interfaces, maintained by Facebook</p>
+                        
+                        <div class="framework-features">
+                            <div class="feature">🔧 Component-Based</div>
+                            <div class="feature">🔄 Virtual DOM</div>
+                            <div class="feature">📱 React Native</div>
+                            <div class="feature">🎣 Hooks</div>
+                        </div>
+                        
+                        <div class="code-preview">
+                            <pre><code>function Welcome({ name }) {
+    return &lt;h1&gt;Hello, {name}!&lt;/h1&gt;;
+}
+
+function App() {
+    return &lt;Welcome name="Sarah" /&gt;;
+}</code></pre>
+                        </div>
+                        
+                        <div class="framework-stats">
+                            <div class="stat">
+                                <span class="stat-label">Learning Curve</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Job Market</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="framework-card vue-card">
+                        <div class="framework-header">
+                            <div class="framework-logo">💚</div>
+                            <h3>Vue.js</h3>
+                            <div class="popularity-badge beginner-friendly">Beginner Friendly</div>
+                        </div>
+                        <p>Progressive framework that's approachable, versatile, and performant</p>
+                        
+                        <div class="framework-features">
+                            <div class="feature">📝 Template Syntax</div>
+                            <div class="feature">🎭 Directives</div>
+                            <div class="feature">⚡ Fast</div>
+                            <div class="feature">🛠️ Vue CLI</div>
+                        </div>
+                        
+                        <div class="framework-stats">
+                            <div class="stat">
+                                <span class="stat-label">Learning Curve</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Job Market</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="framework-card angular-card">
+                        <div class="framework-header">
+                            <div class="framework-logo">🅰️</div>
+                            <h3>Angular</h3>
+                            <div class="popularity-badge enterprise">Enterprise</div>
+                        </div>
+                        <p>Full-featured framework for building large-scale applications</p>
+                        
+                        <div class="framework-features">
+                            <div class="feature">📦 Full Framework</div>
+                            <div class="feature">📘 TypeScript</div>
+                            <div class="feature">🏢 Enterprise</div>
+                            <div class="feature">🔍 Angular CLI</div>
+                        </div>
+                        
+                        <div class="framework-stats">
+                            <div class="stat">
+                                <span class="stat-label">Learning Curve</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Job Market</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 80%"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="subsection">
-                    <h3>Flexbox Layout</h3>
-                    <div class="code-block">
-                        <pre><code>.flex-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-.flex-item {
-    flex: 1;
-    padding: 20px;
-}</code></pre>
-                    </div>
-                </div>
-
-                <div class="subsection">
-                    <h3>CSS Grid Layout</h3>
-                    <div class="code-block">
-                        <pre><code>.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.grid-item {
-    background: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-}</code></pre>
-                    </div>
-                </div>
-            </section>
-
-            <!-- JavaScript Essentials -->
-            <section id="javascript-essentials" class="content-section">
-                <h2>⚡ JavaScript Essentials</h2>
-                <p>JavaScript brings interactivity and dynamic behavior to your websites.</p>
-                
-                <div class="subsection">
-                    <h3>Variables & Data Types</h3>
-                    <div class="code-block">
-                        <pre><code>// Variables
-let name = "John Doe";
-const age = 25;
-var isStudent = true;
-
-// Data Types
-let string = "Hello World";
-let number = 42;
-let boolean = true;
-let array = [1, 2, 3, 4];
-let object = {
-    name: "John",
-    age: 25,
-    city: "New York"
-};</code></pre>
-                    </div>
-                </div>
-
-                <div class="subsection">
-                    <h3>Functions</h3>
-                    <div class="code-block">
-                        <pre><code>// Function Declaration
-function greetUser(name) {
-    return `Hello, ${name}!`;
-}
-
-// Arrow Function
-const calculateArea = (width, height) => width * height;
-
-// Function Expression
-const multiply = function(a, b) {
-    return a * b;
-};</code></pre>
-                    </div>
-                </div>
-
-                <div class="subsection">
-                    <h3>DOM Manipulation</h3>
-                    <div class="code-block">
-                        <pre><code>// Select Elements
-const button = document.getElementById('myButton');
-const elements = document.querySelectorAll('.item');
-
-// Modify Content
-button.textContent = 'Click Me!';
-button.style.backgroundColor = 'blue';
-
-// Event Listeners
-button.addEventListener('click', function() {
-    alert('Button clicked!');
-});
-
-// Create New Elements
-const newDiv = document.createElement('div');
-newDiv.className = 'new-element';
-document.body.appendChild(newDiv);</code></pre>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Responsive Design -->
-            <section id="responsive-design" class="content-section">
-                <h2>📱 Responsive Design</h2>
-                <p>Make your websites look great on all devices and screen sizes.</p>
-                
-                <div class="subsection">
-                    <h3>Mobile-First Approach</h3>
-                    <div class="code-block">
-                        <pre><code>/* Mobile styles (base) */
-.container {
-    padding: 10px;
-    font-size: 14px;
-}
-
-/* Tablet styles */
-@media (min-width: 768px) {
-    .container {
-        padding: 20px;
-        font-size: 16px;
-    }
-}
-
-/* Desktop styles */
-@media (min-width: 1024px) {
-    .container {
-        padding: 30px;
-        font-size: 18px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-}</code></pre>
-                    </div>
-                </div>
-
-                <div class="subsection">
-                    <h3>Responsive Units</h3>
-                    <div class="units-grid">
-                        <div class="unit-card">
-                            <h4>Relative Units</h4>
-                            <ul>
-                                <li><strong>em</strong> - Relative to parent element</li>
-                                <li><strong>rem</strong> - Relative to root element</li>
-                                <li><strong>%</strong> - Percentage of parent</li>
-                                <li><strong>vw/vh</strong> - Viewport width/height</li>
-                            </ul>
+                <div class="framework-chooser">
+                    <h3>🤔 Which Framework Should You Choose?</h3>
+                    <div class="chooser-grid">
+                        <div class="choice-card">
+                            <h4>👶 New to Programming</h4>
+                            <p>Start with <strong>Vue.js</strong> - it has the gentlest learning curve</p>
                         </div>
-                        <div class="unit-card">
-                            <h4>Absolute Units</h4>
-                            <ul>
-                                <li><strong>px</strong> - Pixels (avoid for responsive)</li>
-                                <li><strong>pt</strong> - Points (print media)</li>
-                                <li><strong>cm/mm</strong> - Centimeters/millimeters</li>
-                                <li><strong>in</strong> - Inches</li>
-                            </ul>
+                        <div class="choice-card">
+                            <h4>💼 Job Market Focus</h4>
+                            <p>Learn <strong>React</strong> - highest demand in the job market</p>
+                        </div>
+                        <div class="choice-card">
+                            <h4>🏢 Enterprise Development</h4>
+                            <p>Choose <strong>Angular</strong> - built for large-scale applications</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Tools & Setup -->
-            <section id="tools-setup" class="content-section">
-                <h2>🛠️ Tools & Setup</h2>
-                <p>Essential tools and setup for web development.</p>
+            <!-- Backend Introduction -->
+            <section id="backend-intro" class="content-section">
+                <h2 class="section-title">🔧 Backend Development</h2>
+                <p class="section-subtitle">Understand server-side development and APIs</p>
                 
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h3>Code Editors</h3>
-                        <ul>
-                            <li><strong>VS Code</strong> - Free, powerful, extensible</li>
-                            <li><strong>Sublime Text</strong> - Fast and lightweight</li>
-                            <li><strong>Atom</strong> - Hackable text editor</li>
-                            <li><strong>WebStorm</strong> - Full-featured IDE</li>
-                        </ul>
+                <div class="backend-overview">
+                    <div class="backend-concept">
+                        <div class="concept-icon">🖥️</div>
+                        <h3>Server-Side Logic</h3>
+                        <p>Handle business logic, authentication, and data processing on the server</p>
+                        
+                        <div class="tech-options">
+                            <div class="tech-option">
+                                <span class="tech-name">Node.js</span>
+                                <span class="tech-desc">JavaScript on the server</span>
+                            </div>
+                            <div class="tech-option">
+                                <span class="tech-name">Python</span>
+                                <span class="tech-desc">Django, Flask frameworks</span>
+                            </div>
+                            <div class="tech-option">
+                                <span class="tech-name">PHP</span>
+                                <span class="tech-desc">Laravel, WordPress</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tool-card">
-                        <h3>Browser Dev Tools</h3>
-                        <ul>
-                            <li><strong>Chrome DevTools</strong> - Debug and inspect</li>
-                            <li><strong>Firefox Developer Tools</strong> - Web debugging</li>
-                            <li><strong>Safari Web Inspector</strong> - Mac debugging</li>
-                            <li><strong>Edge DevTools</strong> - Microsoft's tools</li>
-                        </ul>
-                    </div>
-                    <div class="tool-card">
-                        <h3>Package Managers</h3>
-                        <ul>
-                            <li><strong>npm</strong> - Node Package Manager</li>
-                            <li><strong>yarn</strong> - Fast, reliable package manager</li>
-                            <li><strong>pnpm</strong> - Efficient disk space usage</li>
-                            <li><strong>CDN</strong> - Content Delivery Networks</li>
-                        </ul>
-                    </div>
-                    <div class="tool-card">
-                        <h3>Build Tools</h3>
-                        <ul>
-                            <li><strong>Webpack</strong> - Module bundler</li>
-                            <li><strong>Vite</strong> - Fast build tool</li>
-                            <li><strong>Parcel</strong> - Zero-config bundler</li>
-                            <li><strong>Gulp</strong> - Task automation</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
 
-            <!-- Best Practices -->
-            <section id="best-practices" class="content-section">
-                <h2>✅ Best Practices</h2>
-                <p>Follow these guidelines to write clean, maintainable, and professional code.</p>
-                
-                <div class="practices-grid">
-                    <div class="practice-card">
-                        <h3>🔍 SEO Optimization</h3>
-                        <ul>
-                            <li>Use semantic HTML5 elements</li>
-                            <li>Add proper meta tags</li>
-                            <li>Optimize images with alt text</li>
-                            <li>Create clean, descriptive URLs</li>
-                            <li>Use heading hierarchy (h1-h6)</li>
-                        </ul>
+                    <div class="backend-concept">
+                        <div class="concept-icon">🗄️</div>
+                        <h3>Databases</h3>
+                        <p>Store and manage your application data efficiently</p>
+                        
+                        <div class="database-types">
+                            <div class="db-type">
+                                <h4>📊 SQL Databases</h4>
+                                <p>MySQL, PostgreSQL, SQLite</p>
+                                <div class="use-case">Best for: Structured data, transactions</div>
+                            </div>
+                            <div class="db-type">
+                                <h4>📄 NoSQL Databases</h4>
+                                <p>MongoDB, Firebase, DynamoDB</p>
+                                <div class="use-case">Best for: Flexible schemas, scaling</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="practice-card">
-                        <h3>♿ Accessibility</h3>
-                        <ul>
-                            <li>Use proper ARIA labels</li>
-                            <li>Ensure keyboard navigation</li>
-                            <li>Maintain color contrast ratios</li>
-                            <li>Provide alternative text for images</li>
-                            <li>Use focus indicators</li>
-                        </ul>
-                    </div>
-                    <div class="practice-card">
-                        <h3>⚡ Performance</h3>
-                        <ul>
-                            <li>Optimize images and assets</li>
-                            <li>Minimize HTTP requests</li>
-                            <li>Use CSS and JS compression</li>
-                            <li>Implement lazy loading</li>
-                            <li>Cache static resources</li>
-                        </ul>
-                    </div>
-                    <div class="practice-card">
-                        <h3>🧹 Code Quality</h3>
-                        <ul>
-                            <li>Use consistent naming conventions</li>
-                            <li>Comment your code appropriately</li>
-                            <li>Follow DRY principle</li>
-                            <li>Keep functions small and focused</li>
-                            <li>Use version control (Git)</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
 
-            <!-- Project Ideas -->
-            <section id="project-ideas" class="content-section">
-                <h2>💡 Project Ideas</h2>
-                <p>Practice your skills with these hands-on projects, from beginner to advanced.</p>
-                
-                <div class="projects-grid">
-                    <div class="project-card beginner">
-                        <span class="difficulty">Beginner</span>
-                        <h3>Personal Portfolio</h3>
-                        <p>Create a personal website showcasing your skills and projects.</p>
-                        <div class="tech-stack">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-                    </div>
-                    <div class="project-card beginner">
-                        <span class="difficulty">Beginner</span>
-                        <h3>Landing Page</h3>
-                        <p>Build a responsive landing page for a product or service.</p>
-                        <div class="tech-stack">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>Flexbox</span>
-                        </div>
-                    </div>
-                    <div class="project-card intermediate">
-                        <span class="difficulty">Intermediate</span>
-                        <h3>Todo App</h3>
-                        <p>Create an interactive todo list with local storage.</p>
-                        <div class="tech-stack">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>LocalStorage</span>
-                        </div>
-                    </div>
-                    <div class="project-card intermediate">
-                        <span class="difficulty">Intermediate</span>
-                        <h3>Weather App</h3>
-                        <p>Build a weather application using a weather API.</p>
-                        <div class="tech-stack">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>API</span>
-                        </div>
-                    </div>
-                    <div class="project-card advanced">
-                        <span class="difficulty">Advanced</span>
-                        <h3>E-commerce Site</h3>
-                        <p>Create a full e-commerce website with shopping cart functionality.</p>
-                        <div class="tech-stack">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>Database</span>
-                            <span>Payment</span>
-                        </div>
-                    </div>
-                    <div class="project-card advanced">
-                        <span class="difficulty">Advanced</span>
-                        <h3>Social Media Dashboard</h3>
-                        <p>Build a dashboard to manage multiple social media accounts.</p>
-                        <div class="tech-stack">
-                            <span>React</span>
-                            <span>APIs</span>
-                            <span>Charts</span>
-                            <span>Authentication</span>
+                    <div class="backend-concept">
+                        <div class="concept-icon">🔌</div>
+                        <h3>APIs & Services</h3>
+                        <p>Create endpoints for your frontend to communicate with</p>
+                        
+                        <div class="api-example">
+                            <h4>REST API Example</h4>
+                            <div class="api-endpoints">
+                                <div class="endpoint">
+                                    <span class="method get">GET</span>
+                                    <span class="url">/api/users</span>
+                                    <span class="desc">Get all users</span>
+                                </div>
+                                <div class="endpoint">
+                                    <span class="method post">POST</span>
+                                    <span class="url">/api/users</span>
+                                    <span class="desc">Create new user</span>
+                                </div>
+                                <div class="endpoint">
+                                    <span class="method put">PUT</span>
+                                    <span class="url">/api/users/:id</span>
+                                    <span class="desc">Update user</span>
+                                </div>
+                                <div class="endpoint">
+                                    <span class="method delete">DELETE</span>
+                                    <span class="url">/api/users/:id</span>
+                                    <span class="desc">Delete user</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Resources -->
-            <section id="resources" class="content-section">
-                <h2>📚 Learning Resources</h2>
-                <p>Continue your web development journey with these excellent resources.</p>
+            <!-- Build Projects -->
+            <section id="build-projects" class="content-section">
+                <h2 class="section-title">💼 Portfolio Projects</h2>
+                <p class="section-subtitle">Build these projects to showcase your skills and land your dream job</p>
                 
-                <div class="resources-grid">
-                    <div class="resource-card">
-                        <h3>📖 Documentation</h3>
-                        <ul>
-                            <li><a href="https://developer.mozilla.org/en-US/docs/Web" target="_blank">MDN Web Docs</a></li>
-                            <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
-                            <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
-                            <li><a href="https://javascript.info/" target="_blank">JavaScript.info</a></li>
-                        </ul>
+                <div class="projects-roadmap">
+                    <div class="project-track">
+                        <h3>🟢 Beginner Track (Weeks 1-4)</h3>
+                        <div class="projects-grid">
+                            <div class="project-card featured beginner">
+                                <div class="project-header">
+                                    <div class="project-icon">🎨</div>
+                                    <div class="project-meta">
+                                        <h4>Personal Portfolio Website</h4>
+                                        <span class="project-duration">⏱️ 1-2 weeks</span>
+                                    </div>
+                                    <div class="difficulty-badge beginner">Beginner</div>
+                                </div>
+                                
+                                <p>Create a stunning portfolio to showcase your work and skills</p>
+                                
+                                <div class="project-features">
+                                    <div class="feature">✨ Responsive design</div>
+                                    <div class="feature">🎭 Smooth animations</div>
+                                    <div class="feature">📧 Contact form</div>
+                                    <div class="feature">🌙 Dark/light mode</div>
+                                </div>
+                                
+                                <div class="tech-stack">
+                                    <span class="tech">HTML5</span>
+                                    <span class="tech">CSS3</span>
+                                    <span class="tech">JavaScript</span>
+                                    <span class="tech">Git</span>
+                                </div>
+                                
+                                <div class="project-actions">
+                                    <button class="project-btn primary">🚀 Start Building</button>
+                                    <button class="project-btn secondary">👀 View Demo</button>
+                                </div>
+                            </div>
+
+                            <div class="project-card beginner">
+                                <div class="project-header">
+                                    <div class="project-icon">🛍️</div>
+                                    <div class="project-meta">
+                                        <h4>Product Landing Page</h4>
+                                        <span class="project-duration">⏱️ 1 week</span>
+                                    </div>
+                                    <div class="difficulty-badge beginner">Beginner</div>
+                                </div>
+                                
+                                <p>Design and build a compelling product landing page</p>
+                                
+                                <div class="project-skills">
+                                    <span>Flexbox Layout</span>
+                                    <span>CSS Grid</span>
+                                    <span>Form Validation</span>
+                                </div>
+                            </div>
+
+                            <div class="project-card beginner">
+                                <div class="project-header">
+                                    <div class="project-icon">📊</div>
+                                    <div class="project-meta">
+                                        <h4>Survey Form</h4>
+                                        <span class="project-duration">⏱️ 3-5 days</span>
+                                    </div>
+                                    <div class="difficulty-badge beginner">Beginner</div>
+                                </div>
+                                
+                                <p>Build an interactive survey with validation and local storage</p>
+                                
+                                <div class="project-skills">
+                                    <span>Forms</span>
+                                    <span>JavaScript</span>
+                                    <span>LocalStorage</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="resource-card">
-                        <h3>🎥 Video Courses</h3>
-                        <ul>
-                            <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></li>
-                            <li><a href="https://www.codecademy.com/" target="_blank">Codecademy</a></li>
-                            <li><a href="https://www.coursera.org/" target="_blank">Coursera</a></li>
-                            <li><a href="https://www.udemy.com/" target="_blank">Udemy</a></li>
-                        </ul>
+
+                    <div class="project-track">
+                        <h3>🟡 Intermediate Track (Weeks 5-8)</h3>
+                        <div class="projects-grid">
+                            <div class="project-card featured intermediate">
+                                <div class="project-header">
+                                    <div class="project-icon">🌤️</div>
+                                    <div class="project-meta">
+                                        <h4>Weather Dashboard</h4>
+                                        <span class="project-duration">⏱️ 2-3 weeks</span>
+                                    </div>
+                                    <div class="difficulty-badge intermediate">Intermediate</div>
+                                </div>
+                                
+                                <p>Build a real-time weather app with location detection and forecasts</p>
+                                
+                                <div class="project-features">
+                                    <div class="feature">🌍 Geolocation API</div>
+                                    <div class="feature">📡 Weather API integration</div>
+                                    <div class="feature">📊 Interactive charts</div>
+                                    <div class="feature">💾 Favorite locations</div>
+                                </div>
+                                
+                                <div class="tech-stack">
+                                    <span class="tech">JavaScript ES6+</span>
+                                    <span class="tech">Fetch API</span>
+                                    <span class="tech">Chart.js</span>
+                                    <span class="tech">PWA</span>
+                                </div>
+                                
+                                <div class="project-actions">
+                                    <button class="project-btn primary">🚀 Start Building</button>
+                                    <button class="project-btn secondary">👀 View Demo</button>
+                                </div>
+                            </div>
+
+                            <div class="project-card intermediate">
+                                <div class="project-header">
+                                    <div class="project-icon">✅</div>
+                                    <div class="project-meta">
+                                        <h4>Task Management App</h4>
+                                        <span class="project-duration">⏱️ 2 weeks</span>
+                                    </div>
+                                    <div class="difficulty-badge intermediate">Intermediate</div>
+                                </div>
+                                
+                                <p>Create a feature-rich todo app with drag & drop</p>
+                                
+                                <div class="project-skills">
+                                    <span>Drag & Drop API</span>
+                                    <span>Local Storage</span>
+                                    <span>Date/Time</span>
+                                </div>
+                            </div>
+
+                            <div class="project-card intermediate">
+                                <div class="project-header">
+                                    <div class="project-icon">🎵</div>
+                                    <div class="project-meta">
+                                        <h4>Music Player</h4>
+                                        <span class="project-duration">⏱️ 2 weeks</span>
+                                    </div>
+                                    <div class="difficulty-badge intermediate">Intermediate</div>
+                                </div>
+                                
+                                <p>Build a sleek music player with playlists and visualizations</p>
+                                
+                                <div class="project-skills">
+                                    <span>Audio API</span>
+                                    <span>Canvas</span>
+                                    <span>Animations</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="resource-card">
-                        <h3>🛠️ Practice Platforms</h3>
-                        <ul>
-                            <li><a href="https://codepen.io/" target="_blank">CodePen</a></li>
-                            <li><a href="https://jsfiddle.net/" target="_blank">JSFiddle</a></li>
-                            <li><a href="https://codesandbox.io/" target="_blank">CodeSandbox</a></li>
-                            <li><a href="https://replit.com/" target="_blank">Replit</a></li>
-                        </ul>
+
+                    <div class="project-track">
+                        <h3>🔴 Advanced Track (Weeks 9-12)</h3>
+                        <div class="projects-grid">
+                            <div class="project-card featured advanced">
+                                <div class="project-header">
+                                    <div class="project-icon">🛒</div>
+                                    <div class="project-meta">
+                                        <h4>E-Commerce Platform</h4>
+                                        <span class="project-duration">⏱️ 3-4 weeks</span>
+                                    </div>
+                                    <div class="difficulty-badge advanced">Advanced</div>
+                                </div>
+                                
+                                <p>Full-stack e-commerce with payment integration and admin panel</p>
+                                
+                                <div class="project-features">
+                                    <div class="feature">🛍️ Product catalog</div>
+                                    <div class="feature">🛒 Shopping cart</div>
+                                    <div class="feature">💳 Payment processing</div>
+                                    <div class="feature">👤 User authentication</div>
+                                    <div class="feature">📊 Admin dashboard</div>
+                                </div>
+                                
+                                <div class="tech-stack">
+                                    <span class="tech">React</span>
+                                    <span class="tech">Node.js</span>
+                                    <span class="tech">MongoDB</span>
+                                    <span class="tech">Stripe API</span>
+                                </div>
+                                
+                                <div class="project-actions">
+                                    <button class="project-btn primary">🚀 Start Building</button>
+                                    <button class="project-btn secondary">👀 View Demo</button>
+                                </div>
+                            </div>
+
+                            <div class="project-card advanced">
+                                <div class="project-header">
+                                    <div class="project-icon">💬</div>
+                                    <div class="project-meta">
+                                        <h4>Real-time Chat App</h4>
+                                        <span class="project-duration">⏱️ 3 weeks</span>
+                                    </div>
+                                    <div class="difficulty-badge advanced">Advanced</div>
+                                </div>
+                                
+                                <p>Build a messenger app with real-time communication</p>
+                                
+                                <div class="project-skills">
+                                    <span>WebSocket</span>
+                                    <span>Socket.io</span>
+                                    <span>Real-time</span>
+                                </div>
+                            </div>
+
+                            <div class="project-card advanced">
+                                <div class="project-header">
+                                    <div class="project-icon">📊</div>
+                                    <div class="project-meta">
+                                        <h4>Analytics Dashboard</h4>
+                                        <span class="project-duration">⏱️ 2-3 weeks</span>
+                                    </div>
+                                    <div class="difficulty-badge advanced">Advanced</div>
+                                </div>
+                                
+                                <p>Create an interactive dashboard with data visualization</p>
+                                
+                                <div class="project-skills">
+                                    <span>D3.js</span>
+                                    <span>APIs</span>
+                                    <span>Data Viz</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="resource-card">
-                        <h3>🎨 Design Resources</h3>
-                        <ul>
-                            <li><a href="https://fonts.google.com/" target="_blank">Google Fonts</a></li>
-                            <li><a href="https://unsplash.com/" target="_blank">Unsplash (Images)</a></li>
-                            <li><a href="https://fontawesome.com/" target="_blank">Font Awesome (Icons)</a></li>
-                            <li><a href="https://coolors.co/" target="_blank">Coolors (Palettes)</a></li>
-                        </ul>
+                </div>
+            </section>
+
+            <!-- Career Preparation -->
+            <section id="career-prep" class="content-section">
+                <h2 class="section-title">🎓 Career Preparation</h2>
+                <p class="section-subtitle">Get job-ready with interview prep, portfolio tips, and industry insights</p>
+                
+                <div class="career-grid">
+                    <div class="career-card">
+                        <div class="career-icon">📝</div>
+                        <h3>Technical Interview Prep</h3>
+                        <p>Master coding challenges and technical questions</p>
+                        
+                        <div class="prep-items">
+                            <div class="prep-item">
+                                <span class="prep-check">✅</span>
+                                <span>Algorithm challenges</span>
+                            </div>
+                            <div class="prep-item">
+                                <span class="prep-check">✅</span>
+                                <span>System design basics</span>
+                            </div>
+                            <div class="prep-item">
+                                <span class="prep-check">✅</span>
+                                <span>Code review practice</span>
+                            </div>
+                            <div class="prep-item">
+                                <span class="prep-check">✅</span>
+                                <span>Mock interviews</span>
+                            </div>
+                        </div>
+                        
+                        <button class="career-btn">🎯 Practice Now</button>
+                    </div>
+
+                    <div class="career-card">
+                        <div class="career-icon">💼</div>
+                        <h3>Portfolio Optimization</h3>
+                        <p>Create a portfolio that gets you hired</p>
+                        
+                        <div class="portfolio-tips">
+                            <div class="tip">
+                                <h4>🎨 Visual Appeal</h4>
+                                <p>Clean design that showcases your skills</p>
+                            </div>
+                            <div class="tip">
+                                <h4>📱 Responsive</h4>
+                                <p>Works perfectly on all devices</p>
+                            </div>
+                            <div class="tip">
+                                <h4>⚡ Performance</h4>
+                                <p>Fast loading and optimized</p>
+                            </div>
+                            <div class="tip">
+                                <h4>📊 Projects</h4>
+                                <p>3-5 quality projects with details</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card">
+                        <div class="career-icon">🌐</div>
+                        <h3>Industry Trends</h3>
+                        <p>Stay current with web development trends</p>
+                        
+                        <div class="trends-list">
+                            <div class="trend hot">
+                                <span class="trend-label">🔥 Hot</span>
+                                <span class="trend-name">React & Next.js</span>
+                            </div>
+                            <div class="trend rising">
+                                <span class="trend-label">📈 Rising</span>
+                                <span class="trend-name">TypeScript</span>
+                            </div>
+                            <div class="trend stable">
+                                <span class="trend-label">⭐ Stable</span>
+                                <span class="trend-name">Node.js</span>
+                            </div>
+                            <div class="trend emerging">
+                                <span class="trend-label">🚀 Emerging</span>
+                                <span class="trend-name">WebAssembly</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-card salary-info">
+                        <div class="career-icon">💰</div>
+                        <h3>Salary Expectations</h3>
+                        <p>Know your worth in the job market</p>
+                        
+                        <div class="salary-ranges">
+                            <div class="salary-level">
+                                <div class="level-header">
+                                    <span class="level-title">Junior Developer</span>
+                                    <span class="experience">0-2 years</span>
+                                </div>
+                                <div class="salary-range">$45K - $70K</div>
+                            </div>
+                            <div class="salary-level">
+                                <div class="level-header">
+                                    <span class="level-title">Mid-Level Developer</span>
+                                    <span class="experience">2-5 years</span>
+                                </div>
+                                <div class="salary-range">$70K - $100K</div>
+                            </div>
+                            <div class="salary-level">
+                                <div class="level-header">
+                                    <span class="level-title">Senior Developer</span>
+                                    <span class="experience">5+ years</span>
+                                </div>
+                                <div class="salary-range">$100K - $150K+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Resources -->
+            <section id="resources-advanced" class="content-section">
+                <h2 class="section-title">📚 Advanced Learning Resources</h2>
+                <p class="section-subtitle">Continue your growth with these carefully curated resources</p>
+                
+                <div class="resources-categories">
+                    <div class="resource-category">
+                        <div class="category-header">
+                            <h3>📖 Documentation & References</h3>
+                            <p>The best places to find accurate, up-to-date information</p>
+                        </div>
+                        
+                        <div class="resource-links">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web" target="_blank" class="resource-link">
+                                <div class="link-icon">🦎</div>
+                                <div class="link-content">
+                                    <h4>MDN Web Docs</h4>
+                                    <p>The gold standard for web documentation</p>
+                                </div>
+                                <div class="link-rating">⭐⭐⭐⭐⭐</div>
+                            </a>
+                            
+                            <a href="https://javascript.info/" target="_blank" class="resource-link">
+                                <div class="link-icon">📚</div>
+                                <div class="link-content">
+                                    <h4>JavaScript.info</h4>
+                                    <p>Modern JavaScript tutorial with exercises</p>
+                                </div>
+                                <div class="link-rating">⭐⭐⭐⭐⭐</div>
+                            </a>
+                            
+                            <a href="https://css-tricks.com/" target="_blank" class="resource-link">
+                                <div class="link-icon">🎨</div>
+                                <div class="link-content">
+                                    <h4>CSS-Tricks</h4>
+                                    <p>CSS techniques, tips, and best practices</p>
+                                </div>
+                                <div class="link-rating">⭐⭐⭐⭐⭐</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-category">
+                        <div class="category-header">
+                            <h3>🎥 Video Learning Platforms</h3>
+                            <p>Learn through interactive video courses and tutorials</p>
+                        </div>
+                        
+                        <div class="resource-links">
+                            <a href="https://www.freecodecamp.org/" target="_blank" class="resource-link">
+                                <div class="link-icon">🔥</div>
+                                <div class="link-content">
+                                    <h4>freeCodeCamp</h4>
+                                    <p>Free coding bootcamp with certifications</p>
+                                </div>
+                                <div class="link-badge free">Free</div>
+                            </a>
+                            
+                            <a href="https://egghead.io/" target="_blank" class="resource-link">
+                                <div class="link-icon">🥚</div>
+                                <div class="link-content">
+                                    <h4>Egghead</h4>
+                                    <p>Concise screencasts for web developers</p>
+                                </div>
+                                <div class="link-badge premium">Premium</div>
+                            </a>
+                            
+                            <a href="https://frontendmasters.com/" target="_blank" class="resource-link">
+                                <div class="link-icon">🎯</div>
+                                <div class="link-content">
+                                    <h4>Frontend Masters</h4>
+                                    <p>Expert-led courses on advanced topics</p>
+                                </div>
+                                <div class="link-badge premium">Premium</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-category">
+                        <div class="category-header">
+                            <h3>🛠️ Practice & Building</h3>
+                            <p>Platforms to practice coding and build projects</p>
+                        </div>
+                        
+                        <div class="resource-links">
+                            <a href="https://codepen.io/" target="_blank" class="resource-link">
+                                <div class="link-icon">✏️</div>
+                                <div class="link-content">
+                                    <h4>CodePen</h4>
+                                    <p>Social development environment for frontend</p>
+                                </div>
+                                <div class="link-badge free">Free</div>
+                            </a>
+                            
+                            <a href="https://codesandbox.io/" target="_blank" class="resource-link">
+                                <div class="link-icon">📦</div>
+                                <div class="link-content">
+                                    <h4>CodeSandbox</h4>
+                                    <p>Online IDE for rapid web development</p>
+                                </div>
+                                <div class="link-badge freemium">Freemium</div>
+                            </a>
+                            
+                            <a href="https://leetcode.com/" target="_blank" class="resource-link">
+                                <div class="link-icon">🧩</div>
+                                <div class="link-content">
+                                    <h4>LeetCode</h4>
+                                    <p>Algorithm challenges for interview prep</p>
+                                </div>
+                                <div class="link-badge freemium">Freemium</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-category">
+                        <div class="category-header">
+                            <h3>🎨 Design & Assets</h3>
+                            <p>Resources for making your projects look professional</p>
+                        </div>
+                        
+                        <div class="resource-links">
+                            <a href="https://unsplash.com/" target="_blank" class="resource-link">
+                                <div class="link-icon">📷</div>
+                                <div class="link-content">
+                                    <h4>Unsplash</h4>
+                                    <p>High-quality free photography</p>
+                                </div>
+                                <div class="link-badge free">Free</div>
+                            </a>
+                            
+                            <a href="https://fonts.google.com/" target="_blank" class="resource-link">
+                                <div class="link-icon">🔤</div>
+                                <div class="link-content">
+                                    <h4>Google Fonts</h4>
+                                    <p>Free web fonts for your projects</p>
+                                </div>
+                                <div class="link-badge free">Free</div>
+                            </a>
+                            
+                            <a href="https://heroicons.com/" target="_blank" class="resource-link">
+                                <div class="link-icon">🎯</div>
+                                <div class="link-content">
+                                    <h4>Heroicons</h4>
+                                    <p>Beautiful hand-crafted SVG icons</p>
+                                </div>
+                                <div class="link-badge free">Free</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2>Ready to Start Your Web Development Journey?</h2>
+                    <p>Join thousands of successful developers who started right here. Your future in tech begins with a single step.</p>
+                    
+                    <div class="cta-actions">
+                        <button class="cta-btn primary" onclick="scrollToSection('roadmap')">
+                            🚀 Begin Learning Path
+                        </button>
+                        <button class="cta-btn secondary" onclick="scrollToSection('build-projects')">
+                            💼 View Projects
+                        </button>
+                    </div>
+                    
+                    <div class="cta-stats">
+                        <div class="cta-stat">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-text">Success Rate</div>
+                        </div>
+                        <div class="cta-stat">
+                            <div class="stat-number">$75k</div>
+                            <div class="stat-text">Avg. Starting Salary</div>
+                        </div>
+                        <div class="cta-stat">
+                            <div class="stat-number">12</div>
+                            <div class="stat-text">Weeks to Job Ready</div>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <div class="back-to-top">
-                <a href="#" id="backToTop">↑ Back to Top</a>
+                <button id="backToTop" class="back-btn">
+                    <span>↑</span>
+                    <span>Back to Top</span>
+                </button>
             </div>
         </main>
     </div>
 
+    <!-- Base JavaScript -->
     <script src="js/script.js"></script>
+    <!-- Dedicated JavaScript for Web Dev Basics -->
+    <script src="js/web-dev-basics.js"></script>
 </body>
 </html>
