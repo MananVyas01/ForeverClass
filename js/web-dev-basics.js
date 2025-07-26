@@ -160,13 +160,19 @@ class WebDevBasicsApp {
                 
                 const targetTab = button.dataset.tab;
                 
-                // Remove active class from all tabs and content
+                // Remove active class from all tabs and content in this container
                 tabContainer.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
                 tabContainer.querySelectorAll('.tab-content, .tab-panel').forEach(content => content.classList.remove('active'));
                 
-                // Add active class to clicked tab and corresponding content
+                // Add active class to clicked tab
                 button.classList.add('active');
-                const targetContent = tabContainer.querySelector(`#${targetTab}, [data-tab="${targetTab}"]`);
+                
+                // Find and activate the target content - try both ID and data-tab selectors
+                let targetContent = tabContainer.querySelector(`#${targetTab}`);
+                if (!targetContent) {
+                    targetContent = tabContainer.querySelector(`[data-tab="${targetTab}"]`);
+                }
+                
                 if (targetContent) {
                     targetContent.classList.add('active');
                 }
@@ -184,12 +190,14 @@ class WebDevBasicsApp {
                 
                 const targetDemo = tab.dataset.demo;
                 
-                // Remove active class from all demo tabs
+                // Remove active class from all demo tabs in this container
                 demoContainer.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
                 demoContainer.querySelectorAll('.demo-container').forEach(container => container.classList.add('hidden'));
                 
                 // Add active class to clicked tab
                 tab.classList.add('active');
+                
+                // Show the target demo container
                 const targetContainer = document.getElementById(`${targetDemo}-demo`);
                 if (targetContainer) {
                     targetContainer.classList.remove('hidden');
