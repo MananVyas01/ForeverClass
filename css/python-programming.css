@@ -194,7 +194,7 @@
 /* Fundamentals Grid */
 .fundamentals-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 32px;
     margin-top: 40px;
 }
@@ -244,6 +244,66 @@
     line-height: 1.6;
 }
 
+/* Detailed sections within cards */
+.subsection {
+    margin-bottom: 48px;
+    padding: 32px;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.subsection h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.subsection-content {
+    display: grid;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.info-card {
+    background: var(--card-bg);
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.info-card h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.info-card p {
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.detail-section {
+    margin-bottom: 24px;
+    padding: 20px;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.detail-section h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
 .code-demo {
     background: #1e1e1e;
     border-radius: 8px;
@@ -270,6 +330,7 @@
     cursor: pointer;
     transition: all 0.2s ease;
     width: 100%;
+    margin-top: 16px;
 }
 
 .demo-btn:hover {
@@ -327,6 +388,51 @@
     font-size: 18px;
     color: var(--text-secondary);
     margin-bottom: 32px;
+}
+
+.structure-details {
+    margin-bottom: 32px;
+    padding: 24px;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.feature-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.feature-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-item li {
+    padding: 6px 0;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.feature-item li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .code-playground {

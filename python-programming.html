@@ -135,61 +135,315 @@
             <section id="python-basics" class="content-section">
                 <div class="section-header">
                     <h2>📚 Python Fundamentals</h2>
-                    <p>Master the building blocks of Python programming</p>
+                    <p>Master the building blocks of Python programming with detailed explanations and examples</p>
+                </div>
+                
+                <!-- Getting Started Subsection -->
+                <div class="subsection">
+                    <h3>🚀 Setting Up Python Environment</h3>
+                    <div class="subsection-content">
+                        <div class="info-card">
+                            <h4>Python Installation</h4>
+                            <p>Python comes in different versions. We recommend Python 3.8+ for this course.</p>
+                            <div class="code-demo">
+                                <pre><code># Check Python version
+python --version
+# or
+python3 --version
+
+# Install packages using pip
+pip install package_name
+
+# Create virtual environment
+python -m venv myenv
+source myenv/bin/activate  # On Windows: myenv\Scripts\activate</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h4>Python Interactive Shell (REPL)</h4>
+                            <p>The Read-Eval-Print Loop is perfect for testing code snippets.</p>
+                            <div class="code-demo">
+                                <pre><code># Start Python REPL
+python
+
+# Try basic operations
+>>> 2 + 3
+5
+>>> print("Hello, Python!")
+Hello, Python!
+>>> exit()  # or Ctrl+D to exit</code></pre>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="fundamentals-grid">
                     <div class="fundamental-card">
                         <div class="card-icon">🔤</div>
-                        <h3>Syntax & Variables</h3>
-                        <p>Learn Python syntax, variables, and basic operations</p>
-                        <div class="code-demo">
-                            <pre><code># Variables and basic operations
-name = "Python Learner"
-age = 25
-is_learning = True
+                        <h3>Variables & Data Types</h3>
+                        <p>Understanding Python's dynamic typing and variable assignment</p>
+                        
+                        <div class="detail-section">
+                            <h4>Variable Assignment</h4>
+                            <div class="code-demo">
+                                <pre><code># Python uses dynamic typing
+name = "Alice"          # String
+age = 25               # Integer
+height = 5.6           # Float
+is_student = True      # Boolean
+grades = [85, 92, 78]  # List
+profile = {"id": 1, "active": True}  # Dictionary
 
-# String formatting
-greeting = f"Hello {name}, you are {age} years old!"
-print(greeting)</code></pre>
+# Multiple assignment
+x, y, z = 1, 2, 3
+a = b = c = 0
+
+# Variable naming rules
+first_name = "John"    # ✅ Snake case (recommended)
+firstName = "John"     # ✅ Camel case (less common)
+# 1name = "John"       # ❌ Can't start with number
+# my-name = "John"     # ❌ No hyphens allowed</code></pre>
+                            </div>
                         </div>
+                        
+                        <div class="detail-section">
+                            <h4>String Operations</h4>
+                            <div class="code-demo">
+                                <pre><code># String formatting methods
+name = "Python"
+version = 3.9
+
+# f-strings (Python 3.6+) - Recommended
+message = f"Welcome to {name} {version}!"
+
+# .format() method
+message = "Welcome to {} {}!".format(name, version)
+
+# % formatting (older style)
+message = "Welcome to %s %.1f!" % (name, version)
+
+# String methods
+text = "  Python Programming  "
+print(text.strip())        # "Python Programming"
+print(text.upper())        # "  PYTHON PROGRAMMING  "
+print(text.lower())        # "  python programming  "
+print(text.replace("Python", "Java"))  # "  Java Programming  "</code></pre>
+                            </div>
+                        </div>
+                        
                         <button class="demo-btn" data-demo="variables">Try Interactive Demo</button>
                     </div>
                     
                     <div class="fundamental-card">
                         <div class="card-icon">🔄</div>
                         <h3>Control Structures</h3>
-                        <p>Master if statements, loops, and flow control</p>
-                        <div class="code-demo">
-                            <pre><code># Conditional statements and loops
-for i in range(5):
-    if i % 2 == 0:
-                        print(f"{i} is even")
-    else:
-        print(f"{i} is odd")
+                        <p>Master decision making and iteration in Python</p>
+                        
+                        <div class="detail-section">
+                            <h4>Conditional Statements</h4>
+                            <div class="code-demo">
+                                <pre><code># if, elif, else statements
+score = 85
 
-# List comprehension
-squares = [x**2 for x in range(10)]</code></pre>
+if score >= 90:
+    grade = "A"
+    print("Excellent!")
+elif score >= 80:
+    grade = "B"
+    print("Good job!")
+elif score >= 70:
+    grade = "C"
+    print("Satisfactory")
+else:
+    grade = "F"
+    print("Need improvement")
+
+# Ternary operator (conditional expression)
+status = "Pass" if score >= 60 else "Fail"
+
+# Multiple conditions
+age = 25
+has_license = True
+
+if age >= 18 and has_license:
+    print("Can drive")
+elif age >= 16 and has_license:
+    print("Can drive with restrictions")
+else:
+    print("Cannot drive")</code></pre>
+                            </div>
                         </div>
+                        
+                        <div class="detail-section">
+                            <h4>Loops and Iteration</h4>
+                            <div class="code-demo">
+                                <pre><code># For loops with different iterables
+numbers = [1, 2, 3, 4, 5]
+
+# Basic for loop
+for num in numbers:
+    print(f"Number: {num}")
+
+# For loop with range
+for i in range(5):          # 0 to 4
+    print(f"Index: {i}")
+
+for i in range(2, 10, 2):   # 2, 4, 6, 8
+    print(f"Even: {i}")
+
+# Enumerate for index and value
+fruits = ["apple", "banana", "orange"]
+for index, fruit in enumerate(fruits):
+    print(f"{index}: {fruit}")
+
+# While loop
+count = 0
+while count < 5:
+    print(f"Count: {count}")
+    count += 1
+
+# Loop control
+for i in range(10):
+    if i == 3:
+        continue  # Skip this iteration
+    if i == 7:
+        break     # Exit the loop
+    print(i)</code></pre>
+                            </div>
+                        </div>
+                        
                         <button class="demo-btn" data-demo="control">Try Interactive Demo</button>
                     </div>
                     
                     <div class="fundamental-card">
                         <div class="card-icon">⚡</div>
-                        <h3>Functions</h3>
-                        <p>Create reusable code with functions and modules</p>
-                        <div class="code-demo">
-                            <pre><code># Function definition and usage
-def calculate_bmi(weight, height):
-    """Calculate Body Mass Index"""
-    bmi = weight / (height ** 2)
-    return round(bmi, 2)
+                        <h3>Functions & Scope</h3>
+                        <p>Create reusable code with functions, parameters, and proper scope management</p>
+                        
+                        <div class="detail-section">
+                            <h4>Function Definition & Parameters</h4>
+                            <div class="code-demo">
+                                <pre><code># Basic function
+def greet(name):
+    """Simple greeting function"""
+    return f"Hello, {name}!"
 
-# Function call
-my_bmi = calculate_bmi(70, 1.75)
-print(f"Your BMI is: {my_bmi}")</code></pre>
+# Function with default parameters
+def create_profile(name, age=18, city="Unknown"):
+    return {
+        "name": name,
+        "age": age,
+        "city": city
+    }
+
+# Call with different arguments
+profile1 = create_profile("Alice")
+profile2 = create_profile("Bob", 25)
+profile3 = create_profile("Charlie", city="New York")
+
+# *args and **kwargs
+def flexible_function(*args, **kwargs):
+    print(f"Positional args: {args}")
+    print(f"Keyword args: {kwargs}")
+
+flexible_function(1, 2, 3, name="Python", version=3.9)</code></pre>
+                            </div>
                         </div>
+                        
+                        <div class="detail-section">
+                            <h4>Advanced Function Concepts</h4>
+                            <div class="code-demo">
+                                <pre><code># Lambda functions (anonymous functions)
+square = lambda x: x ** 2
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(square, numbers))
+
+# Built-in higher-order functions
+# map() - apply function to each item
+doubled = list(map(lambda x: x * 2, numbers))
+
+# filter() - filter items based on condition
+evens = list(filter(lambda x: x % 2 == 0, numbers))
+
+# reduce() - reduce sequence to single value
+from functools import reduce
+sum_all = reduce(lambda x, y: x + y, numbers)
+
+# List comprehensions (Pythonic alternative)
+squared_lc = [x ** 2 for x in numbers]
+evens_lc = [x for x in numbers if x % 2 == 0]
+
+# Decorators (advanced)
+def timer_decorator(func):
+    import time
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"{func.__name__} took {end - start:.4f} seconds")
+        return result
+    return wrapper
+
+@timer_decorator
+def slow_function():
+    import time
+    time.sleep(1)
+    return "Done!"</code></pre>
+                            </div>
+                        </div>
+                        
                         <button class="demo-btn" data-demo="functions">Try Interactive Demo</button>
+                    </div>
+                    
+                    <div class="fundamental-card">
+                        <div class="card-icon">📊</div>
+                        <h3>Error Handling</h3>
+                        <p>Handle exceptions gracefully and write robust code</p>
+                        
+                        <div class="detail-section">
+                            <h4>Try-Except Blocks</h4>
+                            <div class="code-demo">
+                                <pre><code># Basic exception handling
+def safe_divide(a, b):
+    try:
+        result = a / b
+        return result
+    except ZeroDivisionError:
+        print("Error: Cannot divide by zero!")
+        return None
+    except TypeError:
+        print("Error: Invalid input types!")
+        return None
+
+# Multiple exception types
+def process_data(data):
+    try:
+        # Convert to integer
+        num = int(data)
+        # Perform calculation
+        result = 100 / num
+        return result
+    except ValueError:
+        print("Error: Cannot convert to integer")
+    except ZeroDivisionError:
+        print("Error: Cannot divide by zero")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+    finally:
+        print("Cleanup code runs here")
+
+# Raising custom exceptions
+def validate_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative")
+    if age > 150:
+        raise ValueError("Age seems unrealistic")
+    return True</code></pre>
+                            </div>
+                        </div>
+                        
+                        <button class="demo-btn" data-demo="errors">Try Interactive Demo</button>
                     </div>
                 </div>
             </section>
@@ -197,8 +451,8 @@ print(f"Your BMI is: {my_bmi}")</code></pre>
             <!-- Data Structures -->
             <section id="data-structures" class="content-section">
                 <div class="section-header">
-                    <h2>🗂️ Data Structures</h2>
-                    <p>Master Python's built-in data structures and their applications</p>
+                    <h2>🗂️ Data Structures Deep Dive</h2>
+                    <p>Master Python's built-in data structures and understand when to use each one</p>
                 </div>
                 
                 <div class="data-structures-container">
@@ -207,33 +461,88 @@ print(f"Your BMI is: {my_bmi}")</code></pre>
                         <button class="tab-btn" data-tab="dictionaries">Dictionaries</button>
                         <button class="tab-btn" data-tab="sets">Sets</button>
                         <button class="tab-btn" data-tab="tuples">Tuples</button>
+                        <button class="tab-btn" data-tab="advanced">Advanced</button>
                     </div>
                     
                     <div class="tab-content active" data-content="lists">
                         <div class="structure-explanation">
-                            <h3>📋 Lists - Ordered Collections</h3>
-                            <p>Lists are mutable, ordered collections that can store multiple items.</p>
+                            <h3>📋 Lists - Ordered, Mutable Collections</h3>
+                            <p>Lists are the most versatile data structure in Python. They're ordered, mutable, and can contain any data type.</p>
+                            
+                            <div class="structure-details">
+                                <div class="feature-grid">
+                                    <div class="feature-item">
+                                        <h4>✅ Characteristics</h4>
+                                        <ul>
+                                            <li>Ordered (maintains insertion order)</li>
+                                            <li>Mutable (can be changed after creation)</li>
+                                            <li>Allows duplicates</li>
+                                            <li>Can store mixed data types</li>
+                                            <li>Zero-indexed</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>🎯 Use Cases</h4>
+                                        <ul>
+                                            <li>Storing sequences of items</li>
+                                            <li>When order matters</li>
+                                            <li>Need to modify contents</li>
+                                            <li>Building dynamic collections</li>
+                                            <li>Stack/Queue implementations</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="code-playground">
                                 <div class="code-editor">
-                                    <pre><code># Creating and manipulating lists
-fruits = ['apple', 'banana', 'orange']
-fruits.append('grape')
-fruits.insert(1, 'kiwi')
-
-# List comprehensions
+                                    <pre><code># Creating lists
+empty_list = []
 numbers = [1, 2, 3, 4, 5]
-doubled = [x * 2 for x in numbers]
+mixed = [1, "hello", 3.14, True, [1, 2]]
+
+# List methods
+fruits = ['apple', 'banana']
+fruits.append('orange')        # Add to end
+fruits.insert(1, 'kiwi')      # Insert at index
+fruits.extend(['grape', 'mango'])  # Add multiple
+
+# Removing items
+fruits.remove('banana')        # Remove by value
+popped = fruits.pop()         # Remove and return last
+del fruits[0]                 # Remove by index
+
+# List operations
+numbers = [1, 2, 3, 4, 5]
+doubled = [x * 2 for x in numbers]     # List comprehension
+evens = [x for x in numbers if x % 2 == 0]  # Filtering
+squares = list(map(lambda x: x**2, numbers))  # Map function
 
 # Slicing
-first_three = fruits[:3]
-print(f"Fruits: {fruits}")
-print(f"Doubled numbers: {doubled}")</code></pre>
+first_three = numbers[:3]      # [1, 2, 3]
+last_two = numbers[-2:]       # [4, 5]
+reversed_list = numbers[::-1]  # [5, 4, 3, 2, 1]
+
+# Sorting
+numbers.sort()                # In-place sort
+sorted_nums = sorted(numbers, reverse=True)  # New sorted list
+
+print(f"Final fruits: {fruits}")
+print(f"Doubled numbers: {doubled}")
+print(f"Even numbers: {evens}")</code></pre>
                                 </div>
                                 <div class="output-display">
-                                    <div class="output-header">Output:</div>
+                                    <div class="output-header">Output & Performance:</div>
                                     <div class="output-content" id="listsOutput">
-                                        Fruits: ['apple', 'kiwi', 'banana', 'orange', 'grape']<br>
-                                        Doubled numbers: [2, 4, 6, 8, 10]
+                                        Final fruits: ['kiwi', 'apple', 'orange', 'grape']<br>
+                                        Doubled numbers: [2, 4, 6, 8, 10]<br>
+                                        Even numbers: [2, 4]<br><br>
+                                        <strong>Time Complexity:</strong><br>
+                                        • Access by index: O(1)<br>
+                                        • Append: O(1) amortized<br>
+                                        • Insert at beginning: O(n)<br>
+                                        • Search: O(n)<br>
+                                        • Delete: O(n)
                                     </div>
                                 </div>
                             </div>
@@ -242,31 +551,104 @@ print(f"Doubled numbers: {doubled}")</code></pre>
                     
                     <div class="tab-content" data-content="dictionaries">
                         <div class="structure-explanation">
-                            <h3>🗝️ Dictionaries - Key-Value Pairs</h3>
-                            <p>Dictionaries store data in key-value pairs for fast lookups.</p>
+                            <h3>🗝️ Dictionaries - Key-Value Mappings</h3>
+                            <p>Dictionaries store data as key-value pairs, providing fast lookups and flexible data organization.</p>
+                            
+                            <div class="structure-details">
+                                <div class="feature-grid">
+                                    <div class="feature-item">
+                                        <h4>✅ Characteristics</h4>
+                                        <ul>
+                                            <li>Unordered (Python 3.7+ maintains insertion order)</li>
+                                            <li>Mutable</li>
+                                            <li>Keys must be unique and immutable</li>
+                                            <li>Values can be any data type</li>
+                                            <li>Hash table implementation</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>🎯 Use Cases</h4>
+                                        <ul>
+                                            <li>Mapping relationships</li>
+                                            <li>Fast lookups by key</li>
+                                            <li>Counting occurrences</li>
+                                            <li>Caching/memoization</li>
+                                            <li>Configuration data</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="code-playground">
                                 <div class="code-editor">
-                                    <pre><code># Creating and using dictionaries
+                                    <pre><code># Creating dictionaries
+empty_dict = {}
 student = {
     'name': 'Alice',
     'age': 22,
     'courses': ['Python', 'Data Science'],
-    'gpa': 3.8
+    'gpa': 3.8,
+    'is_graduated': False
 }
 
-# Accessing and modifying
-student['age'] = 23
-student.setdefault('graduation_year', 2024)
+# Dictionary methods
+student['major'] = 'Computer Science'  # Add new key
+student.update({'year': 3, 'advisor': 'Dr. Smith'})  # Add multiple
 
-# Dictionary comprehension
-grades = {'math': 95, 'science': 88, 'english': 92}
-passed = {k: v for k, v in grades.items() if v >= 90}</code></pre>
+# Safe access methods
+age = student.get('age', 0)           # Returns 0 if key missing
+name = student.setdefault('name', 'Unknown')  # Sets if missing
+
+# Dictionary operations
+keys = list(student.keys())
+values = list(student.values())
+items = list(student.items())
+
+# Dictionary comprehensions
+grades = {'math': 95, 'science': 88, 'english': 92, 'history': 85}
+passed = {k: v for k, v in grades.items() if v >= 90}
+grade_letters = {k: 'A' if v >= 90 else 'B' if v >= 80 else 'C' 
+                for k, v in grades.items()}
+
+# Nested dictionaries
+school = {
+    'students': {
+        'alice': {'gpa': 3.8, 'year': 3},
+        'bob': {'gpa': 3.2, 'year': 2}
+    },
+    'courses': {
+        'CS101': {'credits': 3, 'instructor': 'Dr. Smith'},
+        'MATH201': {'credits': 4, 'instructor': 'Dr. Johnson'}
+    }
+}
+
+# Advanced operations
+from collections import defaultdict, Counter
+
+# defaultdict - provides default values
+word_count = defaultdict(int)
+text = "hello world hello python"
+for word in text.split():
+    word_count[word] += 1
+
+# Counter - specialized dict for counting
+counter = Counter(text.split())
+
+print(f"Student: {student['name']}, GPA: {student['gpa']}")
+print(f"Passed subjects: {passed}")
+print(f"Word count: {dict(word_count)}")</code></pre>
                                 </div>
                                 <div class="output-display">
-                                    <div class="output-header">Output:</div>
+                                    <div class="output-header">Output & Performance:</div>
                                     <div class="output-content">
-                                        Student: {'name': 'Alice', 'age': 23, 'courses': ['Python', 'Data Science'], 'gpa': 3.8, 'graduation_year': 2024}<br>
-                                        Passed subjects: {'math': 95, 'english': 92}
+                                        Student: Alice, GPA: 3.8<br>
+                                        Passed subjects: {'math': 95, 'english': 92}<br>
+                                        Word count: {'hello': 2, 'world': 1, 'python': 1}<br><br>
+                                        <strong>Time Complexity:</strong><br>
+                                        • Access/Insert/Delete: O(1) average<br>
+                                        • Search by key: O(1) average<br>
+                                        • Search by value: O(n)<br>
+                                        • Space: O(n)
                                     </div>
                                 </div>
                             </div>
@@ -275,29 +657,94 @@ passed = {k: v for k, v in grades.items() if v >= 90}</code></pre>
                     
                     <div class="tab-content" data-content="sets">
                         <div class="structure-explanation">
-                            <h3>🔗 Sets - Unique Collections</h3>
-                            <p>Sets store unique elements and provide mathematical set operations.</p>
+                            <h3>🔗 Sets - Unique Element Collections</h3>
+                            <p>Sets store unique elements and provide mathematical set operations like union, intersection, and difference.</p>
+                            
+                            <div class="structure-details">
+                                <div class="feature-grid">
+                                    <div class="feature-item">
+                                        <h4>✅ Characteristics</h4>
+                                        <ul>
+                                            <li>Unordered collection</li>
+                                            <li>Mutable (frozenset is immutable)</li>
+                                            <li>No duplicate elements</li>
+                                            <li>Elements must be hashable</li>
+                                            <li>Hash table implementation</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>🎯 Use Cases</h4>
+                                        <ul>
+                                            <li>Removing duplicates</li>
+                                            <li>Membership testing</li>
+                                            <li>Mathematical set operations</li>
+                                            <li>Finding common elements</li>
+                                            <li>Efficient lookups</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="code-playground">
                                 <div class="code-editor">
-                                    <pre><code># Creating sets and operations
+                                    <pre><code># Creating sets
+empty_set = set()  # Note: {} creates empty dict, not set
+numbers = {1, 2, 3, 4, 5}
+from_list = set([1, 2, 2, 3, 3, 4])  # Duplicates removed
+
+# Set operations
 python_students = {'Alice', 'Bob', 'Charlie', 'Diana'}
 js_students = {'Bob', 'Diana', 'Eve', 'Frank'}
 
-# Set operations
-both_languages = python_students & js_students
-only_python = python_students - js_students
-all_students = python_students | js_students
+# Mathematical operations
+intersection = python_students & js_students        # Both languages
+union = python_students | js_students              # Either language
+python_only = python_students - js_students        # Only Python
+js_only = js_students - python_students           # Only JS
+symmetric_diff = python_students ^ js_students     # Exclusive (XOR)
 
-print(f"Both languages: {both_languages}")
-print(f"Only Python: {only_python}")
-print(f"Total unique students: {len(all_students)}")</code></pre>
+# Set methods
+python_students.add('Grace')                       # Add single element
+python_students.update(['Henry', 'Ivy'])          # Add multiple
+python_students.discard('Bob')                    # Remove (no error if missing)
+# python_students.remove('Bob')                   # Remove (raises error if missing)
+
+# Set comprehensions
+numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+even_squares = {x**2 for x in numbers if x % 2 == 0}
+
+# Membership and subset operations
+is_member = 'Alice' in python_students
+is_subset = {'Alice', 'Charlie'} <= python_students
+is_superset = python_students >= {'Alice'}
+is_disjoint = python_students.isdisjoint({'Xavier', 'Yvonne'})
+
+# Practical example: Finding unique words
+text = "the quick brown fox jumps over the lazy dog the fox"
+words = text.split()
+unique_words = set(words)
+duplicate_words = set(word for word in words if words.count(word) > 1)
+
+# frozenset (immutable set)
+immutable_set = frozenset([1, 2, 3])
+
+print(f"Both languages: {intersection}")
+print(f"Python only: {python_only}")
+print(f"Unique words: {len(unique_words)} out of {len(words)}")
+print(f"Duplicates: {duplicate_words}")</code></pre>
                                 </div>
                                 <div class="output-display">
-                                    <div class="output-header">Output:</div>
+                                    <div class="output-header">Output & Performance:</div>
                                     <div class="output-content">
                                         Both languages: {'Bob', 'Diana'}<br>
-                                        Only Python: {'Alice', 'Charlie'}<br>
-                                        Total unique students: 6
+                                        Python only: {'Alice', 'Charlie'}<br>
+                                        Unique words: 9 out of 12<br>
+                                        Duplicates: {'the', 'fox'}<br><br>
+                                        <strong>Time Complexity:</strong><br>
+                                        • Add/Remove/Contains: O(1) average<br>
+                                        • Union/Intersection: O(len(s1) + len(s2))<br>
+                                        • Difference: O(len(s1))<br>
+                                        • Space: O(n)
                                     </div>
                                 </div>
                             </div>
@@ -307,32 +754,225 @@ print(f"Total unique students: {len(all_students)}")</code></pre>
                     <div class="tab-content" data-content="tuples">
                         <div class="structure-explanation">
                             <h3>📦 Tuples - Immutable Sequences</h3>
-                            <p>Tuples are immutable sequences, perfect for fixed data.</p>
+                            <p>Tuples are immutable sequences, perfect for fixed data that shouldn't change.</p>
+                            
+                            <div class="structure-details">
+                                <div class="feature-grid">
+                                    <div class="feature-item">
+                                        <h4>✅ Characteristics</h4>
+                                        <ul>
+                                            <li>Ordered sequence</li>
+                                            <li>Immutable (cannot be changed)</li>
+                                            <li>Allows duplicates</li>
+                                            <li>Can store mixed data types</li>
+                                            <li>Hashable (can be dict keys)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>🎯 Use Cases</h4>
+                                        <ul>
+                                            <li>Coordinates/points</li>
+                                            <li>Database records</li>
+                                            <li>Function return values</li>
+                                            <li>Dictionary keys</li>
+                                            <li>Configuration data</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="code-playground">
                                 <div class="code-editor">
-                                    <pre><code># Creating and using tuples
+                                    <pre><code># Creating tuples
+empty_tuple = ()
+single_item = (42,)  # Note the comma for single item
 coordinates = (10, 20)
 rgb_color = (255, 128, 0)
+mixed_tuple = (1, "hello", 3.14, True)
 
 # Tuple unpacking
 x, y = coordinates
 red, green, blue = rgb_color
 
+# Multiple assignment using tuples
+a, b, c = 1, 2, 3  # Same as (1, 2, 3)
+
+# Advanced unpacking
+numbers = (1, 2, 3, 4, 5)
+first, *middle, last = numbers  # first=1, middle=[2,3,4], last=5
+first_two, *rest = numbers      # first_two can't be unpacked this way
+*start, last_two = numbers[-2:] # Get last two
+
 # Named tuples for better readability
 from collections import namedtuple
-Point = namedtuple('Point', ['x', 'y'])
-p = Point(10, 20)
 
-print(f"Coordinates: x={x}, y={y}")
-print(f"Color RGB: {red}, {green}, {blue}")
-print(f"Point: {p.x}, {p.y}")</code></pre>
+# Define a named tuple type
+Point = namedtuple('Point', ['x', 'y'])
+Person = namedtuple('Person', ['name', 'age', 'city'])
+
+# Create instances
+p1 = Point(10, 20)
+p2 = Point(x=30, y=40)
+person = Person('Alice', 25, 'New York')
+
+# Access elements
+print(f"Point 1: x={p1.x}, y={p1.y}")
+print(f"Person: {person.name} is {person.age} years old")
+
+# Named tuple methods
+point_dict = p1._asdict()  # Convert to dictionary
+new_point = p1._replace(x=100)  # Create new with different values
+
+# Tuples as dictionary keys (because they're hashable)
+locations = {
+    (0, 0): "Origin",
+    (10, 20): "Point A",
+    (30, 40): "Point B"
+}
+
+# Tuple methods
+numbers = (1, 2, 3, 2, 4, 2, 5)
+count_of_2 = numbers.count(2)       # Count occurrences
+index_of_3 = numbers.index(3)       # Find first index
+
+# Returning multiple values from functions
+def get_name_age():
+    return "Alice", 25  # Returns a tuple
+
+name, age = get_name_age()  # Unpack the returned tuple
+
+# Using tuples for swapping
+a, b = 10, 20
+a, b = b, a  # Swap values
+
+print(f"Coordinates: {coordinates}")
+print(f"RGB: {red}, {green}, {blue}")
+print(f"Named tuple: {person}")
+print(f"Count of 2: {count_of_2}")
+print(f"After swap: a={a}, b={b}")</code></pre>
                                 </div>
                                 <div class="output-display">
-                                    <div class="output-header">Output:</div>
+                                    <div class="output-header">Output & Performance:</div>
                                     <div class="output-content">
-                                        Coordinates: x=10, y=20<br>
-                                        Color RGB: 255, 128, 0<br>
-                                        Point: 10, 20
+                                        Point 1: x=10, y=20<br>
+                                        Person: Alice is 25 years old<br>
+                                        Coordinates: (10, 20)<br>
+                                        RGB: 255, 128, 0<br>
+                                        Named tuple: Person(name='Alice', age=25, city='New York')<br>
+                                        Count of 2: 3<br>
+                                        After swap: a=20, b=10<br><br>
+                                        <strong>Time Complexity:</strong><br>
+                                        • Access by index: O(1)<br>
+                                        • Search (in/count/index): O(n)<br>
+                                        • Slice: O(k) where k is slice size<br>
+                                        • Memory efficient vs lists
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" data-content="advanced">
+                        <div class="structure-explanation">
+                            <h3>🚀 Advanced Data Structures</h3>
+                            <p>Explore Python's collections module and other advanced data structures for specialized use cases.</p>
+                            
+                            <div class="code-playground">
+                                <div class="code-editor">
+                                    <pre><code>from collections import deque, defaultdict, Counter, OrderedDict
+from collections import ChainMap
+import heapq
+from typing import Dict, List, Set, Tuple
+
+# 1. deque - Double-ended queue
+# Efficient for adding/removing from both ends
+queue = deque([1, 2, 3])
+queue.appendleft(0)      # Add to left: [0, 1, 2, 3]
+queue.append(4)          # Add to right: [0, 1, 2, 3, 4]
+left_item = queue.popleft()   # Remove from left
+right_item = queue.pop()      # Remove from right
+
+# 2. defaultdict - Dict with default values
+dd = defaultdict(list)  # Creates empty list for missing keys
+dd['fruits'].append('apple')  # No KeyError!
+dd['vegetables'].append('carrot')
+
+word_positions = defaultdict(list)
+text = "hello world hello python hello"
+for i, word in enumerate(text.split()):
+    word_positions[word].append(i)
+
+# 3. Counter - Counting hashable objects
+counter = Counter("hello world")
+most_common = counter.most_common(3)  # Top 3 most common
+counter.update("hello")  # Add more counts
+
+# 4. OrderedDict - Dict that remembers insertion order
+# (Less relevant in Python 3.7+ as regular dicts maintain order)
+od = OrderedDict()
+od['first'] = 1
+od['second'] = 2
+od.move_to_end('first')  # Move to end
+
+# 5. ChainMap - Combine multiple dicts
+defaults = {'color': 'red', 'user': 'guest'}
+user_prefs = {'color': 'blue'}
+config = ChainMap(user_prefs, defaults)  # user_prefs takes precedence
+
+# 6. heapq - Heap operations (priority queue)
+heap = [1, 3, 6, 5, 9, 8]
+heapq.heapify(heap)  # Convert to heap in-place
+smallest = heapq.heappop(heap)  # Remove and return smallest
+heapq.heappush(heap, 2)  # Add new element
+
+# 7. Custom data structures
+class Stack:
+    def __init__(self):
+        self.items = []
+    
+    def push(self, item):
+        self.items.append(item)
+    
+    def pop(self):
+        if not self.is_empty():
+            return self.items.pop()
+        raise IndexError("pop from empty stack")
+    
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
+        return None
+    
+    def is_empty(self):
+        return len(self.items) == 0
+
+# Usage examples
+stack = Stack()
+stack.push("first")
+stack.push("second")
+top = stack.peek()
+
+print(f"Deque after operations: {queue}")
+print(f"Word positions: {dict(word_positions)}")
+print(f"Most common letters: {most_common}")
+print(f"Config color: {config['color']}")
+print(f"Heap smallest: {smallest}")
+print(f"Stack top: {top}")</code></pre>
+                                </div>
+                                <div class="output-display">
+                                    <div class="output-header">Output & Use Cases:</div>
+                                    <div class="output-content">
+                                        Deque after operations: deque([1, 2, 3])<br>
+                                        Word positions: {'hello': [0, 2, 4], 'world': [1], 'python': [3]}<br>
+                                        Most common letters: [('l', 3), ('o', 2), ('h', 1)]<br>
+                                        Config color: blue<br>
+                                        Heap smallest: 1<br>
+                                        Stack top: second<br><br>
+                                        <strong>When to Use:</strong><br>
+                                        • deque: When you need efficient operations at both ends<br>
+                                        • defaultdict: When you need default values for missing keys<br>
+                                        • Counter: For counting and frequency analysis<br>
+                                        • heapq: For priority queues and finding min/max efficiently
                                     </div>
                                 </div>
                             </div>
