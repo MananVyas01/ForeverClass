@@ -1,0 +1,16 @@
+# Git files
+.git/
+.gitignore
+
+# Documentation
+README.md
+docs/
+
+# Development files
+*.log
+node_modules/
+.env*
+
+# OS files
+.DS_Store
+Thumbs.db
