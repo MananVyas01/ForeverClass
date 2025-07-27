@@ -13,6 +13,11 @@ class PythonProgrammingApp {
         this.activeTab = 'lists';
         this.playgroundOpen = false;
         
+        // Update mobile state on resize
+        window.addEventListener('resize', () => {
+            this.isMobile = window.innerWidth <= 768;
+        });
+        
         // Demo code snippets
         this.demoSnippets = {
             variables: {
@@ -454,7 +459,34 @@ Finished processing 'abc'`
     initializeHeroCode() {
         const heroCode = document.getElementById('heroCode');
         if (heroCode) {
-            const codeSnippets = [
+            // Shorter code snippets for better mobile display
+            const codeSnippets = this.isMobile ? [
+                `# Python Mastery
+def learn():
+    skills = ['syntax', 'data', 'web']
+    for skill in skills:
+        print(f"Learning {skill}...")
+    return "Expert! 🐍"
+
+result = learn()
+print(result)`,
+
+                `# Data Science
+import pandas as pd
+df = pd.read_csv('data.csv')
+avg = df['score'].mean()
+print(f"Average: {avg}")`,
+
+                `# Web Development
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello Python!"
+
+app.run()`
+            ] : [
                 `# Welcome to Python Programming Mastery!
 def learn_python():
     """Your journey to Python mastery starts here"""
@@ -505,7 +537,7 @@ if __name__ == '__main__':
             
             let currentSnippet = 0;
             
-            const typeCode = (text, element, speed = 50) => {
+            const typeCode = (text, element, speed = this.isMobile ? 30 : 50) => {
                 element.textContent = '';
                 let i = 0;
                 

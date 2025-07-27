@@ -33,6 +33,8 @@
     padding: 0 20px;
     position: relative;
     z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-badge {
@@ -148,6 +150,9 @@
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     border: 1px solid #333;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .window-header {
@@ -185,6 +190,8 @@
     font-family: 'Monaco', 'Menlo', monospace;
     font-size: 14px;
     line-height: 1.6;
+    overflow-x: auto;
+    max-width: 100%;
 }
 
 .python-code {
@@ -1177,6 +1184,48 @@
         gap: 16px;
     }
     
+    /* Hero Visual/Terminal Responsiveness */
+    .hero-visual {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    .code-window {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    .window-header {
+        padding: 8px 12px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .window-title {
+        font-size: 11px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 150px;
+    }
+    
+    .code-content {
+        padding: 12px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .python-code {
+        font-size: 12px;
+        line-height: 1.4;
+        white-space: pre;
+        word-wrap: normal;
+        overflow-x: auto;
+    }
+    
     .fundamentals-grid {
         grid-template-columns: 1fr;
     }
@@ -1268,6 +1317,46 @@
         font-size: 28px;
     }
     
+    /* Enhanced terminal responsiveness for very small screens */
+    .hero-visual {
+        margin: 0 -10px;
+        width: calc(100% + 20px);
+    }
+    
+    .code-window {
+        border-radius: 8px;
+        margin: 0 10px;
+        width: calc(100% - 20px);
+    }
+    
+    .window-header {
+        padding: 6px 8px;
+    }
+    
+    .window-controls {
+        gap: 4px;
+    }
+    
+    .control {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .window-title {
+        font-size: 10px;
+        max-width: 100px;
+    }
+    
+    .code-content {
+        padding: 8px;
+        font-size: 10px;
+    }
+    
+    .python-code {
+        font-size: 10px;
+        line-height: 1.3;
+    }
+    
     .fundamental-card,
     .concept-card,
     .framework-card,
@@ -1294,6 +1383,8 @@
     .step-code,
     .automation-code {
         padding: 12px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
     
     .code-demo pre,
@@ -1302,6 +1393,9 @@
     .step-code pre,
     .automation-code pre {
         font-size: 11px;
+        white-space: pre;
+        word-wrap: normal;
+        overflow-x: auto;
     }
     
     .structure-tabs {
