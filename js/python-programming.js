@@ -12,10 +12,23 @@ class PythonProgrammingApp {
         this.sidebarOpen = false;
         this.activeTab = 'lists';
         this.playgroundOpen = false;
+        this.heroCodeInterval = null;
+        this.heroCodeTimeout = null;
         
         // Update mobile state on resize
         window.addEventListener('resize', () => {
+            const wasMobile = this.isMobile;
             this.isMobile = window.innerWidth <= 768;
+            
+            // Only reinitialize hero code if mobile state changed
+            if (wasMobile !== this.isMobile) {
+                const heroCode = document.getElementById('heroCode');
+                if (heroCode) {
+                    heroCode.dataset.initialized = 'false';
+                    this.stopHeroCodeAnimation();
+                    this.initializeHeroCode();
+                }
+            }
         });
         
         // Demo code snippets
@@ -458,10 +471,24 @@ Finished processing 'abc'`
     
     initializeHeroCode() {
         const heroCode = document.getElementById('heroCode');
-        if (heroCode) {
-            // Shorter code snippets for better mobile display
-            const codeSnippets = this.isMobile ? [
-                `# Python Mastery
+        if (!heroCode) return;
+        
+        // Prevent multiple initializations
+        if (heroCode.dataset.initialized === 'true') return;
+        heroCode.dataset.initialized = 'true';
+        
+        // Clear any existing content and intervals
+        heroCode.textContent = '';
+        if (this.heroCodeInterval) {
+            clearInterval(this.heroCodeInterval);
+        }
+        if (this.heroCodeTimeout) {
+            clearTimeout(this.heroCodeTimeout);
+        }
+        
+        // Shorter code snippets for better mobile display
+        const codeSnippets = this.isMobile ? [
+            `# Python Mastery
 def learn():
     skills = ['syntax', 'data', 'web']
     for skill in skills:
@@ -471,13 +498,13 @@ def learn():
 result = learn()
 print(result)`,
 
-                `# Data Science
+            `# Data Science
 import pandas as pd
 df = pd.read_csv('data.csv')
 avg = df['score'].mean()
 print(f"Average: {avg}")`,
 
-                `# Web Development
+            `# Web Development
 from flask import Flask
 app = Flask(__name__)
 
@@ -486,8 +513,8 @@ def home():
     return "Hello Python!"
 
 app.run()`
-            ] : [
-                `# Welcome to Python Programming Mastery!
+        ] : [
+            `# Welcome to Python Programming Mastery!
 def learn_python():
     """Your journey to Python mastery starts here"""
     skills = ['syntax', 'data_structures', 'oop', 'web_dev']
@@ -502,7 +529,7 @@ def learn_python():
 result = learn_python()
 print(result)`,
 
-                `# Data Science with Python
+            `# Data Science with Python
 import pandas as pd
 import numpy as np
 
@@ -518,7 +545,7 @@ plt.show()
 
 print(f"Average score: {average_score}")`,
 
-                `# Web Development with Flask
+            `# Web Development with Flask
 from flask import Flask, jsonify
 
 app = Flask(__name__)
@@ -533,30 +560,49 @@ def get_students():
 
 if __name__ == '__main__':
     app.run(debug=True)`
-            ];
+        ];
+        
+        let currentSnippet = 0;
+        
+        const typeCode = (text, element, speed = this.isMobile ? 30 : 50) => {
+            // Clear any existing intervals
+            if (this.heroCodeInterval) {
+                clearInterval(this.heroCodeInterval);
+            }
+            if (this.heroCodeTimeout) {
+                clearTimeout(this.heroCodeTimeout);
+            }
             
-            let currentSnippet = 0;
+            element.textContent = '';
+            let i = 0;
             
-            const typeCode = (text, element, speed = this.isMobile ? 30 : 50) => {
-                element.textContent = '';
-                let i = 0;
-                
-                const typing = setInterval(() => {
-                    if (i < text.length) {
-                        element.textContent += text.charAt(i);
-                        i++;
-                    } else {
-                        clearInterval(typing);
-                        setTimeout(() => {
-                            currentSnippet = (currentSnippet + 1) % codeSnippets.length;
-                            setTimeout(() => typeCode(codeSnippets[currentSnippet], element, speed), 2000);
-                        }, 3000);
-                    }
-                }, speed);
-            };
-            
-            // Start the typing animation
-            typeCode(codeSnippets[currentSnippet], heroCode);
+            this.heroCodeInterval = setInterval(() => {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(this.heroCodeInterval);
+                    this.heroCodeTimeout = setTimeout(() => {
+                        currentSnippet = (currentSnippet + 1) % codeSnippets.length;
+                        this.heroCodeTimeout = setTimeout(() => typeCode(codeSnippets[currentSnippet], element, speed), 2000);
+                    }, 3000);
+                }
+            }, speed);
+        };
+        
+        // Start the typing animation
+        typeCode(codeSnippets[currentSnippet], heroCode);
+    }
+    
+    // Cleanup method to stop hero code animation
+    stopHeroCodeAnimation() {
+        if (this.heroCodeInterval) {
+            clearInterval(this.heroCodeInterval);
+            this.heroCodeInterval = null;
+        }
+        if (this.heroCodeTimeout) {
+            clearTimeout(this.heroCodeTimeout);
+            this.heroCodeTimeout = null;
         }
     }
     
