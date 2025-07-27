@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming Mastery - Forever Class</title>
+    <meta name="description" content="Master Python programming from beginner to advanced. Learn syntax, data structures, web development, data science, and automation with hands-on projects.">
+    <meta name="keywords" content="python programming, coding, data science, web development, automation, machine learning, beginner python, python tutorial">
+    <meta property="og:title" content="Python Programming Mastery - Forever Class">
+    <meta property="og:description" content="Complete Python programming course from zero to hero. Build real projects and master Python for various applications.">
+    <meta property="og:url" content="https://mananvyas01.github.io/ForeverClass/python-programming.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://mananvyas01.github.io/ForeverClass/assets/python-og.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/progress-tracker.css">
+    <link rel="stylesheet" href="css/auth-system.css">
+    <link rel="stylesheet" href="css/python-programming.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span>Forever Class</span>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="git-github.html" class="nav-link">Git & GitHub</a>
+                <a href="web-dev-basics.html" class="nav-link">Web Development</a>
+                <a href="python-programming.html" class="nav-link active">Python Programming</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <!-- Desktop Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <div class="sidebar-header">
+                    <h3>🐍 Python Programming</h3>
+                    <div class="progress-indicator">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <span class="progress-text" id="progressText">0% Complete</span>
+                    </div>
+                </div>
+                <ul>
+                    <li><a href="#hero-section" class="sidebar-link" data-section="hero-section">🚀 Getting Started</a></li>
+                    <li><a href="#python-basics" class="sidebar-link" data-section="python-basics">📚 Python Fundamentals</a></li>
+                    <li><a href="#data-structures" class="sidebar-link" data-section="data-structures">🗂️ Data Structures</a></li>
+                    <li><a href="#oop" class="sidebar-link" data-section="oop">🏗️ Object-Oriented Programming</a></li>
+                    <li><a href="#libraries" class="sidebar-link" data-section="libraries">📦 Essential Libraries</a></li>
+                    <li><a href="#web-development" class="sidebar-link" data-section="web-development">🌐 Web Development</a></li>
+                    <li><a href="#data-science" class="sidebar-link" data-section="data-science">📊 Data Science</a></li>
+                    <li><a href="#automation" class="sidebar-link" data-section="automation">🤖 Automation</a></li>
+                    <li><a href="#projects" class="sidebar-link" data-section="projects">🎯 Real Projects</a></li>
+                    <li><a href="#career" class="sidebar-link" data-section="career">💼 Career Paths</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section id="hero-section" class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-icon">🐍</span>
+                        <span class="badge-text">Python Programming Mastery</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Master Python Programming
+                        <span class="gradient-text">From Zero to Hero</span>
+                    </h1>
+                    <p class="hero-description">
+                        Learn Python programming with hands-on projects, real-world applications, 
+                        and industry best practices. Perfect for beginners and advancing developers.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Comprehensive Modules</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">25+</span>
+                            <span class="stat-label">Hands-on Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Code Examples</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#python-basics" class="btn-primary">Start Learning</a>
+                        <a href="#projects" class="btn-secondary">View Projects</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-controls">
+                                <span class="control red"></span>
+                                <span class="control yellow"></span>
+                                <span class="control green"></span>
+                            </div>
+                            <span class="window-title">python_mastery.py</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="python-code" id="heroCode"></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Python Fundamentals -->
+            <section id="python-basics" class="content-section">
+                <div class="section-header">
+                    <h2>📚 Python Fundamentals</h2>
+                    <p>Master the building blocks of Python programming</p>
+                </div>
+                
+                <div class="fundamentals-grid">
+                    <div class="fundamental-card">
+                        <div class="card-icon">🔤</div>
+                        <h3>Syntax & Variables</h3>
+                        <p>Learn Python syntax, variables, and basic operations</p>
+                        <div class="code-demo">
+                            <pre><code># Variables and basic operations
+name = "Python Learner"
+age = 25
+is_learning = True
+
+# String formatting
+greeting = f"Hello {name}, you are {age} years old!"
+print(greeting)</code></pre>
+                        </div>
+                        <button class="demo-btn" data-demo="variables">Try Interactive Demo</button>
+                    </div>
+                    
+                    <div class="fundamental-card">
+                        <div class="card-icon">🔄</div>
+                        <h3>Control Structures</h3>
+                        <p>Master if statements, loops, and flow control</p>
+                        <div class="code-demo">
+                            <pre><code># Conditional statements and loops
+for i in range(5):
+    if i % 2 == 0:
+                        print(f"{i} is even")
+    else:
+        print(f"{i} is odd")
+
+# List comprehension
+squares = [x**2 for x in range(10)]</code></pre>
+                        </div>
+                        <button class="demo-btn" data-demo="control">Try Interactive Demo</button>
+                    </div>
+                    
+                    <div class="fundamental-card">
+                        <div class="card-icon">⚡</div>
+                        <h3>Functions</h3>
+                        <p>Create reusable code with functions and modules</p>
+                        <div class="code-demo">
+                            <pre><code># Function definition and usage
+def calculate_bmi(weight, height):
+    """Calculate Body Mass Index"""
+    bmi = weight / (height ** 2)
+    return round(bmi, 2)
+
+# Function call
+my_bmi = calculate_bmi(70, 1.75)
+print(f"Your BMI is: {my_bmi}")</code></pre>
+                        </div>
+                        <button class="demo-btn" data-demo="functions">Try Interactive Demo</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Structures -->
+            <section id="data-structures" class="content-section">
+                <div class="section-header">
+                    <h2>🗂️ Data Structures</h2>
+                    <p>Master Python's built-in data structures and their applications</p>
+                </div>
+                
+                <div class="data-structures-container">
+                    <div class="structure-tabs">
+                        <button class="tab-btn active" data-tab="lists">Lists</button>
+                        <button class="tab-btn" data-tab="dictionaries">Dictionaries</button>
+                        <button class="tab-btn" data-tab="sets">Sets</button>
+                        <button class="tab-btn" data-tab="tuples">Tuples</button>
+                    </div>
+                    
+                    <div class="tab-content active" data-content="lists">
+                        <div class="structure-explanation">
+                            <h3>📋 Lists - Ordered Collections</h3>
+                            <p>Lists are mutable, ordered collections that can store multiple items.</p>
+                            <div class="code-playground">
+                                <div class="code-editor">
+                                    <pre><code># Creating and manipulating lists
+fruits = ['apple', 'banana', 'orange']
+fruits.append('grape')
+fruits.insert(1, 'kiwi')
+
+# List comprehensions
+numbers = [1, 2, 3, 4, 5]
+doubled = [x * 2 for x in numbers]
+
+# Slicing
+first_three = fruits[:3]
+print(f"Fruits: {fruits}")
+print(f"Doubled numbers: {doubled}")</code></pre>
+                                </div>
+                                <div class="output-display">
+                                    <div class="output-header">Output:</div>
+                                    <div class="output-content" id="listsOutput">
+                                        Fruits: ['apple', 'kiwi', 'banana', 'orange', 'grape']<br>
+                                        Doubled numbers: [2, 4, 6, 8, 10]
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" data-content="dictionaries">
+                        <div class="structure-explanation">
+                            <h3>🗝️ Dictionaries - Key-Value Pairs</h3>
+                            <p>Dictionaries store data in key-value pairs for fast lookups.</p>
+                            <div class="code-playground">
+                                <div class="code-editor">
+                                    <pre><code># Creating and using dictionaries
+student = {
+    'name': 'Alice',
+    'age': 22,
+    'courses': ['Python', 'Data Science'],
+    'gpa': 3.8
+}
+
+# Accessing and modifying
+student['age'] = 23
+student.setdefault('graduation_year', 2024)
+
+# Dictionary comprehension
+grades = {'math': 95, 'science': 88, 'english': 92}
+passed = {k: v for k, v in grades.items() if v >= 90}</code></pre>
+                                </div>
+                                <div class="output-display">
+                                    <div class="output-header">Output:</div>
+                                    <div class="output-content">
+                                        Student: {'name': 'Alice', 'age': 23, 'courses': ['Python', 'Data Science'], 'gpa': 3.8, 'graduation_year': 2024}<br>
+                                        Passed subjects: {'math': 95, 'english': 92}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" data-content="sets">
+                        <div class="structure-explanation">
+                            <h3>🔗 Sets - Unique Collections</h3>
+                            <p>Sets store unique elements and provide mathematical set operations.</p>
+                            <div class="code-playground">
+                                <div class="code-editor">
+                                    <pre><code># Creating sets and operations
+python_students = {'Alice', 'Bob', 'Charlie', 'Diana'}
+js_students = {'Bob', 'Diana', 'Eve', 'Frank'}
+
+# Set operations
+both_languages = python_students & js_students
+only_python = python_students - js_students
+all_students = python_students | js_students
+
+print(f"Both languages: {both_languages}")
+print(f"Only Python: {only_python}")
+print(f"Total unique students: {len(all_students)}")</code></pre>
+                                </div>
+                                <div class="output-display">
+                                    <div class="output-header">Output:</div>
+                                    <div class="output-content">
+                                        Both languages: {'Bob', 'Diana'}<br>
+                                        Only Python: {'Alice', 'Charlie'}<br>
+                                        Total unique students: 6
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" data-content="tuples">
+                        <div class="structure-explanation">
+                            <h3>📦 Tuples - Immutable Sequences</h3>
+                            <p>Tuples are immutable sequences, perfect for fixed data.</p>
+                            <div class="code-playground">
+                                <div class="code-editor">
+                                    <pre><code># Creating and using tuples
+coordinates = (10, 20)
+rgb_color = (255, 128, 0)
+
+# Tuple unpacking
+x, y = coordinates
+red, green, blue = rgb_color
+
+# Named tuples for better readability
+from collections import namedtuple
+Point = namedtuple('Point', ['x', 'y'])
+p = Point(10, 20)
+
+print(f"Coordinates: x={x}, y={y}")
+print(f"Color RGB: {red}, {green}, {blue}")
+print(f"Point: {p.x}, {p.y}")</code></pre>
+                                </div>
+                                <div class="output-display">
+                                    <div class="output-header">Output:</div>
+                                    <div class="output-content">
+                                        Coordinates: x=10, y=20<br>
+                                        Color RGB: 255, 128, 0<br>
+                                        Point: 10, 20
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Object-Oriented Programming -->
+            <section id="oop" class="content-section">
+                <div class="section-header">
+                    <h2>🏗️ Object-Oriented Programming</h2>
+                    <p>Master classes, objects, inheritance, and design patterns</p>
+                </div>
+                
+                <div class="oop-concepts">
+                    <div class="concept-card">
+                        <div class="concept-header">
+                            <span class="concept-icon">🏛️</span>
+                            <h3>Classes & Objects</h3>
+                        </div>
+                        <div class="concept-content">
+                            <div class="code-demo">
+                                <pre><code>class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer = 0
+    
+    def get_description(self):
+        return f"{self.year} {self.make} {self.model}"
+    
+    def drive(self, miles):
+        self.odometer += miles
+        print(f"Drove {miles} miles. Total: {self.odometer}")
+
+# Creating objects
+my_car = Car("Toyota", "Camry", 2022)
+print(my_car.get_description())
+my_car.drive(100)</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="concept-card">
+                        <div class="concept-header">
+                            <span class="concept-icon">🧬</span>
+                            <h3>Inheritance</h3>
+                        </div>
+                        <div class="concept-content">
+                            <div class="code-demo">
+                                <pre><code>class ElectricCar(Car):
+    def __init__(self, make, model, year, battery_size):
+        super().__init__(make, model, year)
+        self.battery_size = battery_size
+        self.charge_level = 100
+    
+    def charge(self, amount):
+        self.charge_level = min(100, self.charge_level + amount)
+        print(f"Charged to {self.charge_level}%")
+    
+    def drive(self, miles):
+        if self.charge_level > 0:
+            super().drive(miles)
+            self.charge_level -= miles * 0.1
+
+tesla = ElectricCar("Tesla", "Model 3", 2023, 75)
+tesla.drive(50)
+tesla.charge(20)</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Essential Libraries -->
+            <section id="libraries" class="content-section">
+                <div class="section-header">
+                    <h2>📦 Essential Libraries</h2>
+                    <p>Explore the powerful ecosystem of Python libraries</p>
+                </div>
+                
+                <div class="libraries-grid">
+                    <div class="library-card">
+                        <div class="library-icon">🔢</div>
+                        <h3>NumPy</h3>
+                        <p>Numerical computing with arrays</p>
+                        <div class="library-code">
+                            <pre><code>import numpy as np
+
+# Create arrays
+arr = np.array([1, 2, 3, 4, 5])
+matrix = np.array([[1, 2], [3, 4]])
+
+# Mathematical operations
+squared = arr ** 2
+mean_val = np.mean(arr)</code></pre>
+                        </div>
+                        <div class="library-tags">
+                            <span class="tag">Scientific Computing</span>
+                            <span class="tag">Arrays</span>
+                        </div>
+                    </div>
+                    
+                    <div class="library-card">
+                        <div class="library-icon">🐼</div>
+                        <h3>Pandas</h3>
+                        <p>Data manipulation and analysis</p>
+                        <div class="library-code">
+                            <pre><code>import pandas as pd
+
+# Create DataFrame
+df = pd.DataFrame({
+    'name': ['Alice', 'Bob', 'Charlie'],
+    'age': [25, 30, 35],
+    'salary': [50000, 60000, 70000]
+})
+
+# Data analysis
+avg_salary = df['salary'].mean()</code></pre>
+                        </div>
+                        <div class="library-tags">
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">DataFrames</span>
+                        </div>
+                    </div>
+                    
+                    <div class="library-card">
+                        <div class="library-icon">📊</div>
+                        <h3>Matplotlib</h3>
+                        <p>Data visualization and plotting</p>
+                        <div class="library-code">
+                            <pre><code>import matplotlib.pyplot as plt
+
+# Create plots
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+plt.plot(x, y, marker='o')
+plt.title('Linear Relationship')
+plt.xlabel('X values')
+plt.ylabel('Y values')
+plt.show()</code></pre>
+                        </div>
+                        <div class="library-tags">
+                            <span class="tag">Visualization</span>
+                            <span class="tag">Charts</span>
+                        </div>
+                    </div>
+                    
+                    <div class="library-card">
+                        <div class="library-icon">🌐</div>
+                        <h3>Requests</h3>
+                        <p>HTTP requests made easy</p>
+                        <div class="library-code">
+                            <pre><code>import requests
+
+# Make API requests
+response = requests.get('https://api.github.com/user')
+data = response.json()
+
+# POST request
+payload = {'key': 'value'}
+response = requests.post(url, json=payload)</code></pre>
+                        </div>
+                        <div class="library-tags">
+                            <span class="tag">HTTP</span>
+                            <span class="tag">APIs</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Web Development -->
+            <section id="web-development" class="content-section">
+                <div class="section-header">
+                    <h2>🌐 Web Development with Python</h2>
+                    <p>Build web applications using modern Python frameworks</p>
+                </div>
+                
+                <div class="web-frameworks">
+                    <div class="framework-card featured">
+                        <div class="framework-header">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2309aa3f'%3E%3Cpath d='M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0z'/%3E%3C/svg%3E" alt="Flask" class="framework-logo">
+                            <div>
+                                <h3>Flask</h3>
+                                <p>Lightweight and flexible web framework</p>
+                            </div>
+                        </div>
+                        <div class="framework-code">
+                            <pre><code>from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/api/users', methods=['GET', 'POST'])
+def users():
+    if request.method == 'POST':
+        # Handle user creation
+        pass
+    return {'users': []}
+
+if __name__ == '__main__':
+    app.run(debug=True)</code></pre>
+                        </div>
+                        <div class="framework-features">
+                            <span class="feature">RESTful APIs</span>
+                            <span class="feature">Templates</span>
+                            <span class="feature">Database Integration</span>
+                        </div>
+                    </div>
+                    
+                    <div class="framework-card">
+                        <div class="framework-header">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23092e20'%3E%3Cpath d='M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0z'/%3E%3C/svg%3E" alt="Django" class="framework-logo">
+                            <div>
+                                <h3>Django</h3>
+                                <p>Full-featured web framework with batteries included</p>
+                            </div>
+                        </div>
+                        <div class="framework-code">
+                            <pre><code># models.py
+from django.db import models
+
+class Post(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+# views.py
+from django.shortcuts import render
+from .models import Post
+
+def post_list(request):
+    posts = Post.objects.all()
+    return render(request, 'posts.html', {'posts': posts})</code></pre>
+                        </div>
+                        <div class="framework-features">
+                            <span class="feature">ORM</span>
+                            <span class="feature">Admin Panel</span>
+                            <span class="feature">Authentication</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Science -->
+            <section id="data-science" class="content-section">
+                <div class="section-header">
+                    <h2>📊 Data Science & Analytics</h2>
+                    <p>Analyze data, build models, and extract insights</p>
+                </div>
+                
+                <div class="data-science-pipeline">
+                    <div class="pipeline-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Data Collection</h3>
+                            <p>Gather data from various sources</p>
+                            <div class="step-code">
+                                <pre><code>import pandas as pd
+import requests
+
+# Load CSV data
+df = pd.read_csv('data.csv')
+
+# API data
+response = requests.get('https://api.example.com/data')
+api_data = pd.DataFrame(response.json())</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pipeline-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Data Cleaning</h3>
+                            <p>Clean and preprocess the data</p>
+                            <div class="step-code">
+                                <pre><code># Handle missing values
+df = df.dropna()
+df['age'].fillna(df['age'].mean(), inplace=True)
+
+# Remove duplicates
+df = df.drop_duplicates()
+
+# Data type conversion
+df['date'] = pd.to_datetime(df['date'])</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pipeline-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Analysis & Visualization</h3>
+                            <p>Explore patterns and create visualizations</p>
+                            <div class="step-code">
+                                <pre><code>import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Statistical analysis
+print(df.describe())
+
+# Correlation analysis
+correlation_matrix = df.corr()
+
+# Visualization
+plt.figure(figsize=(10, 6))
+sns.heatmap(correlation_matrix, annot=True)
+plt.title('Feature Correlations')
+plt.show()</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pipeline-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Machine Learning</h3>
+                            <p>Build predictive models</p>
+                            <div class="step-code">
+                                <pre><code>from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+
+# Prepare data
+X = df[['feature1', 'feature2']]
+y = df['target']
+
+# Train model
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Evaluate
+predictions = model.predict(X_test)
+mse = mean_squared_error(y_test, predictions)</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Automation -->
+            <section id="automation" class="content-section">
+                <div class="section-header">
+                    <h2>🤖 Automation & Scripting</h2>
+                    <p>Automate repetitive tasks and workflows</p>
+                </div>
+                
+                <div class="automation-examples">
+                    <div class="automation-card">
+                        <div class="automation-icon">📧</div>
+                        <h3>Email Automation</h3>
+                        <p>Send automated emails and reports</p>
+                        <div class="automation-code">
+                            <pre><code>import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+def send_report_email(to_email, report_data):
+    msg = MIMEMultipart()
+    msg['From'] = 'your-email@example.com'
+    msg['To'] = to_email
+    msg['Subject'] = 'Daily Report'
+    
+    body = f"Today's metrics: {report_data}"
+    msg.attach(MIMEText(body, 'plain'))
+    
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login('your-email@example.com', 'password')
+    server.send_message(msg)
+    server.quit()</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="automation-card">
+                        <div class="automation-icon">📁</div>
+                        <h3>File Management</h3>
+                        <p>Organize and process files automatically</p>
+                        <div class="automation-code">
+                            <pre><code>import os
+import shutil
+from pathlib import Path
+
+def organize_downloads():
+    downloads = Path.home() / 'Downloads'
+    
+    for file in downloads.iterdir():
+        if file.is_file():
+            extension = file.suffix.lower()
+            
+            if extension in ['.jpg', '.png', '.gif']:
+                dest = downloads / 'Images'
+            elif extension in ['.pdf', '.doc', '.txt']:
+                dest = downloads / 'Documents'
+            else:
+                dest = downloads / 'Others'
+            
+            dest.mkdir(exist_ok=True)
+            shutil.move(str(file), dest / file.name)</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="automation-card">
+                        <div class="automation-icon">🌐</div>
+                        <h3>Web Scraping</h3>
+                        <p>Extract data from websites automatically</p>
+                        <div class="automation-code">
+                            <pre><code>import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+def scrape_news_headlines():
+    url = 'https://news.ycombinator.com'
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+    
+    headlines = []
+    for item in soup.find_all('a', class_='storylink'):
+        headlines.append({
+            'title': item.text,
+            'url': item.get('href')
+        })
+    
+    df = pd.DataFrame(headlines)
+    df.to_csv('news_headlines.csv', index=False)
+    return df</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Real Projects -->
+            <section id="projects" class="content-section">
+                <div class="section-header">
+                    <h2>🎯 Real-World Projects</h2>
+                    <p>Build impressive projects for your portfolio</p>
+                </div>
+                
+                <div class="projects-showcase">
+                    <div class="project-card featured">
+                        <div class="project-image">
+                            <div class="project-demo">
+                                <div class="demo-screen">
+                                    <div class="demo-header">
+                                        <span class="demo-title">Task Manager API</span>
+                                    </div>
+                                    <div class="demo-content">
+                                        <div class="api-endpoint">GET /api/tasks</div>
+                                        <div class="api-endpoint">POST /api/tasks</div>
+                                        <div class="api-endpoint">PUT /api/tasks/:id</div>
+                                        <div class="api-endpoint">DELETE /api/tasks/:id</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Task Management API</h3>
+                            <p>Build a RESTful API with Flask, SQLAlchemy, and JWT authentication</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">SQLAlchemy</span>
+                                <span class="tech-tag">JWT</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                            <div class="project-features">
+                                <div class="feature">✅ User authentication</div>
+                                <div class="feature">✅ CRUD operations</div>
+                                <div class="feature">✅ Database relationships</div>
+                                <div class="feature">✅ API documentation</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-demo">
+                                <div class="demo-screen">
+                                    <div class="demo-chart">📊 Stock Analysis Dashboard</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Stock Price Analyzer</h3>
+                            <p>Analyze stock market data with pandas and create interactive visualizations</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Matplotlib</span>
+                                <span class="tech-tag">Yahoo Finance API</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-demo">
+                                <div class="demo-screen">
+                                    <div class="demo-chat">💬 Chatbot Interface</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>AI Chatbot</h3>
+                            <p>Create an intelligent chatbot using natural language processing</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">NLTK</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">Flask</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-demo">
+                                <div class="demo-screen">
+                                    <div class="demo-scraper">🕷️ Web Scraper</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>E-commerce Price Monitor</h3>
+                            <p>Monitor product prices across multiple websites with automated alerts</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Beautiful Soup</span>
+                                <span class="tech-tag">Selenium</span>
+                                <span class="tech-tag">Celery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Career Paths -->
+            <section id="career" class="content-section">
+                <div class="section-header">
+                    <h2>💼 Python Career Paths</h2>
+                    <p>Explore different career opportunities with Python</p>
+                </div>
+                
+                <div class="career-paths">
+                    <div class="career-card">
+                        <div class="career-icon">🌐</div>
+                        <h3>Web Developer</h3>
+                        <p>Build web applications and APIs</p>
+                        <div class="career-skills">
+                            <span class="skill">Django/Flask</span>
+                            <span class="skill">REST APIs</span>
+                            <span class="skill">Databases</span>
+                        </div>
+                        <div class="career-salary">$65,000 - $120,000</div>
+                    </div>
+                    
+                    <div class="career-card">
+                        <div class="career-icon">📊</div>
+                        <h3>Data Scientist</h3>
+                        <p>Analyze data and build ML models</p>
+                        <div class="career-skills">
+                            <span class="skill">Pandas</span>
+                            <span class="skill">Scikit-learn</span>
+                            <span class="skill">Statistics</span>
+                        </div>
+                        <div class="career-salary">$80,000 - $150,000</div>
+                    </div>
+                    
+                    <div class="career-card">
+                        <div class="career-icon">🤖</div>
+                        <h3>Automation Engineer</h3>
+                        <p>Automate processes and workflows</p>
+                        <div class="career-skills">
+                            <span class="skill">Scripting</span>
+                            <span class="skill">DevOps</span>
+                            <span class="skill">Testing</span>
+                        </div>
+                        <div class="career-salary">$70,000 - $130,000</div>
+                    </div>
+                    
+                    <div class="career-card">
+                        <div class="career-icon">🧠</div>
+                        <h3>AI/ML Engineer</h3>
+                        <p>Develop intelligent systems</p>
+                        <div class="career-skills">
+                            <span class="skill">TensorFlow</span>
+                            <span class="skill">PyTorch</span>
+                            <span class="skill">Deep Learning</span>
+                        </div>
+                        <div class="career-salary">$90,000 - $180,000</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Playground -->
+            <div id="code-playground" class="code-playground-modal">
+                <div class="playground-content">
+                    <div class="playground-header">
+                        <h3 id="playground-title">Python Interactive Demo</h3>
+                        <button class="close-playground">&times;</button>
+                    </div>
+                    <div class="playground-body">
+                        <div class="playground-editor">
+                            <div class="editor-header">
+                                <span>Code Editor</span>
+                                <button class="run-code-btn">Run Code</button>
+                            </div>
+                            <textarea id="playground-code" placeholder="Write your Python code here..."></textarea>
+                        </div>
+                        <div class="playground-output">
+                            <div class="output-header">Output</div>
+                            <div id="playground-result"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2>Ready to Master Python?</h2>
+                    <p>Join thousands of learners who have transformed their careers with Python</p>
+                    <div class="cta-actions">
+                        <a href="#python-basics" class="btn-primary">Start Your Journey</a>
+                        <a href="#projects" class="btn-secondary">View Projects</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Back to Top -->
+            <div class="back-to-top">
+                <button id="backToTop" class="back-to-top-btn">
+                    <span>↑</span>
+                    <span>Back to Top</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/progress-tracker.js"></script>
+    <script src="js/auth-system.js"></script>
+    <script src="js/python-programming.js"></script>
+</body>
+</html>
