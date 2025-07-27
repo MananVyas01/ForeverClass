@@ -23,6 +23,7 @@
 
     <title>Git & GitHub Mastery - Forever Class</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/progress-tracker.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <style>
         /* Additional styles for this learning page */
@@ -1099,6 +1100,28 @@ git clone [url] && cd [folder]</pre>
                 });
             });
         });
+        
+        // Initialize progress tracking for Git & GitHub module
+        if (typeof ProgressTracker !== 'undefined') {
+            const progressTracker = new ProgressTracker();
+            
+            // Track module visit
+            progressTracker.updateModuleProgress('git-github', 10); // Initial progress for visiting
+            
+            // Track reading progress based on scroll
+            let maxScroll = 0;
+            window.addEventListener('scroll', () => {
+                const scrollPercent = Math.round(
+                    (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+                );
+                
+                if (scrollPercent > maxScroll) {
+                    maxScroll = scrollPercent;
+                    progressTracker.updateModuleProgress('git-github', Math.min(maxScroll, 100));
+                }
+            });
+        }
     </script>
+    <script src="js/progress-tracker.js"></script>
 </body>
 </html>

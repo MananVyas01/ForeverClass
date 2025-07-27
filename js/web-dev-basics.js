@@ -501,6 +501,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // Make app instance globally available for debugging
     window.webDevApp = app;
     
+    // Initialize progress tracking integration
+    if (typeof ProgressTracker !== 'undefined') {
+        const progressTracker = new ProgressTracker();
+        
+        // Track module visit
+        progressTracker.updateModuleProgress('web-dev-basics', 0); // Start with 0, will update based on scroll
+        
+        // Integrate with existing progress system
+        const originalUpdateProgress = app.updateProgress.bind(app);
+        app.updateProgress = function() {
+            originalUpdateProgress();
+            
+            // Get current progress and update global tracker
+            const progressText = document.getElementById('progressText');
+            if (progressText) {
+                const progressMatch = progressText.textContent.match(/(\d+)%/);
+                if (progressMatch) {
+                    const progress = parseInt(progressMatch[1]);
+                    progressTracker.updateModuleProgress('web-dev-basics', progress);
+                }
+            }
+        };
+    }
+    
     // Force sidebar visibility on desktop after initialization
     setTimeout(() => {
         const sidebar = document.getElementById('sidebar');

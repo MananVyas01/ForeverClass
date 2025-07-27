@@ -23,6 +23,7 @@
 
     <title>Forever Class - Learning That Never Stops</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/progress-tracker.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 <body>
@@ -73,6 +74,97 @@
                 </div>
             </div>
             <a href="#daily-dose" class="cta-button">Start Learning Today</a>
+        </div>
+    </section>
+
+    <!-- Progress Dashboard -->
+    <section id="progress-dashboard" class="progress-dashboard">
+        <div class="container">
+            <h2 class="section-title">📊 Your Learning Progress</h2>
+            <p class="section-subtitle">Track your journey and celebrate your achievements</p>
+            
+            <!-- Overall Progress -->
+            <div class="overall-progress">
+                <div class="overall-progress-content">
+                    <h3>🎯 Overall Progress</h3>
+                    <div class="overall-progress-bar-container progress-bar-container">
+                        <div class="overall-progress-bar progress-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="overall-progress-text progress-percentage">0% Complete</div>
+                </div>
+            </div>
+            
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-icon">🚀</span>
+                    <div class="stat-value" data-stat="modules-started">0</div>
+                    <div class="stat-label">Modules Started</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">✅</span>
+                    <div class="stat-value" data-stat="modules-completed">0</div>
+                    <div class="stat-label">Modules Completed</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🔥</span>
+                    <div class="stat-value" data-stat="learning-streak">0</div>
+                    <div class="stat-label">Day Streak</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">⏱️</span>
+                    <div class="stat-value" data-stat="time-spent">0m</div>
+                    <div class="stat-label">Time Spent</div>
+                </div>
+            </div>
+            
+            <!-- Module Progress Cards -->
+            <div class="modules-progress">
+                <h3>📚 Module Progress</h3>
+                <div class="modules-grid">
+                    <div class="module-progress-card" data-module="web-dev-basics">
+                        <div class="module-status"></div>
+                        <div class="module-title">🌐 Web Development Basics</div>
+                        <div class="progress-container">
+                            <div class="progress-bar-container">
+                                <div class="module-progress-bar progress-bar" style="width: 0%"></div>
+                            </div>
+                            <div class="module-progress-text progress-percentage">0% Complete</div>
+                        </div>
+                        <div class="module-meta">
+                            <div class="module-meta-item">
+                                <span>📖</span>
+                                <span>10 Sections</span>
+                            </div>
+                            <div class="module-meta-item">
+                                <span>⏱️</span>
+                                <span>~4 hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-progress-card" data-module="git-github">
+                        <div class="module-status"></div>
+                        <div class="module-title">🐙 Git & GitHub</div>
+                        <div class="progress-container">
+                            <div class="progress-bar-container">
+                                <div class="module-progress-bar progress-bar" style="width: 0%"></div>
+                            </div>
+                            <div class="module-progress-text progress-percentage">0% Complete</div>
+                        </div>
+                        <div class="module-meta">
+                            <div class="module-meta-item">
+                                <span>📖</span>
+                                <span>8 Sections</span>
+                            </div>
+                            <div class="module-meta-item">
+                                <span>⏱️</span>
+                                <span>~3 hours</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -619,5 +711,6 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/progress-tracker.js"></script>
 </body>
 </html>
