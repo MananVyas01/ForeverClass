@@ -1181,6 +1181,21 @@
         grid-template-columns: 1fr;
     }
     
+    .subsection {
+        padding: 20px;
+        margin-bottom: 32px;
+    }
+    
+    .subsection-content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
     .code-playground {
         grid-template-columns: 1fr;
     }
@@ -1236,6 +1251,16 @@
         max-width: 280px;
         justify-content: center;
     }
+    
+    .structure-tabs {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    
+    .tab-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1250,12 +1275,32 @@
         padding: 20px;
     }
     
+    .detail-section {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+    
+    .subsection {
+        padding: 16px;
+    }
+    
+    .info-card {
+        padding: 16px;
+    }
+    
     .code-demo,
     .library-code,
     .framework-code,
     .step-code,
     .automation-code {
         padding: 12px;
+    }
+    
+    .code-demo pre,
+    .library-code pre,
+    .framework-code pre,
+    .step-code pre,
+    .automation-code pre {
         font-size: 11px;
     }
     
@@ -1265,11 +1310,24 @@
     
     .tab-btn {
         padding: 8px 12px;
-        font-size: 14px;
+        font-size: 12px;
     }
     
     .playground-content {
         margin: 10px;
         width: calc(100% - 20px);
+    }
+    
+    .feature-item li {
+        font-size: 14px;
+    }
+    
+    .structure-details {
+        padding: 16px;
+    }
+    
+    .output-content {
+        font-size: 11px;
+        padding: 16px;
     }
 }

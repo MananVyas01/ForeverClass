@@ -13,6 +13,184 @@ class PythonProgrammingApp {
         this.activeTab = 'lists';
         this.playgroundOpen = false;
         
+        // Demo code snippets
+        this.demoSnippets = {
+            variables: {
+                title: "Variables & Data Types Demo",
+                code: `# Variables and basic operations
+name = "Python Learner"
+age = 25
+is_learning = True
+
+# String formatting
+greeting = f"Hello {name}, you are {age} years old!"
+print(greeting)
+
+# Data type checking
+print(f"Type of name: {type(name)}")
+print(f"Type of age: {type(age)}")
+print(f"Type of is_learning: {type(is_learning)}")
+
+# String methods
+text = "  Python Programming  "
+print(f"Original: '{text}'")
+print(f"Stripped: '{text.strip()}'")
+print(f"Uppercase: '{text.upper()}'")
+print(f"Replaced: '{text.replace('Python', 'Java')}'")`,
+                expectedOutput: `Hello Python Learner, you are 25 years old!
+Type of name: <class 'str'>
+Type of age: <class 'int'>
+Type of is_learning: <class 'bool'>
+Original: '  Python Programming  '
+Stripped: 'Python Programming'
+Uppercase: '  PYTHON PROGRAMMING  '
+Replaced: '  Java Programming  '`
+            },
+            control: {
+                title: "Control Structures Demo",
+                code: `# Conditional statements
+score = 85
+
+if score >= 90:
+    grade = "A"
+    status = "Excellent!"
+elif score >= 80:
+    grade = "B"
+    status = "Good job!"
+elif score >= 70:
+    grade = "C"
+    status = "Satisfactory"
+else:
+    grade = "F"
+    status = "Need improvement"
+
+print(f"Score: {score}, Grade: {grade}")
+print(f"Status: {status}")
+
+# For loop with different ranges
+print("\\nLoop examples:")
+for i in range(5):
+    if i % 2 == 0:
+        print(f"{i} is even")
+    else:
+        print(f"{i} is odd")
+
+# List comprehension
+numbers = [1, 2, 3, 4, 5]
+squares = [x**2 for x in numbers]
+print(f"\\nSquares: {squares}")`,
+                expectedOutput: `Score: 85, Grade: B
+Status: Good job!
+
+Loop examples:
+0 is even
+1 is odd
+2 is even
+3 is odd
+4 is even
+
+Squares: [1, 4, 9, 16, 25]`
+            },
+            functions: {
+                title: "Functions & Scope Demo",
+                code: `# Basic function
+def greet(name):
+    """Simple greeting function"""
+    return f"Hello, {name}!"
+
+# Function with default parameters
+def create_profile(name, age=18, city="Unknown"):
+    return {
+        "name": name,
+        "age": age,
+        "city": city
+    }
+
+# Test the functions
+print(greet("Alice"))
+print(greet("Bob"))
+
+profile1 = create_profile("Charlie")
+profile2 = create_profile("Diana", 25, "New York")
+
+print(f"\\nProfile 1: {profile1}")
+print(f"Profile 2: {profile2}")
+
+# Lambda function
+square = lambda x: x ** 2
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(square, numbers))
+print(f"\\nSquared numbers: {squared}")
+
+# List comprehension (Pythonic way)
+squared_lc = [x**2 for x in numbers]
+print(f"Squared (list comp): {squared_lc}")`,
+                expectedOutput: `Hello, Alice!
+Hello, Bob!
+
+Profile 1: {'name': 'Charlie', 'age': 18, 'city': 'Unknown'}
+Profile 2: {'name': 'Diana', 'age': 25, 'city': 'New York'}
+
+Squared numbers: [1, 4, 9, 16, 25]
+Squared (list comp): [1, 4, 9, 16, 25]`
+            },
+            errors: {
+                title: "Error Handling Demo",
+                code: `# Basic exception handling
+def safe_divide(a, b):
+    try:
+        result = a / b
+        return result
+    except ZeroDivisionError:
+        print(f"Error: Cannot divide {a} by zero!")
+        return None
+    except TypeError:
+        print(f"Error: Invalid input types!")
+        return None
+
+# Test the function
+print("Testing safe_divide function:")
+print(f"10 / 2 = {safe_divide(10, 2)}")
+print(f"10 / 0 = {safe_divide(10, 0)}")
+print(f"'10' / 2 = {safe_divide('10', 2)}")
+
+# Multiple exception handling
+def process_data(data):
+    try:
+        num = int(data)
+        result = 100 / num
+        print(f"Processing {data}: Result = {result}")
+        return result
+    except ValueError:
+        print(f"Error: Cannot convert '{data}' to integer")
+    except ZeroDivisionError:
+        print(f"Error: Cannot divide by zero (data was {data})")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+    finally:
+        print(f"Finished processing '{data}'")
+
+print("\\nTesting process_data function:")
+process_data("50")
+process_data("0")
+process_data("abc")`,
+                expectedOutput: `Testing safe_divide function:
+10 / 2 = 5.0
+Error: Cannot divide 10 by zero!
+10 / 0 = None
+Error: Invalid input types!
+'10' / 2 = None
+
+Testing process_data function:
+Processing 50: Result = 2.0
+Finished processing '50'
+Error: Cannot divide by zero (data was 0)
+Finished processing '0'
+Error: Cannot convert 'abc' to integer
+Finished processing 'abc'`
+            }
+        };
+        
         this.init();
     }
     
@@ -491,12 +669,25 @@ for i in range(8):
         });
     }
     
-    openPlayground() {
+    openPlayground(demoType = null) {
         const playground = document.getElementById('code-playground');
+        const titleElement = document.getElementById('playground-title');
+        const codeTextarea = document.getElementById('playground-code');
+        
         if (playground) {
             playground.style.display = 'flex';
             document.body.style.overflow = 'hidden';
             this.playgroundOpen = true;
+            
+            // Load demo code if specified
+            if (demoType && this.demoSnippets && this.demoSnippets[demoType]) {
+                const demo = this.demoSnippets[demoType];
+                if (titleElement) titleElement.textContent = demo.title;
+                if (codeTextarea) codeTextarea.value = demo.code;
+            } else {
+                if (titleElement) titleElement.textContent = 'Python Interactive Demo';
+                if (codeTextarea) codeTextarea.value = '# Write your Python code here...\nprint("Hello, Python!")';
+            }
         }
     }
     
@@ -597,6 +788,16 @@ Fibonacci sequence:
     }
     
     setupInteractiveDemos() {
+        // Add demo button functionality
+        const demoButtons = document.querySelectorAll('.demo-btn');
+        
+        demoButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const demoType = button.getAttribute('data-demo');
+                this.openPlayground(demoType);
+            });
+        });
+        
         // Add hover effects and animations
         const cards = document.querySelectorAll('.fundamental-card, .library-card, .automation-card, .project-card, .career-card');
         

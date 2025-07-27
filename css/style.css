@@ -4098,6 +4098,7 @@ a:focus {
     }
     
     .page-container {
+        display: block;
         padding: 0 var(--spacing-md);
     }
     
