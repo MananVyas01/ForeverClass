@@ -940,6 +940,9 @@ Fibonacci sequence:
 document.addEventListener('DOMContentLoaded', () => {
     const app = new PythonProgrammingApp();
     
+    // Initialize the app
+    app.init();
+    
     // Make app instance globally available for debugging
     window.pythonApp = app;
     
