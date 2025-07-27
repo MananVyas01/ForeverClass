@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Mastery - Forever Class</title>
+    <meta name="description" content="Master cybersecurity from beginner to advanced. Learn security fundamentals, ethical hacking, network security, and hands-on projects.">
+    <meta name="keywords" content="cybersecurity, ethical hacking, network security, information security, penetration testing, beginner cybersecurity, cybersecurity tutorial">
+    <meta property="og:title" content="Cybersecurity Mastery - Forever Class">
+    <meta property="og:description" content="Complete cybersecurity course from zero to hero. Build real projects and master cybersecurity for various applications.">
+    <meta property="og:url" content="https://mananvyas01.github.io/ForeverClass/cybersecurity.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://mananvyas01.github.io/ForeverClass/assets/cybersecurity-og.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/progress-tracker.css">
+    <link rel="stylesheet" href="css/auth-system.css">
+    <!-- <link rel="stylesheet" href="css/python-programming.css"> -->
+    <link rel="stylesheet" href="css/cybersecurity.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span>Forever Class</span>
+            </a>
+            <div class="nav-menu">
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="git-github.html" class="nav-link">Git & GitHub</a>
+                <a href="web-dev-basics.html" class="nav-link">Web Development</a>
+                <a href="cybersecurity.html" class="nav-link active">Cybersecurity</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="page-container">
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <div class="sidebar-header">
+                    <h3>🛡️ Cybersecurity</h3>
+                    <div class="progress-indicator">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <span class="progress-text" id="progressText">0% Complete</span>
+                    </div>
+                </div>
+                <ul>
+                    <li><a href="#hero-section" class="sidebar-link" data-section="hero-section">🚀 Getting Started</a></li>
+                    <li><a href="#security-fundamentals" class="sidebar-link" data-section="security-fundamentals">🔐 Security Fundamentals</a></li>
+                    <li><a href="#network-security" class="sidebar-link" data-section="network-security">🌐 Network Security</a></li>
+                    <li><a href="#ethical-hacking" class="sidebar-link" data-section="ethical-hacking">🕵️ Ethical Hacking</a></li>
+                    <li><a href="#cryptography" class="sidebar-link" data-section="cryptography">🔑 Cryptography</a></li>
+                    <li><a href="#web-app-security" class="sidebar-link" data-section="web-app-security">🛡️ Web App Security</a></li>
+                    <li><a href="#incident-response" class="sidebar-link" data-section="incident-response">🚨 Incident Response</a></li>
+                    <li><a href="#tools" class="sidebar-link" data-section="tools">🧰 Tools & Techniques</a></li>
+                    <li><a href="#projects" class="sidebar-link" data-section="projects">🎯 Real Projects</a></li>
+                    <li><a href="#career" class="sidebar-link" data-section="career">💼 Career Paths</a></li>
+                </ul>
+            </nav>
+        </aside>
+  <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section id="hero-section" class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-icon">🛡️</span>
+                        <span class="badge-text">Cybersecurity Mastery</span>
+                    </div>
+                    <h1 class="hero-title">Master Cybersecurity from Zero to Hero</h1>
+                    <p class="hero-description">
+                        Dive into the world of cybersecurity with our comprehensive course. From security fundamentals to advanced ethical hacking techniques, this course is designed to take you from a beginner to an expert. Learn through hands-on projects and real-world applications.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10</span>
+                            <span class="stat-label">Security Modules</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Practical Labs</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label">Security Tools</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#security-fundamentals" class="btn-primary">Start Learning</a>
+                        <a href="#projects" class="btn-secondary">View Projects</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-controls">
+                                <span class="control red"></span>
+                                <span class="control yellow"></span>
+                                <span class="control green"></span>
+                            </div>
+                            <span class="window-title">python_mastery.py</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="python-code" id="heroCode"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cyber Attack Simulator (Demo) -->
+                <div class="hero-visual">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-controls">
+                                <span class="control red"></span>
+                                <span class="control yellow"></span>
+                                <span class="control green"></span>
+                            </div>
+                            <span class="window-title">cyber_simulator.js</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="js-code" id="simulatorCode">// Cyber Attack Simulator (Demo)
+function simulateAttack(type) {
+  if(type === 'phishing') {
+    return 'Phishing email detected! Do not click suspicious links.';
+  } else if(type === 'bruteforce') {
+    return 'Brute force attack blocked by strong password policy.';
+  } else {
+    return 'Unknown attack.';
+  }
+}
+</code></pre>
+                            <div style="margin-top:10px;">
+                                <label for="attackType">Simulate Attack: </label>
+                                <select id="attackType">
+                                    <option value="phishing">Phishing</option>
+                                    <option value="bruteforce">Brute Force</option>
+                                </select>
+                                <button onclick="document.getElementById('simResult').innerText = simulateAttack(document.getElementById('attackType').value);">Run</button>
+                                <div id="simResult" style="margin-top:8px;color:#2e7d32;font-weight:bold;"></div>
+                            </div>
+                            <script>
+                            // Attach simulator function to window for demo
+                            window.simulateAttack = function(type) {
+                              if(type === 'phishing') {
+                                return 'Phishing email detected! Do not click suspicious links.';
+                              } else if(type === 'bruteforce') {
+                                return 'Brute force attack blocked by strong password policy.';
+                              } else {
+                                return 'Unknown attack.';
+                              }
+                            }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            <!-- Interactive Labs -->
+            <section id="interactive-labs" class="module-section">
+                <h2 class="section-title">🧪 Interactive Labs</h2>
+                <div class="module-content">
+                    <p>Practice your skills in a safe environment! Try these interactive labs:</p>
+                    <ul>
+                        <li><strong>Password Strength Checker:</strong> <a href="#" onclick="alert('Try to create a strong password! (Feature coming soon)')">Test Now</a></li>
+                        <li><strong>Phishing Email Identifier:</strong> <a href="#" onclick="alert('Spot the phishing email! (Feature coming soon)')">Play</a></li>
+                        <li><strong>Network Packet Analyzer:</strong> <a href="#" onclick="alert('Analyze packets! (Feature coming soon)')">Try</a></li>
+                    </ul>
+                    <p><em>More interactive labs coming soon!</em></p>
+                </div>
+            </section>
+            <!-- Advanced Topics -->
+            <section id="advanced-topics" class="module-section">
+                <h2 class="section-title">🚀 Advanced Topics</h2>
+                <div class="module-content">
+                    <ul>
+                        <li><strong>Cloud Security:</strong> Learn how to secure data and applications in the cloud.</li>
+                        <li><strong>IoT Security:</strong> Protect smart devices and home automation systems.</li>
+                        <li><strong>Mobile Security:</strong> Secure your smartphone and mobile apps.</li>
+                        <li><strong>Forensics:</strong> Investigate and analyze cyber incidents.</li>
+                        <li><strong>Red Team vs Blue Team:</strong> Offensive and defensive security roles.</li>
+                    </ul>
+                    <p><em>Explore these topics as you advance in your cybersecurity journey!</em></p>
+                </div>
+            </section>
+            </section>
+
+            <!-- Progress Tracker -->
+            <section id="progress-tracker" class="progress-tracker">
+                <h2 class="section-title">Progress Tracker</h2>
+                <div class="tracker-container">
+                    <div class="tracker-item">
+                        <span class="tracker-icon">🔐</span>
+                        <span class="tracker-label">Module 1: Security Fundamentals</span>
+                    </div>
+                    <div class="tracker-item">
+                        <span class="tracker-icon">🚨</span>
+                        <span class="tracker-label">Module 2: Network Security</span>
+                    </div>
+                    <div class="tracker-item">
+                        <span class="tracker-icon">🕵️</span>
+                        <span class="tracker-label">Module 3: Ethical Hacking</span>
+                    </div>
+                    <div class="tracker-item">
+                        <span class="tracker-icon">🔑</span>
+                        <span class="tracker-label">Module 4: Cryptography</span>
+                    </div>
+                    <div class="tracker-item">
+                        <span class="tracker-icon">�</span>
+                        <span class="tracker-label">Module 5: Web Application Security</span>
+                    </div>
+                    <div class="tracker-item">
+                        <span class="tracker-icon">🧪</span>
+                        <span class="tracker-label">Interactive Labs</span>
+                    </div>
+                    <div class="tracker-item">
+                        <span class="tracker-icon">🚀</span>
+                        <span class="tracker-label">Advanced Topics</span>
+                    </div>
+                    <div class="tracker-item">
+                        <span class="tracker-icon">�</span>
+                        <span class="tracker-label">Module 6: Incident Response</span>
+                    </div>
+                    <div class="tracker-item">
+                        <span class="tracker-icon">🧰</span>
+                        <span class="tracker-label">Module 7: Tools & Techniques</span>
+                    </div>
+                    <div class="tracker-item">
+                        <span class="tracker-icon">🎯</span>
+                        <span class="tracker-label">Module 8: Real Projects</span>
+                    </div>
+                    <div class="tracker-item">
+                        <span class="tracker-icon">�</span>
+                        <span class="tracker-label">Module 9: Career Paths</span>
+                    </div>
+                </div>
+            </section>
+            <!-- Incident Response -->
+            <section id="incident-response" class="module-section">
+                <h2 class="section-title">🚨 Incident Response</h2>
+                <div class="module-content">
+                    <p><strong>Incident response</strong> is the process of preparing for, detecting, and responding to cybersecurity incidents such as data breaches, malware infections, or attacks. A strong incident response plan helps minimize damage and recover quickly.</p>
+                    <h3>Key Steps</h3>
+                    <ol>
+                        <li><strong>Preparation:</strong> Develop policies, train your team, and set up tools for monitoring and response.</li>
+                        <li><strong>Identification:</strong> Detect and confirm the incident using monitoring tools and alerts.</li>
+                        <li><strong>Containment:</strong> Limit the spread of the attack (e.g., disconnect affected systems from the network).</li>
+                        <li><strong>Eradication:</strong> Remove the threat (e.g., delete malware, close vulnerabilities).</li>
+                        <li><strong>Recovery:</strong> Restore systems and data from backups, monitor for further issues.</li>
+                        <li><strong>Lessons Learned:</strong> Analyze what happened, update your response plan, and improve defenses.</li>
+                    </ol>
+                    <h3>Best Practices</h3>
+                    <ul>
+                        <li>Have a clear incident response plan and test it regularly.</li>
+                        <li>Keep contact information for your IT/security team handy.</li>
+                        <li>Document every step taken during an incident for future analysis.</li>
+                        <li>Report incidents promptly to minimize impact.</li>
+                    </ul>
+                    <p><strong>Tip:</strong> Even small incidents can reveal bigger problems. Always investigate and learn from every event.</p>
+                </div>
+            </section>
+
+            <!-- Tools & Techniques -->
+            <!-- Security Fundamentals -->
+            <section id="security-fundamentals" class="module-section">
+                <h2 class="section-title">🔐 Security Fundamentals</h2>
+                <div class="module-content">
+                    <p><strong>Security fundamentals</strong> are the building blocks of cybersecurity. Understanding these basics is essential for anyone starting out.</p>
+                    <h3>Core Concepts</h3>
+                    <ul>
+                        <li><strong>Confidentiality:</strong> Keeping information private and accessible only to those who need it.</li>
+                        <li><strong>Integrity:</strong> Ensuring information is accurate and unaltered.</li>
+                        <li><strong>Availability:</strong> Making sure information and systems are accessible when needed.</li>
+                        <li><strong>Authentication:</strong> Verifying the identity of users and systems.</li>
+                        <li><strong>Authorization:</strong> Granting access to resources based on permissions.</li>
+                        <li><strong>Non-repudiation:</strong> Ensuring actions can be traced to the responsible party.</li>
+                    </ul>
+                    <h3>Best Practices</h3>
+                    <ul>
+                        <li>Use strong, unique passwords for every account.</li>
+                        <li>Enable two-factor authentication (2FA) wherever possible.</li>
+                        <li>Keep your software and devices updated.</li>
+                        <li>Be cautious with emails and links from unknown sources.</li>
+                        <li>Back up important data regularly.</li>
+                    </ul>
+                    <p><strong>Example:</strong> Using a password manager helps you create and store strong passwords securely.</p>
+                    <p><strong>Tip:</strong> Security is everyone’s responsibility—stay alert and informed!</p>
+                </div>
+            </section>
+
+            <!-- Network Security -->
+            <section id="network-security" class="module-section">
+                <h2 class="section-title">🌐 Network Security</h2>
+                <div class="module-content">
+                    <p><strong>Network security</strong> protects data as it travels across networks, such as the internet or your home Wi-Fi.</p>
+                    <h3>Common Threats</h3>
+                    <ul>
+                        <li><strong>Man-in-the-Middle (MitM) Attacks:</strong> Attackers intercept communication between two parties.</li>
+                        <li><strong>Denial of Service (DoS):</strong> Overloading a network or website to make it unavailable.</li>
+                        <li><strong>Packet Sniffing:</strong> Capturing data packets to steal sensitive information.</li>
+                    </ul>
+                    <h3>Protection Techniques</h3>
+                    <ul>
+                        <li>Use strong Wi-Fi passwords and WPA3 encryption.</li>
+                        <li>Install firewalls to block unauthorized access.</li>
+                        <li>Use Virtual Private Networks (VPNs) for secure remote access.</li>
+                        <li>Segment networks to limit the spread of attacks.</li>
+                        <li>Monitor network traffic for unusual activity.</li>
+                    </ul>
+                    <p><strong>Example:</strong> A firewall acts as a barrier between your computer and the internet, blocking unwanted traffic.</p>
+                    <p><strong>Tip:</strong> Never use public Wi-Fi for sensitive activities unless you use a VPN.</p>
+                </div>
+            </section>
+
+            <!-- Ethical Hacking -->
+            <section id="ethical-hacking" class="module-section">
+                <h2 class="section-title">🕵️ Ethical Hacking</h2>
+                <div class="module-content">
+                    <p><strong>Ethical hacking</strong> is the practice of testing systems and networks for vulnerabilities—legally and with permission—to help organizations improve their security.</p>
+                    <h3>Types of Hackers</h3>
+                    <ul>
+                        <li><strong>White Hat:</strong> Ethical hackers who help secure systems.</li>
+                        <li><strong>Black Hat:</strong> Malicious hackers who break into systems for personal gain.</li>
+                        <li><strong>Gray Hat:</strong> Hackers who may break rules but don’t have malicious intent.</li>
+                    </ul>
+                    <h3>Common Tools</h3>
+                    <ul>
+                        <li><strong>Nmap:</strong> Scans networks for open ports and services.</li>
+                        <li><strong>Metasploit:</strong> Framework for developing and executing exploits.</li>
+                        <li><strong>Burp Suite:</strong> Web vulnerability scanner and proxy tool.</li>
+                    </ul>
+                    <h3>Best Practices</h3>
+                    <ul>
+                        <li>Always get written permission before testing any system.</li>
+                        <li>Document your findings and report them responsibly.</li>
+                        <li>Stay updated on the latest vulnerabilities and exploits.</li>
+                    </ul>
+                    <p><strong>Example:</strong> A company hires an ethical hacker to test their website for security holes before launching.</p>
+                    <p><strong>Tip:</strong> Ethical hacking is about helping, not harming. Always act with integrity.</p>
+                </div>
+            </section>
+
+            <!-- Cryptography -->
+            <section id="cryptography" class="module-section">
+                <h2 class="section-title">🔑 Cryptography</h2>
+                <div class="module-content">
+                    <p><strong>Cryptography</strong> is the science of securing information by converting it into a form that only authorized parties can understand.</p>
+                    <h3>Key Concepts</h3>
+                    <ul>
+                        <li><strong>Encryption:</strong> Turning readable data (plaintext) into unreadable code (ciphertext).</li>
+                        <li><strong>Decryption:</strong> Converting ciphertext back to plaintext.</li>
+                        <li><strong>Keys:</strong> Secret values used in encryption and decryption.</li>
+                        <li><strong>Hashing:</strong> Creating a fixed-size output from any input, used for passwords and data integrity.</li>
+                    </ul>
+                    <h3>Common Algorithms</h3>
+                    <ul>
+                        <li><strong>AES:</strong> Widely used symmetric encryption algorithm.</li>
+                        <li><strong>RSA:</strong> Popular asymmetric encryption for secure data exchange.</li>
+                        <li><strong>SHA-256:</strong> Secure hashing algorithm for data integrity.</li>
+                    </ul>
+                    <h3>Best Practices</h3>
+                    <ul>
+                        <li>Never share your encryption keys.</li>
+                        <li>Use strong, up-to-date algorithms.</li>
+                        <li>Encrypt sensitive data at rest and in transit.</li>
+                        <li>Regularly update and rotate keys.</li>
+                    </ul>
+                    <p><strong>Example:</strong> Messaging apps use end-to-end encryption to keep your conversations private.</p>
+                    <p><strong>Tip:</strong> If you see a lock icon in your browser, your connection is encrypted!</p>
+                </div>
+            </section>
+
+            <!-- Tools & Techniques -->
+            <section id="tools" class="module-section">
+                <h2 class="section-title">🧰 Tools & Techniques</h2>
+                <div class="module-content">
+                    <p><strong>Cybersecurity professionals</strong> use a variety of tools and techniques to protect systems and investigate threats.</p>
+                    <h3>Essential Tools</h3>
+                    <ul>
+                        <li><strong>Antivirus Software:</strong> Detects and removes malware.</li>
+                        <li><strong>Firewalls:</strong> Block unauthorized access to networks.</li>
+                        <li><strong>Packet Analyzers (e.g., Wireshark):</strong> Inspect network traffic for suspicious activity.</li>
+                        <li><strong>Password Managers:</strong> Store and generate strong passwords securely.</li>
+                        <li><strong>Vulnerability Scanners:</strong> Identify weaknesses in systems and applications.</li>
+                    </ul>
+                    <h3>Techniques</h3>
+                    <ul>
+                        <li>Regularly update and patch software.</li>
+                        <li>Monitor logs for unusual activity.</li>
+                        <li>Segment networks to limit the spread of attacks.</li>
+                        <li>Educate users about phishing and social engineering.</li>
+                    </ul>
+                    <p><strong>Example:</strong> Using Wireshark to analyze network traffic and spot suspicious connections.</p>
+                    <p><strong>Tip:</strong> The right tool can make all the difference—learn to use them effectively!</p>
+                </div>
+            </section>
+
+            <!-- Real Projects -->
+            <section id="projects" class="module-section">
+                <h2 class="section-title">🎯 Real Projects</h2>
+                <div class="module-content">
+                    <p>Apply your knowledge with hands-on projects. Building real projects helps you understand how cybersecurity works in practice.</p>
+                    <h3>Project Ideas</h3>
+                    <ul>
+                        <li><strong>Build a Secure Login System:</strong> Create a simple website with user authentication and password hashing.</li>
+                        <li><strong>Set Up a Home Firewall:</strong> Configure a firewall on your home network and monitor traffic.</li>
+                        <li><strong>Phishing Awareness Campaign:</strong> Design a campaign to teach others how to spot phishing emails.</li>
+                        <li><strong>Vulnerability Assessment:</strong> Use tools to scan a test website for security flaws.</li>
+                    </ul>
+                    <h3>Best Practices</h3>
+                    <ul>
+                        <li>Document your process and results.</li>
+                        <li>Work in a safe, legal environment (never test on systems you don’t own or have permission to use).</li>
+                        <li>Share your projects in a portfolio to showcase your skills.</li>
+                    </ul>
+                    <p><strong>Tip:</strong> Start small and build up—every project teaches you something new!</p>
+                </div>
+            </section>
+
+            <!-- Career Paths -->
+            <section id="career" class="module-section">
+                <h2 class="section-title">💼 Career Paths</h2>
+                <div class="module-content">
+                    <p>Cybersecurity offers many exciting career opportunities. Here are some common roles:</p>
+                    <ul>
+                        <li><strong>Security Analyst:</strong> Monitors systems for threats and investigates incidents.</li>
+                        <li><strong>Penetration Tester (Ethical Hacker):</strong> Tests systems for vulnerabilities.</li>
+                        <li><strong>Security Engineer:</strong> Designs and implements security solutions.</li>
+                        <li><strong>Incident Responder:</strong> Handles and recovers from security incidents.</li>
+                        <li><strong>Cryptographer:</strong> Develops encryption algorithms and protocols.</li>
+                        <li><strong>Chief Information Security Officer (CISO):</strong> Leads an organization’s security strategy.</li>
+                    </ul>
+                    <h3>How to Get Started</h3>
+                    <ul>
+                        <li>Learn the basics and build hands-on skills.</li>
+                        <li>Earn certifications (e.g., CompTIA Security+, CEH, CISSP).</li>
+                        <li>Participate in Capture The Flag (CTF) competitions and online labs.</li>
+                        <li>Network with professionals and join cybersecurity communities.</li>
+                    </ul>
+                    <p><strong>Tip:</strong> There’s a place for everyone in cybersecurity—find your passion and keep learning!</p>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" class="module-section">
+                <h2 class="section-title">❓ Frequently Asked Questions (FAQ)</h2>
+                <div class="module-content">
+                    <h3>What is cybersecurity?</h3>
+                    <p>Cybersecurity is the practice of protecting computers, networks, and data from unauthorized access, attacks, or damage. It helps keep your information safe and private.</p>
+                    <h3>Do I need to know programming to start learning cybersecurity?</h3>
+                    <p>No! While programming can help, you can start learning the basics of cybersecurity without any coding experience. As you progress, learning some programming (like Python) can open up more opportunities.</p>
+                    <h3>How can I practice cybersecurity skills safely?</h3>
+                    <p>Use online labs, simulators, and Capture The Flag (CTF) challenges designed for learning. Never test your skills on systems you don’t own or have permission to use.</p>
+                    <h3>What are some good resources for beginners?</h3>
+                    <ul>
+                        <li><a href="https://www.cybrary.it/" target="_blank">Cybrary</a> – Free cybersecurity courses</li>
+                        <li><a href="https://www.hackthebox.com/" target="_blank">Hack The Box</a> – Hands-on labs and challenges</li>
+                        <li><a href="https://www.tryhackme.com/" target="_blank">TryHackMe</a> – Guided learning paths</li>
+                        <li><a href="https://www.coursera.org/" target="_blank">Coursera</a> – University-level courses</li>
+                    </ul>
+                    <h3>How do I stay updated in cybersecurity?</h3>
+                    <p>Follow cybersecurity news sites, join online communities, and participate in forums like Reddit’s <a href="https://www.reddit.com/r/cybersecurity/" target="_blank">r/cybersecurity</a> or <a href="https://www.reddit.com/r/netsec/" target="_blank">r/netsec</a>.</p>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer-content">
+                <span>&copy; 2025 Forever Class. All rights reserved.</span>
+                <span>Made with ❤️ by the Forever Class Team</span>
+            </div>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/progress-tracker.js"></script>
+    <script src="js/auth-system.js"></script>
+    <script src="js/cybersecurity.js"></script>
+    </body> 
+</html>
