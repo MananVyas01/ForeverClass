@@ -3,24 +3,84 @@
  * Forever Class Platform
  */
 
+/* Define missing CSS variables */
+:root {
+    --hover-bg: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+    --hover-bg: rgba(255, 255, 255, 0.1);
+}
+
 /* Ensure sidebar is visible on desktop */
 @media (min-width: 769px) {
-    .sidebar {
+    .page-container .sidebar {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
         transform: translateX(0) !important;
+        position: sticky !important;
+        top: 0 !important;
+        height: 100vh !important;
+        background: var(--card-bg, #ffffff) !important;
+        border-right: 1px solid var(--border-color, #e9ecef) !important;
+        z-index: 100 !important;
+        overflow-y: auto !important;
+        width: 280px !important;
     }
     
     .page-container {
         display: grid !important;
         grid-template-columns: 280px 1fr !important;
         grid-template-areas: "sidebar main" !important;
+        min-height: 100vh !important;
     }
     
     .main-content {
         grid-area: main !important;
         margin-left: 0 !important;
+        padding: var(--spacing-lg) !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Ensure sidebar navigation is styled correctly */
+    .sidebar-nav {
+        padding: var(--spacing-lg, 24px) 0 !important;
+    }
+    
+    .sidebar-header {
+        padding: 0 var(--spacing-lg, 24px) var(--spacing-lg, 24px) !important;
+        border-bottom: 1px solid var(--border-color, #e9ecef) !important;
+        margin-bottom: var(--spacing-lg, 24px) !important;
+    }
+    
+    .sidebar-nav ul {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .sidebar-link {
+        display: flex !important;
+        align-items: center !important;
+        padding: var(--spacing-md, 16px) var(--spacing-lg, 24px) !important;
+        color: var(--text-secondary, #6c757d) !important;
+        text-decoration: none !important;
+        font-weight: 500 !important;
+        font-size: var(--font-size-sm, 14px) !important;
+        transition: all 0.2s ease !important;
+        border-right: 3px solid transparent !important;
+    }
+    
+    .sidebar-link:hover {
+        background: var(--hover-bg, rgba(0, 0, 0, 0.05)) !important;
+        color: var(--text-primary, #333333) !important;
+    }
+    
+    .sidebar-link.active {
+        background: var(--primary-color, #007bff) !important;
+        color: white !important;
+        border-right-color: var(--secondary-color, #28a745) !important;
     }
 }
 
