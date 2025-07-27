@@ -3,6 +3,27 @@
  * Forever Class Platform
  */
 
+/* Ensure sidebar is visible on desktop */
+@media (min-width: 769px) {
+    .sidebar {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: translateX(0) !important;
+    }
+    
+    .page-container {
+        display: grid !important;
+        grid-template-columns: 280px 1fr !important;
+        grid-template-areas: "sidebar main" !important;
+    }
+    
+    .main-content {
+        grid-area: main !important;
+        margin-left: 0 !important;
+    }
+}
+
 /* Python Hero Section */
 .hero-section {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -1169,6 +1190,20 @@
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    .page-container {
+        display: block !important;
+        grid-template-columns: none !important;
+    }
+    
+    .sidebar {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin-left: 0 !important;
+        grid-area: none !important;
+    }
+    
     .hero-content {
         grid-template-columns: 1fr;
         gap: 40px;
